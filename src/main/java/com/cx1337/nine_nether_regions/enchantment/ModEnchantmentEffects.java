@@ -1,6 +1,7 @@
 package com.cx1337.nine_nether_regions.enchantment;
 
 import com.cx1337.nine_nether_regions.NineNetherRegions;
+import com.cx1337.nine_nether_regions.enchantment.custom.SoulRipEnchantmentEffect;
 import com.cx1337.nine_nether_regions.enchantment.custom.StormAngerEnchantmentEffect;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.registries.Registries;
@@ -16,6 +17,8 @@ public class ModEnchantmentEffects {
 
     public static final Supplier<MapCodec<? extends EnchantmentEntityEffect>> STORM_ANGER =
             ENTITY_ENCHANTMENT_EFFECTS.register("storm_anger", () -> StormAngerEnchantmentEffect.CODEC);
+    public static final Supplier<MapCodec<? extends EnchantmentEntityEffect>> SOUL_RIP =
+            ENTITY_ENCHANTMENT_EFFECTS.register("soul_rip", () -> SoulRipEnchantmentEffect.CODEC);
 
     public static void register(IEventBus eventBus) {
         ENTITY_ENCHANTMENT_EFFECTS.register(eventBus);

@@ -23,6 +23,8 @@ public class ModEffects {
             MOB_EFFECTS.register("frost", () -> new FrostEffect(MobEffectCategory.HARMFUL, 0x87CEEB));
     public static final DeferredHolder<MobEffect, WrappedEffect> WRAPPED =
             MOB_EFFECTS.register("wrapped", () -> new WrappedEffect(MobEffectCategory.HARMFUL, 0x797979));
+    public static final DeferredHolder<MobEffect, HellBlastEffect> HELL_BLAST =
+            MOB_EFFECTS.register("hell_blast", () -> new HellBlastEffect(MobEffectCategory.HARMFUL, 0x000f0a));
 
 
     public static void register(IEventBus eventBus){

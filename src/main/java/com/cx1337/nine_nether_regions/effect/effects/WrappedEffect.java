@@ -20,11 +20,6 @@ public class WrappedEffect extends MobEffect {
     }
 
     @Override
-    public boolean isBeneficial() {
-        return false;
-    }
-
-    @Override
     public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
         return true;
     }

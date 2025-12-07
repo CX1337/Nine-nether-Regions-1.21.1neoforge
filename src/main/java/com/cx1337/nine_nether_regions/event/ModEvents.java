@@ -4,30 +4,40 @@ import com.cx1337.nine_nether_regions.block.ModBlocks;
 import com.cx1337.nine_nether_regions.effect.ModEffects;
 import com.cx1337.nine_nether_regions.item.ModItems;
 import com.cx1337.nine_nether_regions.potion.ModPotions;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.protocol.game.ClientboundLevelParticlesPacket;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.WitherSkull;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.phys.AABB;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
+import net.neoforged.neoforge.network.PacketDistributor;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class ModEvents {
@@ -91,6 +101,42 @@ public class ModEvents {
                 float finalDamage = damageAmount * damageMultiplier;
 
                 event.setNewDamage(finalDamage);
+            }
+        }
+    }
+
+    //幽冥爆破效果
+    private static final ThreadLocal<Boolean> IS_PROCESSING_HELL_BLAST =
+            ThreadLocal.withInitial(() -> false);
+    @SubscribeEvent
+    public void onLivingDamageHellBlast(LivingDamageEvent.Post event) {
+        if (IS_PROCESSING_HELL_BLAST.get()) {
+            return;
+        }
+        LivingEntity victim = event.getEntity();
+        if (victim.level().isClientSide) return;
+        MobEffectInstance effect = victim.getEffect(ModEffects.HELL_BLAST);
+
+        if (effect != null) {
+            IS_PROCESSING_HELL_BLAST.set(true);
+            try {
+                int level = effect.getAmplifier();
+                float damage = level + 2.0F;
+
+                List<LivingEntity> entities = victim.level().getEntitiesOfClass(
+                        LivingEntity.class,
+                        new AABB(victim.blockPosition()).inflate(3.0));
+
+                for (LivingEntity target : entities) {
+                    target.hurt(victim.damageSources().indirectMagic(victim, victim), damage);
+                    victim.level().levelEvent(2007,
+                            BlockPos.containing(target.getX(), target.getY() + 1.0, target.getZ()),
+                            0);
+                }
+                victim.level().playSound(null, victim.getX(), victim.getY(), victim.getZ(),
+                        SoundEvents.FIREWORK_ROCKET_BLAST, SoundSource.PLAYERS, 1.0F, 0.8F);
+            } finally {
+                IS_PROCESSING_HELL_BLAST.set(false);
             }
         }
     }
@@ -253,26 +299,25 @@ public class ModEvents {
                 DamageSource source = event.getSource();
                 if (source.is(DamageTypes.MAGIC) || source.is(DamageTypes.DRAGON_BREATH)
                 || source.is(DamageTypes.WITHER) || source.is(DamageTypes.INDIRECT_MAGIC)) {
-                    event.setNewDamage(0.0f);
                     return;
                 }
                 if (source.is(DamageTypeTags.IS_EXPLOSION)) {
-                    event.setNewDamage(0.0f);
+                    event.setNewDamage(0);
                     return;
                 }
                 if (source.is(DamageTypeTags.IS_FREEZING)) {
-                    event.setNewDamage(0.0f);
+                    event.setNewDamage(0);
                     return;
                 }
                 if (source.is(DamageTypes.SONIC_BOOM)) {
-                    event.setNewDamage(0.0f);
+                    event.setNewDamage(0);
                     return;
                 }
             }
 
             float originalDamage = event.getNewDamage();
                 if (fullSet && originalDamage <= 3.0f) {
-                    event.setNewDamage(0.0f);
+                    event.setNewDamage(0);
                     return;
             }
                 if (fullSet) {
@@ -285,6 +330,20 @@ public class ModEvents {
                     float reducedFallDamage = originalDamage * 0.15f;
                     event.setNewDamage(reducedFallDamage);
                 }
+        }
+    }
+
+    @SubscribeEvent
+    public void onLivingDamageSkull(LivingDamageEvent.Pre event) {
+        LivingEntity target = event.getEntity();
+        DamageSource source = event.getSource();
+
+        if (source.getDirectEntity() instanceof WitherSkull witherSkull) {
+            Entity owner = witherSkull.getOwner();
+            if (target.equals(owner)) {
+                event.setNewDamage(0.0f);
+                return;
+            }
         }
     }
 

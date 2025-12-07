@@ -168,8 +168,10 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("item.minecraft.splash_potion.effect.s_frost_potion", "Strengthened Frost Splash Potion");
         add("item.minecraft.lingering_potion.effect.s_frost_potion", "Strengthened Frost Lingering Potion");
         add("effect.nine_nether_regions.wrapped", "Wrapped");
+        add("effect.nine_nether_regions.hell_blast", "Hell Blast");
 
         add("enchantment.nine_nether_regions.storm_anger", "Anger of Storm");
+        add("enchantment.nine_nether_regions.soul_rip", "Soul Rip");
 
         add("painting.nine_nether_regions.wayfarer.title", "Wayfarer");
         add("painting.nine_nether_regions.wayfarer.author", "CX1337");

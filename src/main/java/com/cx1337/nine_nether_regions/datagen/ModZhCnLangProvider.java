@@ -169,8 +169,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("item.minecraft.splash_potion.effect.s_frost_potion", "喷溅型强效冻结药水");
         add("item.minecraft.lingering_potion.effect.s_frost_potion", "滞留型强效冻结药水");
         add("effect.nine_nether_regions.wrapped", "缠绕");
+        add("effect.nine_nether_regions.hell_blast", "幽冥爆破");
 
         add("enchantment.nine_nether_regions.storm_anger", "风暴之怒");
+        add("enchantment.nine_nether_regions.soul_rip", "灵魂撕裂");
 
         add("painting.nine_nether_regions.wayfarer.title", "Wayfarer");
         add("painting.nine_nether_regions.wayfarer.author", "CX1337");

@@ -1457,6 +1457,7 @@ public class ModItems {
                         SmallFireball smallFireball = new SmallFireball(level, player,
                                 lookVec.scale(1.5));
                         smallFireball.setPos(player.getX(), player.getEyeY(), player.getZ());
+                        smallFireball.setOwner(player);
                         level.addFreshEntity(smallFireball);
                         level.playSound(null, player.getX(), player.getY(), player.getZ(),
                                 SoundEvents.BLAZE_SHOOT, SoundSource.PLAYERS, 1.0F, 1.0F);
@@ -1515,6 +1516,7 @@ public class ModItems {
                         WitherSkull witherSkull = new WitherSkull(level, player,
                                 lookVec.scale(1.5));
                         witherSkull.setPos(player.getX(), player.getEyeY(), player.getZ());
+                        witherSkull.setOwner(player);
                         level.addFreshEntity(witherSkull);
                         level.playSound(null, player.getX(), player.getY(), player.getZ(),
                                 SoundEvents.WITHER_SHOOT, SoundSource.PLAYERS, 1.0F, 1.0F);
@@ -1573,6 +1575,7 @@ public class ModItems {
                         DragonFireball dragonFireball = new DragonFireball(level, player,
                                 lookVec.scale(1.5));
                         dragonFireball.setPos(player.getX(), player.getEyeY(), player.getZ());
+                        dragonFireball.setOwner(player);
                         level.addFreshEntity(dragonFireball);
                         level.playSound(null, player.getX(), player.getY(), player.getZ(),
                                 SoundEvents.ENDER_DRAGON_SHOOT, SoundSource.PLAYERS, 1.0F, 1.0F);
