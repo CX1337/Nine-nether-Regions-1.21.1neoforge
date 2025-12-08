@@ -125,6 +125,30 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModBlocks.UNDERWORLD_BRICKS), has(ModBlocks.UNDERWORLD_BRICKS))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.HELL_LAMP, 1)
+                .pattern("#C#")
+                .pattern("$R$")
+                .pattern("###")
+                .define('#', ModBlocks.HELLWOOD_SLAB)
+                .define('$', Items.PAPER)
+                .define('R', ModItems.UNDERWORLD_CRYSTAL)
+                .define('C', ModBlocks.HELLWOOD_PLANKS)
+                .unlockedBy(getHasName(ModItems.UNDERWORLD_CRYSTAL), has(ModItems.UNDERWORLD_CRYSTAL))
+                .unlockedBy(getHasName(ModBlocks.HELLWOOD_PLANKS), has(ModBlocks.HELLWOOD_PLANKS))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STYX_LAMP, 1)
+                .pattern("###")
+                .pattern("#C#")
+                .pattern("$R$")
+                .define('#', Blocks.RED_STAINED_GLASS)
+                .define('$', ModBlocks.BLOODY_SAND)
+                .define('R', ModItems.RUBY)
+                .define('C', Blocks.REDSTONE_BLOCK)
+                .unlockedBy(getHasName(ModBlocks.BLOODY_SAND), has(ModBlocks.BLOODY_SAND))
+                .unlockedBy(getHasName(ModItems.RUBY), has(ModItems.RUBY))
+                .save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.DIAMOND_BOWSTRING, 1)
                 .pattern("# ")
                 .pattern(" #")

@@ -126,9 +126,14 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.HELLWOOD_STAIRS.get(), "Hellwood Stairs");
         add(ModBlocks.HELLWOOD_SLAB.get(), "Hellwood Slab");
         add(ModBlocks.MANJUSAKA.get(), "§cManjusaka");
+        add(ModBlocks.PINESAP.get(), "Pinesap");
+        add(ModBlocks.POTTED_PINESAP.get(), "Potted Pinesap");
+        add(ModBlocks.POTTED_HELLWOOD_SAPLING.get(), "Potted Hellwood Sapling");
         add(ModBlocks.NULL_BLOCK.get(), "§c§k?????");
         add(ModBlocks.NULL_GRASSBLOCK.get(), "§c§k!!!!!");
         add(ModBlocks.STYX_BLOCK.get(), "§5§lStyx Block");
+        add(ModBlocks.HELL_LAMP.get(), "Hell Lamp");
+        add(ModBlocks.STYX_LAMP.get(), "§4Styx Lamp");
         add(ModBlocks.STEEL_BLOCK.get(), "Steel Block");
         add(ModBlocks.RUBY_BLOCK.get(), "Ruby Block");
         add(ModBlocks.RAINBOWGEM_BLOCK.get(), "Rainbowgem Block");
@@ -248,5 +253,6 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.nine_nether_regions.void_staff", "§8§oInfused with power from the Void and the great dragon.\nRight-click to launch a dragon fireball.");
         add("tooltip.nine_nether_regions.rainbowgem", "§8§oA strange gem formed by the fusion of various gems, extremely hard and nearly rivaling Netherite.");
         add("tooltip.nine_nether_regions.ruby_sword", "§8§oA bloodthirsty sword that deals decent damage, at the cost of being extremely fragile.");
+        add("tooltip.nine_nether_regions.styx_lamp", "§8§oA lamp that can be toggled on and off. Right-click to switch its state. While it bears a resemblance to a Beacon, it possesses none of a Beacon's abilities. It is merely a lamp, and nothing more.");
     }
 }

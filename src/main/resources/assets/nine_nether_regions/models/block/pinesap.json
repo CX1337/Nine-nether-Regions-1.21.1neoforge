@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "nine_nether_regions:block/pinesap"
+  },
+  "render_type": "cutout"
+}

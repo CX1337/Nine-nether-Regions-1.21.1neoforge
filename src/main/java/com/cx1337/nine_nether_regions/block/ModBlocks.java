@@ -1,8 +1,10 @@
 package com.cx1337.nine_nether_regions.block;
 
 import com.cx1337.nine_nether_regions.NineNetherRegions;
+import com.cx1337.nine_nether_regions.block.custom.HellLampBlock;
 import com.cx1337.nine_nether_regions.block.custom.ModFlammableRotatedPillarBlock;
 import com.cx1337.nine_nether_regions.block.custom.ModSaplingBlock;
+import com.cx1337.nine_nether_regions.block.custom.StyxLampBlock;
 import com.cx1337.nine_nether_regions.item.ModItems;
 import com.cx1337.nine_nether_regions.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.BlockPos;
@@ -10,10 +12,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
@@ -72,7 +71,7 @@ public class ModBlocks {
                     .strength(44.4F,4444F)
                     .requiresCorrectToolForDrops()
                     .lightLevel(p_50872_ -> 6)
-                    .sound(SoundType.DEEPSLATE)));
+                    .sound(SoundType.DEEPSLATE)), new Item.Properties().rarity(Rarity.UNCOMMON));
 
     public static final DeferredBlock<Block> HELLWOOD_LOG =
             registerBlocks("hellwood_log", () -> new ModFlammableRotatedPillarBlock(
@@ -173,7 +172,7 @@ public class ModBlocks {
                     tooltipComponents.add(Component.translatable("tooltip.nine_nether_regions.reinforced_obsidian"));
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
-            });
+            }, new Item.Properties().rarity(Rarity.RARE));
 
     public static final DeferredBlock<Block> UNDERWORLD_SPIRIT_STONE =
             registerBlocks("underworld_spirit_stone", () -> new Block(BlockBehaviour.Properties.of()
@@ -202,6 +201,26 @@ public class ModBlocks {
                     .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)));
 
+    public static final DeferredBlock<Block> PINESAP =
+            registerBlocks("pinesap", () -> new FlowerBlock(MobEffects.LUCK, 14.0F,
+                    BlockBehaviour.Properties.of()
+                            .lightLevel(p_50872_ -> 8)
+                            .mapColor(MapColor.COLOR_LIGHT_GREEN)
+                            .noCollission()
+                            .sound(SoundType.GRASS)
+                            .offsetType(BlockBehaviour.OffsetType.XZ)
+                            .pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> POTTED_PINESAP =
+            registerBlockOnly("potted_pinesap", () -> new FlowerPotBlock(
+                    PINESAP.get(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY)
+                            .lightLevel(p_50872_ -> 8)
+                            .noOcclusion()));
+    public static final DeferredBlock<Block> POTTED_HELLWOOD_SAPLING =
+            registerBlockOnly("potted_hellwood_sapling", () -> new FlowerPotBlock(
+                    HELLWOOD_SAPLING.get(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY)
+                            .noOcclusion()));
 
     public static final DeferredBlock<Block> GLOWING_UNDERWORLD_BRICKS =
             registerBlocks("glowing_underworld_bricks", () -> new Block(BlockBehaviour.Properties.of()
@@ -223,7 +242,7 @@ public class ModBlocks {
                     tooltipComponents.add(Component.translatable("tooltip.nine_nether_regions.hellalloy_block"));
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
-            });
+            }, new Item.Properties().rarity(Rarity.EPIC));
 
     public static final DeferredBlock<Block> STEEL_BLOCK =
             registerBlocks("steel_block", () -> new Block(BlockBehaviour.Properties.of()
@@ -231,8 +250,7 @@ public class ModBlocks {
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
                     .strength(8.0F,12.0F)
-                    .sound(SoundType.METAL)){
-            });
+                    .sound(SoundType.METAL)));
     public static final DeferredBlock<Block> RUBY_BLOCK =
             registerBlocks("ruby_block", () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_RED)
@@ -240,8 +258,7 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .strength(6.0F,10.0F)
                     .lightLevel(p_50872_ -> 8)
-                    .sound(SoundType.STONE)){
-            });
+                    .sound(SoundType.STONE)));
     public static final DeferredBlock<Block> RAINBOWGEM_BLOCK =
             registerBlocks("rainbowgem_block", () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_GREEN)
@@ -249,8 +266,7 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .strength(22.0F,85.0F)
                     .lightLevel(p_50872_ -> 4)
-                    .sound(SoundType.STONE)){
-            });
+                    .sound(SoundType.STONE)), new Item.Properties().rarity(Rarity.UNCOMMON));
 
     public static final DeferredBlock<Block> HELLIGHT =
             registerBlocks("hellight", () -> new Block(BlockBehaviour.Properties.of()
@@ -265,7 +281,7 @@ public class ModBlocks {
                     .instrument(NoteBlockInstrument.BANJO)
                     .strength(3.5F,200.0F)
                     .sound(SoundType.AMETHYST)
-                    .lightLevel(p_50872_ -> 15)
+                    .lightLevel(p_50872_ -> 12)
             ){
                 @Override
                 public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
@@ -274,7 +290,6 @@ public class ModBlocks {
                     }
                     super.stepOn(level, pos, state, entity);
                 }
-
                 @Override
                 protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
                     return Block.box(4.0D, 0.0D, 4.0D, 12.0D, 8.0D, 12.0D);
@@ -290,7 +305,7 @@ public class ModBlocks {
                     tooltipComponents.add(Component.translatable("tooltip.nine_nether_regions.hell_nucleus"));
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
-            });
+            }, new Item.Properties().rarity(Rarity.RARE));
 
     public static final DeferredBlock<Block> STYX_BLOCK =
             registerBlocks("styx_block", () -> new Block(BlockBehaviour.Properties.of()
@@ -305,7 +320,49 @@ public class ModBlocks {
                     tooltipComponents.add(Component.translatable("tooltip.nine_nether_regions.styx_block"));
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
+            }, new Item.Properties().rarity(Rarity.EPIC));
+
+    public static final DeferredBlock<Block> HELL_LAMP =
+            registerBlocks("hell_lamp", () -> new HellLampBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_PURPLE)
+                    .instrument(NoteBlockInstrument.BANJO)
+                    .strength(2.5F, 44.0F)
+                    .sound(SoundType.WOOD)
+                    .noOcclusion()
+                    .lightLevel(state -> state.getValue(HellLampBlock.CLICKED) ? 15 : 0)){
+                @Override
+                protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+                    return Block.box(3.0D, 0.0D, 3.0D, 13.0D, 16.0D, 13.0D);
+                }
+                @Override
+                protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+                    return Block.box(3.0D, 0.0D, 3.0D, 13.0D, 14.0D, 13.0D);
+                }
+                @Override
+                protected boolean useShapeForLightOcclusion(BlockState state) {
+                    return true;
+                }
             });
+
+    public static final DeferredBlock<Block> STYX_LAMP =
+            registerBlocks("styx_lamp", () -> new StyxLampBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_RED)
+                    .instrument(NoteBlockInstrument.BANJO)
+                    .strength(5.0F, 444.0F)
+                    .sound(SoundType.GLASS)
+                    .noOcclusion()
+                    .lightLevel(state -> state.getValue(StyxLampBlock.CLICKED) ? 15 : 2)){
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nine_nether_regions.styx_lamp"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+                @Override
+                protected boolean useShapeForLightOcclusion(BlockState state) {
+                    return true;
+                }
+            });
+
     public static final DeferredBlock<Block> UNDERWORLDRACK =
             registerBlocks("underworldrack", () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_CYAN)
@@ -395,24 +452,16 @@ public class ModBlocks {
         return BLOCKS.register(name, block);
     }
 
-    public static DeferredBlock<Block> registerFlowerWithPot(String name, Supplier<Block> flowerSupplier) {
-        DeferredBlock<Block> flower = registerBlocks(name, flowerSupplier);
-        registerBlockOnly("potted_" + name,
-                () -> new FlowerPotBlock(null, () -> flower.get(),
-                        BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY)
-                                .noOcclusion()
-                                .lightLevel(state -> flower.get().defaultBlockState().getLightEmission())));
-        return flower;
+    public static <T extends Block> void registerBlockItems(String name, DeferredBlock<T> block, Item.Properties properties) {
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), properties));
     }
-
-    public static <T extends Block> void registerBlockItems(String name, DeferredBlock<T> block) {
-        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
-    }
-
-    private static <T extends Block> DeferredBlock<T> registerBlocks(String name, Supplier<T> block) {
+    private static <T extends Block> DeferredBlock<T> registerBlocks(String name, Supplier<T> block, Item.Properties properties) {
         DeferredBlock<T> blocks = BLOCKS.register(name, block);
-        registerBlockItems(name, blocks);
+        registerBlockItems(name, blocks, properties);
         return blocks;
+    }
+    private static <T extends Block> DeferredBlock<T> registerBlocks(String name, Supplier<T> block) {
+        return registerBlocks(name, block, new Item.Properties());
     }
 
     public static void register(IEventBus eventBus) {

@@ -119,13 +119,16 @@ public class ModCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> NineNetherRegions_Blocks_Tab =
             CREATIVE_MODE_TABS.register("nine_nether_regions_blocks_tab", () -> CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(ModBlocks.GLOWING_UNDERWORLD_BRICKS.get()))
+                    .icon(() -> new ItemStack(ModBlocks.STYX_LAMP.get()))
                     .title(Component.translatable("itemGroup.nine_nether_regions_blocks_tab"))
                     .backgroundTexture(ResourceLocation.fromNamespaceAndPath(NineNetherRegions.MODID, "textures/gui/tab_blocks_tab.png"))
                     .displayItems((parameters, output) -> {
                         output.accept(ModBlocks.HELLIGHT);
                         output.accept(ModBlocks.HELL_NUCLEUS);
+                        output.accept(ModBlocks.HELL_LAMP);
+                        output.accept(ModBlocks.STYX_LAMP);
                         output.accept(ModBlocks.MANJUSAKA);
+                        output.accept(ModBlocks.PINESAP);
                         output.accept(ModBlocks.BLOODBLADE_ORE);
                         output.accept(ModBlocks.BLOODBLADE_ROCK);
                         output.accept(ModBlocks.CRACKED_BLOODBLADE_ROCK);

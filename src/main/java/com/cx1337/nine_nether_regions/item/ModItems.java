@@ -6,6 +6,7 @@ import com.cx1337.nine_nether_regions.effect.ModEffects;
 import com.cx1337.nine_nether_regions.sound.ModSounds;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -1414,6 +1415,12 @@ public class ModItems {
                 public boolean isEnchantable(ItemStack stack) {
                     return true;
                 }
+
+                @Override
+                public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
+                    return true;
+                }
+
                 @Override
                 public int getEnchantmentValue() {
                     return ModToolTiers.HELLALLOY.getEnchantmentValue();

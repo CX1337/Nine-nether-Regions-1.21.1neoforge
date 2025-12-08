@@ -50,6 +50,8 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.HELLALLOY_BLOCK.get());
         dropSelf(ModBlocks.HELLIGHT.get());
         dropSelf(ModBlocks.HELL_NUCLEUS.get());
+        dropSelf(ModBlocks.HELL_LAMP.get());
+        dropSelf(ModBlocks.STYX_LAMP.get());
 
         dropSelf(ModBlocks.HELLWOOD_LOG.get());
         dropSelf(ModBlocks.HELLWOOD_WOOD.get());
@@ -93,7 +95,9 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
 
 
         add(ModBlocks.MANJUSAKA.get(), block -> createTallFlowerDrops(block));
-
+        dropSelf(ModBlocks.PINESAP.get());
+        add(ModBlocks.POTTED_PINESAP.get(), createPotFlowerItemTable(ModBlocks.PINESAP));
+        add(ModBlocks.POTTED_HELLWOOD_SAPLING.get(), createPotFlowerItemTable(ModBlocks.HELLWOOD_SAPLING));
     }
 
     protected LootTable.Builder createTallFlowerDrops(Block block) {

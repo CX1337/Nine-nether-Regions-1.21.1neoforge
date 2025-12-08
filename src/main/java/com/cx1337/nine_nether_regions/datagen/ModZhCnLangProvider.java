@@ -127,9 +127,14 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.HELLWOOD_STAIRS.get(), "幽染木楼梯");
         add(ModBlocks.HELLWOOD_SLAB.get(), "幽染木台阶");
         add(ModBlocks.MANJUSAKA.get(), "§c彼岸花");
+        add(ModBlocks.PINESAP.get(), "水晶兰");
+        add(ModBlocks.POTTED_PINESAP.get(), "水晶兰盆栽");
+        add(ModBlocks.POTTED_HELLWOOD_SAPLING.get(), "幽染树苗盆栽");
         add(ModBlocks.NULL_BLOCK.get(), "§c§k？？？？？");
         add(ModBlocks.NULL_GRASSBLOCK.get(), "§c§k！！！！！");
         add(ModBlocks.STYX_BLOCK.get(), "§5§l冥河块");
+        add(ModBlocks.HELL_LAMP.get(), "幽染灯笼");
+        add(ModBlocks.STYX_LAMP.get(), "§4冥河灯");
         add(ModBlocks.STEEL_BLOCK.get(), "精钢块");
         add(ModBlocks.RUBY_BLOCK.get(), "红宝石块");
         add(ModBlocks.RAINBOWGEM_BLOCK.get(), "虹玉块");
@@ -251,5 +256,6 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.nine_nether_regions.void_staff", "§8§o充盈着来自虚空与那巨龙的力量。\n按下右键以发射末影龙火球。");
         add("tooltip.nine_nether_regions.rainbowgem", "§8§o一块由各种宝石融合起来得到的奇异宝石，质地非常坚硬，几乎可以媲美下界合金。");
         add("tooltip.nine_nether_regions.ruby_sword", "§8§o一把非常嗜血的剑，拥有相当不错的伤害，代价是它本身极为脆弱。");
+        add("tooltip.nine_nether_regions.styx_lamp", "§8§o一盏可以开关的灯，右键来控制它的开关。尽管它长得很像信标，但是并不具备信标的任何功能。它只是一盏灯，仅此而已。");
     }
 }

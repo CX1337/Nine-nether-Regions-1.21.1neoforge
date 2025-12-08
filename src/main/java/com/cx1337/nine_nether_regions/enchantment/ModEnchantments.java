@@ -1,14 +1,16 @@
 package com.cx1337.nine_nether_regions.enchantment;
 
 import com.cx1337.nine_nether_regions.NineNetherRegions;
-import com.cx1337.nine_nether_regions.enchantment.custom.SoulRipEnchantmentEffect;
 import com.cx1337.nine_nether_regions.enchantment.custom.StormAngerEnchantmentEffect;
+import net.minecraft.advancements.critereon.EntityPredicate;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.EnchantmentTags;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -16,7 +18,10 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.EnchantmentTarget;
 import net.minecraft.world.item.enchantment.LevelBasedValue;
+import net.minecraft.world.item.enchantment.effects.AddValue;
 import net.minecraft.world.item.enchantment.effects.EnchantmentAttributeEffect;
+import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
 
 public class ModEnchantments {
     public static final ResourceKey<Enchantment> STORM_ANGER =
@@ -56,9 +61,17 @@ public class ModEnchantments {
                                 ResourceLocation.fromNamespaceAndPath(NineNetherRegions.MODID, "soul_rip_damage"),
                                 Attributes.ATTACK_DAMAGE,
                                 LevelBasedValue.perLevel(0.25F),
-                                AttributeModifier.Operation.ADD_MULTIPLIED_BASE
+                                AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
                         )
-                        ));
+                .withEffect(EnchantmentEffectComponents.DAMAGE,
+                        new AddValue(LevelBasedValue.perLevel(4.0F)),
+                        LootItemEntityPropertyCondition.hasProperties(
+                                LootContext.EntityTarget.THIS,
+                                EntityPredicate.Builder.entity()
+                                        .of(EntityType.WARDEN).build()
+                        ))
+        );
+
     }
 
     private static void register(BootstrapContext<Enchantment> registry, ResourceKey<Enchantment> key,

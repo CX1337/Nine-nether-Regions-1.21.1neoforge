@@ -37,7 +37,13 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.WALLS).add(ModBlocks.UNDERWORLD_BRICK_WALL.get());
 
         //植物相关
-
+        tag(BlockTags.SMALL_FLOWERS)
+                .add(ModBlocks.PINESAP.get());
+        tag(BlockTags.FLOWER_POTS)
+                .add(ModBlocks.POTTED_PINESAP.get())
+                .add(ModBlocks.POTTED_HELLWOOD_SAPLING.get());
+        tag(BlockTags.SAPLINGS)
+                .add(ModBlocks.HELLWOOD_SAPLING.get());
 
         // 工具不匹配标签 - 按照挖掘等级顺序排列
         //顺序：木质<石质<铁质<精钢质<钻石质<虹玉质≈下界合金质<幽冥合金质<冥河质。
@@ -160,7 +166,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.HELLIGHT.get())
                 .add(ModBlocks.HELL_NUCLEUS.get())
                 .add(ModBlocks.STYX_BLOCK.get())
-                .add(ModBlocks.UNDERWORLD_CRYSTAL_ORE.get());
+                .add(ModBlocks.UNDERWORLD_CRYSTAL_ORE.get())
+                .add(ModBlocks.HELL_LAMP.get())
+                .add(ModBlocks.STYX_LAMP.get());
 
         //木材
         tag(BlockTags.LOGS_THAT_BURN)
