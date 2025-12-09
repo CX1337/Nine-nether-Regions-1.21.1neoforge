@@ -60,6 +60,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.STEEL_BASE.get());
         basicItem(ModItems.STEEL_INGOT.get());
         basicItem(ModItems.STEEL_NUGGET.get());
+        basicItem(ModItems.COPPER_NUGGET.get());
         basicItem(ModItems.RUBY.get());
         basicItem(ModItems.RAINBOWGEM.get());
         basicItem(ModItems.THE_STYX_MUSIC_DISC.get());
@@ -91,6 +92,10 @@ public class ModItemModelsProvider extends ItemModelProvider {
                 ModItems.STEEL_HORSE_ARMOR)){
             basicItem(sup.get());
         }
+        for (var sup : List.of(ModItems.COPPER_HELMET, ModItems.COPPER_CHESTPLATE,ModItems.COPPER_LEGGINGS, ModItems.COPPER_BOOTS,
+                ModItems.COPPER_HORSE_ARMOR)){
+            basicItem(sup.get());
+        }
         for (var sup : List.of(ModItems.WOOD_HELMET, ModItems.WOOD_CHESTPLATE,ModItems.WOOD_LEGGINGS, ModItems.WOOD_BOOTS)){
             basicItem(sup.get());
         }
@@ -99,6 +104,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         }
 
         //工具武器类的物品均放在handheldItem中。
+        handheldItem(ModItems.DAMAGE_TEST.get());
         handheldItem(ModItems.ALLOY_HILT.get());
         handheldItem(ModItems.AMETHYST_DAGGER.get());
         handheldItem(ModItems.HELLALLOY_AXE.get());
@@ -106,6 +112,11 @@ public class ModItemModelsProvider extends ItemModelProvider {
         handheldItem(ModItems.HELLALLOY_PICKAXE.get());
         handheldItem(ModItems.HELLALLOY_SHOVEL.get());
         handheldItem(ModItems.HELLALLOY_SWORD.get());
+        handheldItem(ModItems.COPPER_AXE.get());
+        handheldItem(ModItems.COPPER_HOE.get());
+        handheldItem(ModItems.COPPER_PICKAXE.get());
+        handheldItem(ModItems.COPPER_SHOVEL.get());
+        handheldItem(ModItems.COPPER_SWORD.get());
         handheldItem(ModItems.STEEL_AXE.get());
         handheldItem(ModItems.STEEL_HOE.get());
         handheldItem(ModItems.STEEL_PICKAXE.get());

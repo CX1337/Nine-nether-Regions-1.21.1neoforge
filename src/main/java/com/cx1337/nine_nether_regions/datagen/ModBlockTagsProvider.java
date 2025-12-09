@@ -46,9 +46,13 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.HELLWOOD_SAPLING.get());
 
         // 工具不匹配标签 - 按照挖掘等级顺序排列
-        //顺序：木质<石质<铁质<精钢质<钻石质<虹玉质≈下界合金质<幽冥合金质<冥河质。
+        //顺序：木质<石质=铜质<铁质<精钢质<钻石质<虹玉质≈下界合金质<幽冥合金质<冥河质。
 // 木工具不正确
         tag(BlockTags.INCORRECT_FOR_WOODEN_TOOL)
+                .add(ModBlocks.HELLALLOY_BLOCK.get())
+                .add(ModBlocks.STYX_BLOCK.get());
+// 金工具不正确
+        tag(BlockTags.INCORRECT_FOR_GOLD_TOOL)
                 .add(ModBlocks.HELLALLOY_BLOCK.get())
                 .add(ModBlocks.STYX_BLOCK.get());
 // 石工具不正确
@@ -68,6 +72,13 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL)
                 .add(ModBlocks.STYX_BLOCK.get());
 // 自定义挖掘等级标签
+// 铜工具需求
+        tag(ModTags.Blocks.NEEDS_COPPER_TOOL);
+// 铜工具不正确
+        tag(ModTags.Blocks.INCORRECT_FOR_COPPER_TOOL)
+                .addTags(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.HELLALLOY_BLOCK.get())
+                .add(ModBlocks.STYX_BLOCK.get());
 // 精钢工具需求
         tag(ModTags.Blocks.NEEDS_STEEL_TOOL);
 // 精钢工具不正确

@@ -22,36 +22,41 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        //喂养相关
         tag(ItemTags.GOAT_FOOD)
                 .add(ModItems.AMETHYST_BEETROOT.get());
-
         tag(ItemTags.HORSE_FOOD)
                 .add(ModItems.GHOSTLIUM_APPLE.get())
                 .add(ModItems.ENCHANTED_GHOSTLIUM_APPLE.get());
-
         tag(ItemTags.HOGLIN_FOOD)
                 .add(ModItems.GHOSTLIUM.get());
 
+        //物品相关
         tag(ItemTags.AXES)
                 .add(ModItems.STEEL_AXE.get())
+                .add(ModItems.COPPER_AXE.get())
                 .add(ModItems.HELLALLOY_AXE.get())
                 .add(ModItems.RAINBOWGEM_AXE.get());
         tag(ItemTags.PICKAXES)
                 .add(ModItems.STYX_PICKAXE.get())
                 .add(ModItems.HELLALLOY_PICKAXE.get())
                 .add(ModItems.STEEL_PICKAXE.get())
+                .add(ModItems.COPPER_PICKAXE.get())
                 .add(ModItems.RAINBOWGEM_PICKAXE.get());
         tag(ItemTags.SHOVELS)
                 .add(ModItems.HELLALLOY_SHOVEL.get())
                 .add(ModItems.STEEL_SHOVEL.get())
+                .add(ModItems.COPPER_SHOVEL.get())
                 .add(ModItems.RAINBOWGEM_SHOVEL.get());
         tag(ItemTags.HOES)
                 .add(ModItems.HELLALLOY_HOE.get())
                 .add(ModItems.STEEL_HOE.get())
+                .add(ModItems.COPPER_HOE.get())
                 .add(ModItems.RAINBOWGEM_HOE.get());
         tag(ItemTags.SWORDS)
                 .add(ModItems.AMETHYST_DAGGER.get())
                 .add(ModItems.STEEL_SWORD.get())
+                .add(ModItems.COPPER_SWORD.get())
                 .add(ModItems.RAINBOWGEM_SWORD.get())
                 .add(ModItems.RUBY_SWORD.get())
                 .add(ModItems.HELLALLOY_SWORD.get())
@@ -60,6 +65,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.HEAD_ARMOR)
                 .add(ModItems.WOOD_HELMET.get())
                 .add(ModItems.CHERRY_HELMET.get())
+                .add(ModItems.COPPER_HELMET.get())
                 .add(ModItems.STEEL_HELMET.get())
                 .add(ModItems.RAINBOWGEM_HELMET.get())
                 .add(ModItems.HELLALLOY_HELMET.get())
@@ -67,6 +73,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.CHEST_ARMOR)
                 .add(ModItems.WOOD_CHESTPLATE.get())
                 .add(ModItems.CHERRY_CHESTPLATE.get())
+                .add(ModItems.COPPER_CHESTPLATE.get())
                 .add(ModItems.STEEL_CHESTPLATE.get())
                 .add(ModItems.RAINBOWGEM_CHESTPLATE.get())
                 .add(ModItems.HELLALLOY_CHESTPLATE.get())
@@ -74,6 +81,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.LEG_ARMOR)
                 .add(ModItems.WOOD_LEGGINGS.get())
                 .add(ModItems.CHERRY_LEGGINGS.get())
+                .add(ModItems.COPPER_LEGGINGS.get())
                 .add(ModItems.STEEL_LEGGINGS.get())
                 .add(ModItems.RAINBOWGEM_LEGGINGS.get())
                 .add(ModItems.HELLALLOY_LEGGINGS.get())
@@ -81,6 +89,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.FOOT_ARMOR)
                 .add(ModItems.WOOD_BOOTS.get())
                 .add(ModItems.CHERRY_BOOTS.get())
+                .add(ModItems.COPPER_BOOTS.get())
                 .add(ModItems.STEEL_BOOTS.get())
                 .add(ModItems.RAINBOWGEM_BOOTS.get())
                 .add(ModItems.HELLALLOY_BOOTS.get())
@@ -95,6 +104,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.STEEL_CHESTPLATE.get())
                 .add(ModItems.STEEL_LEGGINGS.get())
                 .add(ModItems.STEEL_BOOTS.get())
+                .add(ModItems.COPPER_HELMET.get())
+                .add(ModItems.COPPER_CHESTPLATE.get())
+                .add(ModItems.COPPER_LEGGINGS.get())
+                .add(ModItems.COPPER_BOOTS.get())
                 .add(ModItems.RAINBOWGEM_HELMET.get())
                 .add(ModItems.RAINBOWGEM_CHESTPLATE.get())
                 .add(ModItems.RAINBOWGEM_LEGGINGS.get())
@@ -111,7 +124,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModBlocks.HELLWOOD_WOOD.get().asItem())
                 .add(ModBlocks.STRIPPED_HELLWOOD_LOG.get().asItem())
                 .add(ModBlocks.STRIPPED_HELLWOOD_WOOD.get().asItem());
-
         tag(ItemTags.PLANKS)
                 .add(ModBlocks.HELLWOOD_PLANKS.asItem());
     }

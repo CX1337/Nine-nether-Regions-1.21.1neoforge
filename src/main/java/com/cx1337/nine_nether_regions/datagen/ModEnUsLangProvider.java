@@ -13,6 +13,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        add(ModItems.DAMAGE_TEST.get(), "§kDamage Test Sword");
         add(ModItems.ALLOY_HILT.get(), "Alloy Hilt");
         add(ModItems.AMETHYST_BEETROOT.get(), "Amethyst Beetroot");
         add(ModItems.CAVES_MUSIC_DISC.get(), "Music Disc--Biomes/Caves");
@@ -68,6 +69,17 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.STEEL_LEGGINGS.get(), "Steel Leggings");
         add(ModItems.STEEL_BOOTS.get(), "Steel Boots");
         add(ModItems.STEEL_HORSE_ARMOR.get(), "Steel Horse Armor");
+        add(ModItems.COPPER_NUGGET.get(), "Copper Nugget");
+        add(ModItems.COPPER_AXE.get(), "Copper Axe");
+        add(ModItems.COPPER_HOE.get(), "Copper Hoe");
+        add(ModItems.COPPER_PICKAXE.get(), "Copper Pickaxe");
+        add(ModItems.COPPER_SHOVEL.get(), "Copper Shovel");
+        add(ModItems.COPPER_SWORD.get(), "Copper Sword");
+        add(ModItems.COPPER_HELMET.get(), "Copper Helmet");
+        add(ModItems.COPPER_CHESTPLATE.get(), "Copper Chestplate");
+        add(ModItems.COPPER_LEGGINGS.get(), "Copper Leggings");
+        add(ModItems.COPPER_BOOTS.get(), "Copper Boots");
+        add(ModItems.COPPER_HORSE_ARMOR.get(), "Copper Horse Armor");
         add(ModItems.WEB_BALL.get(), "Web Ball");
         add(ModItems.WOOD_HELMET.get(), "Wood Helmet");
         add(ModItems.WOOD_CHESTPLATE.get(), "Wood Chestplate");

@@ -13,6 +13,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        add(ModItems.DAMAGE_TEST.get(), "§k伤害测试剑");
         add(ModItems.ALLOY_HILT.get(), "合金剑柄");
         add(ModItems.AMETHYST_BEETROOT.get(), "紫晶甜菜根");
         add(ModItems.CAVES_MUSIC_DISC.get(), "音乐唱片——群系/洞穴类群系");
@@ -69,6 +70,17 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.STEEL_LEGGINGS.get(), "精钢护腿");
         add(ModItems.STEEL_BOOTS.get(), "精钢靴子");
         add(ModItems.STEEL_HORSE_ARMOR.get(), "精钢马铠");
+        add(ModItems.COPPER_NUGGET.get(), "铜粒");
+        add(ModItems.COPPER_AXE.get(), "铜斧");
+        add(ModItems.COPPER_HOE.get(), "铜锄");
+        add(ModItems.COPPER_PICKAXE.get(), "铜镐");
+        add(ModItems.COPPER_SHOVEL.get(), "铜锹");
+        add(ModItems.COPPER_SWORD.get(), "铜剑");
+        add(ModItems.COPPER_HELMET.get(), "铜头盔");
+        add(ModItems.COPPER_CHESTPLATE.get(), "铜胸甲");
+        add(ModItems.COPPER_LEGGINGS.get(), "铜护腿");
+        add(ModItems.COPPER_BOOTS.get(), "铜靴子");
+        add(ModItems.COPPER_HORSE_ARMOR.get(), "铜马铠");
         add(ModItems.WEB_BALL.get(), "蛛网球");
         add(ModItems.WOOD_HELMET.get(), "木头盔");
         add(ModItems.WOOD_CHESTPLATE.get(), "木胸甲");

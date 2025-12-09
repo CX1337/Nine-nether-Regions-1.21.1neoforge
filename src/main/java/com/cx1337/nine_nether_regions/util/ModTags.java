@@ -12,6 +12,10 @@ import net.minecraft.world.level.block.Block;
 
 public class ModTags {
     public static class Blocks {
+        public static final TagKey<Block> NEEDS_COPPER_TOOL =
+                createTag("needs_copper_tool");
+        public static final TagKey<Block> INCORRECT_FOR_COPPER_TOOL =
+                createTag("incorrect_for_copper_tool");
         public static final TagKey<Block> NEEDS_STEEL_TOOL =
                 createTag("needs_steel_tool");
         public static final TagKey<Block> INCORRECT_FOR_STEEL_TOOL =

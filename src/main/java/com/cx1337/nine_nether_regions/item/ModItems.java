@@ -7,6 +7,7 @@ import com.cx1337.nine_nether_regions.sound.ModSounds;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -152,6 +153,9 @@ public class ModItems {
             });
     public static final DeferredItem<Item> STEEL_NUGGET =
             ITEMS.register("steel_nugget", () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
+
+    public static final DeferredItem<Item> COPPER_NUGGET =
+            ITEMS.register("copper_nugget", () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
 
     public static final DeferredItem<Item> RUBY =
             ITEMS.register("ruby", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
@@ -416,7 +420,42 @@ public class ModItems {
                     return true;
                 }
             });
-
+    //铜盔甲。
+    public static final DeferredItem<ArmorItem> COPPER_HELMET =
+            ITEMS.register("copper_helmet", () ->new ArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
+                    new Item.Properties() .durability(ArmorItem.Type.HELMET.getDurability(11)).rarity(Rarity.COMMON)){
+                @Override
+                public boolean isEnchantable(ItemStack stack) {
+                    return true;
+                }
+            });
+    public static final DeferredItem<ArmorItem> COPPER_CHESTPLATE =
+            ITEMS.register("copper_chestplate", () ->new ArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+                    new Item.Properties() .durability(ArmorItem.Type.CHESTPLATE.getDurability(11)).rarity(Rarity.COMMON)){
+                @Override
+                public boolean isEnchantable(ItemStack stack) {
+                    return true;
+                }
+            });
+    public static final DeferredItem<ArmorItem> COPPER_LEGGINGS =
+            ITEMS.register("copper_leggings", () ->new ArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
+                    new Item.Properties() .durability(ArmorItem.Type.LEGGINGS.getDurability(11)).rarity(Rarity.COMMON)){
+                @Override
+                public boolean isEnchantable(ItemStack stack) {
+                    return true;
+                }
+            });
+    public static final DeferredItem<ArmorItem> COPPER_BOOTS =
+            ITEMS.register("copper_boots", () ->new ArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
+                    new Item.Properties() .durability(ArmorItem.Type.BOOTS.getDurability(11)).rarity(Rarity.COMMON)){
+                @Override
+                public boolean isEnchantable(ItemStack stack) {
+                    return true;
+                }
+            });
+    public static final DeferredItem<Item> COPPER_HORSE_ARMOR =
+            ITEMS.register("copper_horse_armor", () -> new AnimalArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, AnimalArmorItem.BodyType.EQUESTRIAN,
+                    false, new Item.Properties().stacksTo(1)));
     //精钢盔甲。
     public static final DeferredItem<ArmorItem> STEEL_HELMET =
             ITEMS.register("steel_helmet", () ->new ArmorItem(ModArmorMaterials.STEEL_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
@@ -746,10 +785,6 @@ public class ModItems {
                 public boolean isEnchantable(ItemStack stack) {
                     return true;
                 }
-                @Override
-                public int getEnchantmentValue() {
-                    return ModToolTiers.STYX.getEnchantmentValue();
-                }
 
                 //无法破坏。
                 @Override
@@ -823,10 +858,6 @@ public class ModItems {
                 @Override
                 public boolean isEnchantable(ItemStack stack) {
                     return true;
-                }
-                @Override
-                public int getEnchantmentValue() {
-                    return ModToolTiers.HELLALLOY.getEnchantmentValue();
                 }
 
                 @Override
@@ -906,10 +937,6 @@ public class ModItems {
                 public boolean isEnchantable(ItemStack stack) {
                     return true;
                 }
-                @Override
-                public int getEnchantmentValue() {
-                    return ModToolTiers.HELLALLOY.getEnchantmentValue();
-                }
 
                 @Override
                 public boolean isDamageable(ItemStack stack) {
@@ -969,10 +996,6 @@ public class ModItems {
                 public boolean isEnchantable(ItemStack stack) {
                     return true;
                 }
-                @Override
-                public int getEnchantmentValue() {
-                    return ModToolTiers.HELLALLOY.getEnchantmentValue();
-                }
 
                 @Override
                 public boolean isDamageable(ItemStack stack) {
@@ -1031,13 +1054,33 @@ public class ModItems {
     //冥河战刃。
     public static final DeferredItem<SwordItem> STYX_SWORD =
             ITEMS.register("styx_sword", () -> new SwordItem(ModToolTiers.STYX, new Item.Properties()
-                    .attributes(SwordItem.createAttributes(ModToolTiers.STYX, 4.0F, -2.0F)).rarity(Rarity.EPIC).fireResistant()) {
+                    .attributes(SwordItem.createAttributes(ModToolTiers.STYX,
+                            6.0F, -2.0F)).rarity(Rarity.EPIC).fireResistant()) {
 
                 @Override
                 public boolean onLeftClickEntity(ItemStack stack, Player player, Entity target) {
                     if (player.getAttackStrengthScale(0.5F) >= 1.0F) {
                         //蓄满力强制百分比恢复生命。
                         if (player.level() instanceof ServerLevel sl) {
+                            sl.playSound(null,
+                                    player.getX(), player.getY(), player.getZ(),
+                                    SoundEvents.PLAYER_ATTACK_SWEEP,
+                                    SoundSource.PLAYERS, 1.0F, 1.0F);
+                            double radius = 1.5;
+                            int particleCount = 8;
+                            double playerHeight = player.getEyeHeight();
+                            for (int i = 0; i < particleCount; i ++) {
+                                double angle = 2 * Math.PI * i / particleCount;
+                                double offsetX = radius * Math.cos(angle);
+                                double offsetZ = radius * Math.sin(angle);
+                                sl.sendParticles(ParticleTypes.SWEEP_ATTACK,
+                                        player.getX() + offsetX,
+                                        player.getY() + playerHeight,
+                                        player.getZ() + offsetZ, 1,
+                                        0.0, 0.0, 0.0,
+                                        0.0);
+                            }
+
                             float newHealth = player.getHealth() + (player.getMaxHealth() * 0.08F);
                             player.setHealth(Math.min(newHealth, player.getMaxHealth()));
 
@@ -1105,6 +1148,47 @@ public class ModItems {
                 }
             });
 
+    public static final DeferredItem<SwordItem> DAMAGE_TEST =
+            ITEMS.register("damage_test", () -> new SwordItem(ModToolTiers.STYX, new Item.Properties()
+                            .attributes(SwordItem.createAttributes(ModToolTiers.STYX,
+                                    4426.0F, 0.0F)).rarity(Rarity.EPIC).fireResistant()){
+                @Override
+                public boolean onLeftClickEntity(ItemStack stack, Player player, Entity target) {
+                    if (player.getAttackStrengthScale(0.5F) >= 1.0F) {
+                        if (player.level() instanceof ServerLevel serverLevel) {
+                            serverLevel.playSound(null,
+                                    player.getX(), player.getY(), player.getZ(),
+                                    SoundEvents.ARROW_HIT_PLAYER,
+                                    SoundSource.PLAYERS, 1.0F, 1.0F);
+                            AABB areaOfEffect = player.getBoundingBox().inflate(4.0D);
+                            List<LivingEntity> entitiesInRange = serverLevel.getEntitiesOfClass(
+                                    LivingEntity.class, areaOfEffect,
+                                    entity -> entity != player
+                            );
+                            for (LivingEntity entity : entitiesInRange) {
+                                float newHealth = entity.getHealth() - 4444.0F;
+                                if (newHealth <= 0.0F) {
+                                    entity.setHealth(0.0F);
+                                    entity.die(player.damageSources().playerAttack(player));
+                                } else {
+                                    entity.setHealth(newHealth);
+                                }
+                            }
+                        }
+                    }
+                    return super.onLeftClickEntity(stack, player, target);
+                }
+
+                @Override
+                public boolean isDamageable(ItemStack stack) {
+                    return false;
+                }
+                @Override
+                public void setDamage(ItemStack stack, int damage) {
+                    super.setDamage(stack, 0);
+                }
+            });
+
     //工具。
     //冥河镐。
     public static final DeferredItem<PickaxeItem> STYX_PICKAXE =
@@ -1169,6 +1253,68 @@ public class ModItems {
                         tooltipComponents.add(Component.translatable("tooltip.nine_nether_regions.styx_pickaxe"));
                     }
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+
+    //铜工具。
+    public static final DeferredItem<PickaxeItem> COPPER_PICKAXE =
+            ITEMS.register("copper_pickaxe", () -> new PickaxeItem(ModToolTiers.COPPER, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.COPPER, 0.0F, -2.6F)).rarity(Rarity.COMMON)){
+                @Override
+                public boolean isEnchantable(ItemStack stack) {
+                    return true;
+                }
+                @Override
+                public int getEnchantmentValue() {
+                    return ModToolTiers.COPPER.getEnchantmentValue();
+                }
+            });
+    public static final DeferredItem<ShovelItem> COPPER_SHOVEL =
+            ITEMS.register("copper_shovel", () -> new ShovelItem(ModToolTiers.COPPER, new Item.Properties()
+                    .attributes(ShovelItem.createAttributes(ModToolTiers.COPPER, 0.5F, -2.8F)).rarity(Rarity.COMMON)){
+                @Override
+                public boolean isEnchantable(ItemStack stack) {
+                    return true;
+                }
+                @Override
+                public int getEnchantmentValue() {
+                    return ModToolTiers.COPPER.getEnchantmentValue();
+                }
+            });
+    public static final DeferredItem<AxeItem> COPPER_AXE =
+            ITEMS.register("copper_axe", () -> new AxeItem(ModToolTiers.COPPER, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModToolTiers.COPPER, 6.0F, -3.0F)).rarity(Rarity.COMMON)){
+                @Override
+                public boolean isEnchantable(ItemStack stack) {
+                    return true;
+                }
+                @Override
+                public int getEnchantmentValue() {
+                    return ModToolTiers.COPPER.getEnchantmentValue();
+                }
+            });
+    public static final DeferredItem<HoeItem> COPPER_HOE =
+            ITEMS.register("copper_hoe", () -> new HoeItem(ModToolTiers.COPPER, new Item.Properties()
+                    .attributes(HoeItem.createAttributes(ModToolTiers.COPPER, -2.0F, -1.0F)).rarity(Rarity.COMMON)){
+                @Override
+                public boolean isEnchantable(ItemStack stack) {
+                    return true;
+                }
+                @Override
+                public int getEnchantmentValue() {
+                    return ModToolTiers.COPPER.getEnchantmentValue();
+                }
+            });
+    public static final DeferredItem<SwordItem> COPPER_SWORD =
+            ITEMS.register("copper_sword", () -> new SwordItem(ModToolTiers.COPPER, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.COPPER, 2.0F, -2.4F)).rarity(Rarity.COMMON)) {
+                @Override
+                public boolean isEnchantable(ItemStack stack) {
+                    return true;
+                }
+                @Override
+                public int getEnchantmentValue() {
+                    return ModToolTiers.STEEL.getEnchantmentValue();
                 }
             });
 

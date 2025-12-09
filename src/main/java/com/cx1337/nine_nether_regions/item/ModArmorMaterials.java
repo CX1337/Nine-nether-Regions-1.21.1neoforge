@@ -43,6 +43,18 @@ public class ModArmorMaterials {
             SoundEvents.ARMOR_EQUIP_LEATHER,
             ResourceLocation.fromNamespaceAndPath(NineNetherRegions.MODID, "cherry"));
 
+    //铜盔甲
+    public static final Holder<ArmorMaterial> COPPER_ARMOR_MATERIAL = register("copper",
+            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+                attribute.put(ArmorItem.Type.BOOTS, 1);
+                attribute.put(ArmorItem.Type.LEGGINGS, 3);
+                attribute.put(ArmorItem.Type.CHESTPLATE, 4);
+                attribute.put(ArmorItem.Type.HELMET, 2);
+                attribute.put(ArmorItem.Type.BODY, 4);
+            }), 8, 0.0F, 0.0F, () -> Items.COPPER_INGOT,
+            SoundEvents.ARMOR_EQUIP_CHAIN,
+            ResourceLocation.fromNamespaceAndPath(NineNetherRegions.MODID, "copper"));
+
     //精钢盔甲
     public static final Holder<ArmorMaterial> STEEL_ARMOR_MATERIAL = register("steel",
             Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {

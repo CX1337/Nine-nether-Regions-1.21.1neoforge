@@ -29,9 +29,9 @@ public class StyxLampBlock extends Block {
             level.setBlockAndUpdate(pos, state.setValue(CLICKED, newState));
 
             if (newState) {
-                level.playSound(null, pos, SoundEvents.BEACON_ACTIVATE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, pos, SoundEvents.BEACON_ACTIVATE, SoundSource.BLOCKS, 1.5F, 1.0F);
             } else {
-                level.playSound(null, pos, SoundEvents.BEACON_DEACTIVATE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, pos, SoundEvents.BEACON_DEACTIVATE, SoundSource.BLOCKS, 1.5F, 1.0F);
             }
         }
         return InteractionResult.SUCCESS;

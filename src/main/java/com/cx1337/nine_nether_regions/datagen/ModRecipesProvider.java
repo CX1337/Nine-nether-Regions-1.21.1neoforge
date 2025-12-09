@@ -352,6 +352,105 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.STEEL_INGOT), has(ModItems.STEEL_INGOT))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.STEEL_HORSE_ARMOR, 1)
+                .pattern("  #")
+                .pattern("###")
+                .pattern("# #")
+                .define('#', ModItems.STEEL_INGOT)
+                .unlockedBy(getHasName(ModItems.STEEL_INGOT), has(ModItems.STEEL_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.COPPER_INGOT, 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', ModItems.COPPER_NUGGET)
+                .unlockedBy(getHasName(ModItems.COPPER_NUGGET), has(ModItems.COPPER_NUGGET))
+                .save(recipeOutput, NineNetherRegions.MODID + ":" +"copper_ingot_no2");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPER_AXE, 1)
+                .pattern("## ")
+                .pattern("#$ ")
+                .pattern(" $ ")
+                .define('#', Items.COPPER_INGOT)
+                .define('$', Items.STICK)
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPER_HOE, 1)
+                .pattern("## ")
+                .pattern(" $ ")
+                .pattern(" $ ")
+                .define('#', Items.COPPER_INGOT)
+                .define('$', Items.STICK)
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPER_PICKAXE, 1)
+                .pattern("###")
+                .pattern(" $ ")
+                .pattern(" $ ")
+                .define('#', Items.COPPER_INGOT)
+                .define('$', Items.STICK)
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPER_SHOVEL, 1)
+                .pattern(" # ")
+                .pattern(" $ ")
+                .pattern(" $ ")
+                .define('#', Items.COPPER_INGOT)
+                .define('$', Items.STICK)
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.COPPER_SWORD, 1)
+                .pattern(" # ")
+                .pattern(" # ")
+                .pattern(" $ ")
+                .define('#', Items.COPPER_INGOT)
+                .define('$', Items.STICK)
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.COPPER_HELMET, 1)
+                .pattern("###")
+                .pattern("# #")
+                .define('#', Items.COPPER_INGOT)
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.COPPER_CHESTPLATE, 1)
+                .pattern("# #")
+                .pattern("###")
+                .pattern("###")
+                .define('#', Items.COPPER_INGOT)
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.COPPER_LEGGINGS, 1)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', Items.COPPER_INGOT)
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.COPPER_BOOTS, 1)
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', Items.COPPER_INGOT)
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.COPPER_HORSE_ARMOR, 1)
+                .pattern("  #")
+                .pattern("###")
+                .pattern("# #")
+                .define('#', Items.COPPER_INGOT)
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
+                .save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.WOOD_HELMET, 1)
                 .pattern("###")
                 .pattern("# #")
@@ -750,6 +849,11 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModBlocks.HELLALLOY_BLOCK), has(ModBlocks.HELLALLOY_BLOCK))
                 .save(recipeOutput);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.COPPER_NUGGET, 9)
+                .requires(Items.COPPER_INGOT)
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
+                .save(recipeOutput, NineNetherRegions.MODID + ":" +"copper_nugget_no1");
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.STEEL_NUGGET, 9)
                 .requires(ModItems.STEEL_INGOT)
                 .unlockedBy(getHasName(ModItems.STEEL_INGOT), has(ModItems.STEEL_INGOT))
@@ -833,6 +937,8 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         oreBlasting(recipeOutput, STEEL_INGOT, RecipeCategory.MISC, ModItems.STEEL_INGOT, 0.10f, 200, "steel_ingot");
         oreSmelting(recipeOutput, STEEL_NUGGET, RecipeCategory.MISC, ModItems.STEEL_NUGGET, 0.10f, 200, "steel_nugget");
         oreBlasting(recipeOutput, STEEL_NUGGET, RecipeCategory.MISC, ModItems.STEEL_NUGGET, 0.10f, 100, "steel_nugget");
+        oreSmelting(recipeOutput, COPPER_NUGGET, RecipeCategory.MISC, ModItems.COPPER_NUGGET, 0.10f, 200, "copper_nugget");
+        oreBlasting(recipeOutput, COPPER_NUGGET, RecipeCategory.MISC, ModItems.COPPER_NUGGET, 0.10f, 100, "copper_nugget");
     }
     //熔炼原料注册点。
     public static final List<ItemLike> BLOODBLADE_ESSENCE = List.of(ModBlocks.BLOODBLADE_ORE);
@@ -842,7 +948,10 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
     public static final List<ItemLike> STEEL_INGOT = List.of(ModItems.STEEL_BASE);
     public static final List<ItemLike> STEEL_NUGGET = List.of(ModItems.STEEL_HELMET, ModItems.STEEL_CHESTPLATE,
             ModItems.STEEL_LEGGINGS, ModItems.STEEL_BOOTS, ModItems.STEEL_AXE, ModItems.STEEL_HOE, ModItems.STEEL_PICKAXE,
-            ModItems.STEEL_SHOVEL, ModItems.STEEL_SWORD);
+            ModItems.STEEL_SHOVEL, ModItems.STEEL_SWORD, ModItems.STEEL_HORSE_ARMOR);
+    public static final List<ItemLike> COPPER_NUGGET = List.of(ModItems.COPPER_HELMET, ModItems.COPPER_CHESTPLATE,
+            ModItems.COPPER_LEGGINGS, ModItems.COPPER_BOOTS, ModItems.COPPER_AXE, ModItems.COPPER_HOE, ModItems.COPPER_PICKAXE,
+            ModItems.COPPER_SHOVEL, ModItems.COPPER_SWORD, ModItems.COPPER_HORSE_ARMOR);
     public static final List<ItemLike> RED_GLASS = List.of(ModBlocks.BLOODY_SAND);
 
     protected static void oreSmelting(
