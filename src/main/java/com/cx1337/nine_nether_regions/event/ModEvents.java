@@ -1,6 +1,7 @@
 package com.cx1337.nine_nether_regions.event;
 
 import com.cx1337.nine_nether_regions.block.ModBlocks;
+import com.cx1337.nine_nether_regions.block.custom.StyxLampBlock;
 import com.cx1337.nine_nether_regions.effect.ModEffects;
 import com.cx1337.nine_nether_regions.item.ModItems;
 import com.cx1337.nine_nether_regions.potion.ModPotions;
@@ -19,6 +20,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.WitherSkull;
@@ -26,13 +28,16 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.MobSpawnEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 
@@ -333,6 +338,7 @@ public class ModEvents {
         }
     }
 
+    //凋灵法杖防误伤。
     @SubscribeEvent
     public void onLivingDamageSkull(LivingDamageEvent.Pre event) {
         LivingEntity target = event.getEntity();
@@ -343,6 +349,38 @@ public class ModEvents {
             if (target.equals(owner)) {
                 event.setNewDamage(0.0f);
                 return;
+            }
+        }
+    }
+
+    //冥河灯抑制刷怪
+    private static final int EFFECT_RADIUS = 64;
+    private static final int RADIUS_SQ = EFFECT_RADIUS * EFFECT_RADIUS;
+    @SubscribeEvent
+    public void onCheckSpawnStyx(MobSpawnEvent.PositionCheck event) {
+        if (event.getSpawnType() == MobSpawnType.COMMAND || event.getSpawnType() == MobSpawnType.SPAWN_EGG) {
+            return;
+        }
+        Level level = event.getLevel().getLevel();
+        BlockPos spawnPos = BlockPos.containing(event.getX(), event.getY(), event.getZ());
+
+        int x = spawnPos.getX();
+        int y = spawnPos.getY();
+        int z = spawnPos.getZ();
+
+        for (int dx = -EFFECT_RADIUS; dx <= EFFECT_RADIUS; dx += 1) {
+            for (int dy = -EFFECT_RADIUS; dy <= EFFECT_RADIUS; dy += 1) {
+                for (int dz = -EFFECT_RADIUS; dz <= EFFECT_RADIUS; dz += 1) {
+                    BlockPos checkPos = new BlockPos(x + dx, y + dy, z + dz);
+                    BlockState state = level.getBlockState(checkPos);
+
+                    if (state.is(ModBlocks.STYX_LAMP.get()) &&
+                        state.getValue(StyxLampBlock.CLICKED) &&
+                        spawnPos.distSqr(checkPos) <= RADIUS_SQ) {
+                        event.setResult(MobSpawnEvent.PositionCheck.Result.FAIL);
+                        return;
+                    }
+                }
             }
         }
     }

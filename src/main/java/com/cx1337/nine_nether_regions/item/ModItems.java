@@ -1,12 +1,10 @@
 package com.cx1337.nine_nether_regions.item;
 
 import com.cx1337.nine_nether_regions.NineNetherRegions;
-import com.cx1337.nine_nether_regions.block.ModBlocks;
 import com.cx1337.nine_nether_regions.effect.ModEffects;
 import com.cx1337.nine_nether_regions.sound.ModSounds;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -54,40 +52,10 @@ public class ModItems {
         ITEMS.register(eventBus);
     }
 
-
     //紫水晶短剑
-    public static final Tier AMETHYST = new Tier() {
-        @Override
-        public int getUses() {
-            return 114;
-        }
-
-        @Override
-        public float getSpeed() {
-            return 12;
-        }
-
-        @Override
-        public float getAttackDamageBonus() {
-            return 0;
-        }
-        @Override
-        public TagKey<Block> getIncorrectBlocksForDrops() {
-            return BlockTags.INCORRECT_FOR_STONE_TOOL;
-        }
-        @Override
-        public int getEnchantmentValue() {
-            return 10;
-        }
-        @Override
-        public Ingredient getRepairIngredient() {
-            return Ingredient.of(Items.AMETHYST_SHARD);
-        }
-    };
     public static final DeferredItem<SwordItem> AMETHYST_DAGGER =
-           ITEMS.register("amethyst_dagger", () -> new SwordItem(AMETHYST, new Item.Properties()
-                   .attributes(SwordItem.createAttributes(AMETHYST, 4, -0.6F)).rarity(Rarity.COMMON)){
-
+           ITEMS.register("amethyst_dagger", () -> new SwordItem(ModToolTiers.AMETHYST, new Item.Properties()
+                   .attributes(SwordItem.createAttributes(ModToolTiers.AMETHYST, 3, -0.6F)).rarity(Rarity.COMMON)){
                //每次攻击24%概率回1血量，非强制回血。
                @Override
                public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity) {

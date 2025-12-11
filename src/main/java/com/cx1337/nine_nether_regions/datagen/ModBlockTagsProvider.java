@@ -79,6 +79,13 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .addTags(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.HELLALLOY_BLOCK.get())
                 .add(ModBlocks.STYX_BLOCK.get());
+// 紫水晶工具需求
+        tag(ModTags.Blocks.NEEDS_AMETHYST_TOOL);
+// 紫水晶工具不正确
+        tag(ModTags.Blocks.INCORRECT_FOR_AMETHYST_TOOL)
+                .addTags(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.HELLALLOY_BLOCK.get())
+                .add(ModBlocks.STYX_BLOCK.get());
 // 精钢工具需求
         tag(ModTags.Blocks.NEEDS_STEEL_TOOL);
 // 精钢工具不正确

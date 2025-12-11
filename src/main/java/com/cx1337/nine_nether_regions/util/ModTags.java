@@ -28,6 +28,10 @@ public class ModTags {
                 createTag("needs_rainbowgem_tool");
         public static final TagKey<Block> INCORRECT_FOR_RUBY_TOOL =
                 createTag("incorrect_for_rainbowgem_tool");
+        public static final TagKey<Block> NEEDS_AMETHYST_TOOL =
+                createTag("needs_amethyst_tool");
+        public static final TagKey<Block> INCORRECT_FOR_AMETHYST_TOOL =
+                createTag("incorrect_for_amethyst_tool");
         public static final TagKey<Block> NEEDS_HELLALLOY_TOOL =
                 createTag("needs_hellalloy_tool");
         public static final TagKey<Block> INCORRECT_FOR_HELLALLOY_TOOL =

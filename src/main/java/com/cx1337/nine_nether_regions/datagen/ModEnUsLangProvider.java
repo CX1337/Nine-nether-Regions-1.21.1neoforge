@@ -265,6 +265,6 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.nine_nether_regions.void_staff", "§8§oInfused with power from the Void and the great dragon.\nRight-click to launch a dragon fireball.");
         add("tooltip.nine_nether_regions.rainbowgem", "§8§oA strange gem formed by the fusion of various gems, extremely hard and nearly rivaling Netherite.");
         add("tooltip.nine_nether_regions.ruby_sword", "§8§oA bloodthirsty sword that deals decent damage, at the cost of being extremely fragile.");
-        add("tooltip.nine_nether_regions.styx_lamp", "§8§oA lamp that can be toggled on and off. Right-click to switch its state. While it bears a resemblance to a Beacon, it possesses none of a Beacon's abilities. It is merely a lamp, and nothing more.");
+        add("tooltip.nine_nether_regions.styx_lamp", "§8§oA lamp that can be toggled on and off. Right-click to switch its state. When lit, creatures will no longer spawn within a radius of 64 blocks centered on it.");
     }
 }

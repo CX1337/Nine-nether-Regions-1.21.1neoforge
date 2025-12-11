@@ -1,10 +1,7 @@
 package com.cx1337.nine_nether_regions.block;
 
 import com.cx1337.nine_nether_regions.NineNetherRegions;
-import com.cx1337.nine_nether_regions.block.custom.HellLampBlock;
-import com.cx1337.nine_nether_regions.block.custom.ModFlammableRotatedPillarBlock;
-import com.cx1337.nine_nether_regions.block.custom.ModSaplingBlock;
-import com.cx1337.nine_nether_regions.block.custom.StyxLampBlock;
+import com.cx1337.nine_nether_regions.block.custom.*;
 import com.cx1337.nine_nether_regions.item.ModItems;
 import com.cx1337.nine_nether_regions.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.BlockPos;
