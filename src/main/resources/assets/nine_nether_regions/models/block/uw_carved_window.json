@@ -1,0 +1,9 @@
+{
+  "parent": "nine_nether_regions:custom/uw_carved_window",
+  "textures": {
+    "all": "nine_nether_regions:block/uw_carved_window",
+    "particle": "nine_nether_regions:block/uw_carved_window",
+    "0": "nine_nether_regions:block/uw_carved_window"
+  },
+  "render_type": "translucent"
+}

@@ -141,12 +141,30 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .pattern("###")
                 .pattern("#C#")
                 .pattern("$R$")
-                .define('#', Blocks.RED_STAINED_GLASS)
+                .define('#', ModBlocks.CARVED_WINDOW)
                 .define('$', ModBlocks.BLOODY_SAND)
                 .define('R', ModItems.RUBY)
                 .define('C', Blocks.REDSTONE_BLOCK)
                 .unlockedBy(getHasName(ModBlocks.BLOODY_SAND), has(ModBlocks.BLOODY_SAND))
                 .unlockedBy(getHasName(ModItems.RUBY), has(ModItems.RUBY))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CARVED_WINDOW, 4)
+                .pattern("#$#")
+                .pattern("$#$")
+                .pattern("#$#")
+                .define('#', Items.GLASS_PANE)
+                .define('$', Items.STICK)
+                .unlockedBy(getHasName(Items.GLASS_PANE), has(Items.GLASS_PANE))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.UW_CARVED_WINDOW, 8)
+                .pattern("###")
+                .pattern("#$#")
+                .pattern("###")
+                .define('#', ModBlocks.CARVED_WINDOW)
+                .define('$', ModItems.UNDERWORLD_CRYSTAL)
+                .unlockedBy(getHasName(ModBlocks.CARVED_WINDOW), has(ModBlocks.CARVED_WINDOW))
                 .save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.DIAMOND_BOWSTRING, 1)

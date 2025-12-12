@@ -1053,7 +1053,7 @@ public class ModItems {
                             player.setHealth(Math.min(newHealth, player.getMaxHealth()));
 
                             //蓄满力半径3m内所有非友方实体AOE伤害。
-                            AABB box = player.getBoundingBox().inflate(3.5D);
+                            AABB box = player.getBoundingBox().inflate(4.0D);
                             float baseDamage = (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE);
 
                             for (LivingEntity le : sl.getEntitiesOfClass(LivingEntity.class, box,

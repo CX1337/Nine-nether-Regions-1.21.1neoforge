@@ -139,6 +139,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.HELL_NUCLEUS);
                         output.accept(ModBlocks.HELL_LAMP);
                         output.accept(ModBlocks.STYX_LAMP);
+                        output.accept(ModBlocks.CARVED_WINDOW);
+                        output.accept(ModBlocks.UW_CARVED_WINDOW);
                         output.accept(ModBlocks.MANJUSAKA);
                         output.accept(ModBlocks.PINESAP);
                         output.accept(ModBlocks.BLOODBLADE_ORE);

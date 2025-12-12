@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "nine_nether_regions:block/uw_carved_window"
+    },
+    "facing=east": {
+      "model": "nine_nether_regions:block/uw_carved_window",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "nine_nether_regions:block/uw_carved_window",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "nine_nether_regions:block/uw_carved_window",
+      "y": 270
+    }
+  }
+}

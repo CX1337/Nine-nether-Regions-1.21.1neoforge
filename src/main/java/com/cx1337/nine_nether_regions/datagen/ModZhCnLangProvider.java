@@ -147,6 +147,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.STYX_BLOCK.get(), "§5§l冥河块");
         add(ModBlocks.HELL_LAMP.get(), "幽染灯笼");
         add(ModBlocks.STYX_LAMP.get(), "§4冥河灯");
+        add(ModBlocks.CARVED_WINDOW.get(), "雕花窗户");
+        add(ModBlocks.UW_CARVED_WINDOW.get(), "§b幽染雕花窗户");
         add(ModBlocks.STEEL_BLOCK.get(), "精钢块");
         add(ModBlocks.RUBY_BLOCK.get(), "红宝石块");
         add(ModBlocks.RAINBOWGEM_BLOCK.get(), "虹玉块");
@@ -207,67 +209,67 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("item.nine_nether_regions.manjusaka_plain_music_disc.desc", "Bryan Teoh--Go On Without Me（君自前行）");
         add("item.nine_nether_regions.caves_music_disc.desc", "Kevin MacLeod--Satin Danger（危机如缎）");
 
-        add("tooltip.nine_nether_regions.amethyst_dagger", "§8§o虽然这把短剑确实很小，合成配方简单，攻击力也不高；但是得益于紫水晶的生命力，使用它攻击时每次命中敌人都有33%概率为你恢复1点生命值；也正因为它很小巧，你可以更快速的挥动它。\n当然，由于紫水晶质地很脆，它的耐久度在同类武器中并不优秀。");
-        add("tooltip.nine_nether_regions.ghostlium_apple", "§8§o沾染了一点点幽冥界的力量……但是尝起来很美味！");
-        add("tooltip.nine_nether_regions.enchanted_ghostlium_apple", "§8§o被幽冥之力全方位强化过的附魔金苹果，美味顶饱而且效果强大。");
-        add("tooltip.nine_nether_regions.web_fruit", "§8§o蛛网球抹除了紫颂果的瞬移能力，取而代之的是赋予玩家一段时间的类似蜘蛛的攀爬能力。");
-        add("tooltip.nine_nether_regions.bloodblade_essence", "§8§o一团不可名状的物质……但是内部蕴含的能量不可小觑。");
-        add("tooltip.nine_nether_regions.hellalloy_block", "§8§o浸润着来自冥界的力量……");
-        add("tooltip.nine_nether_regions.hellalloy_ingot", "§8§o被冥界力量强化过的合金锭，坚硬无比。");
-        add("tooltip.nine_nether_regions.hellalloy_pickaxe", "§8§o原来黑曜石也没有那么坚硬。");
-        add("tooltip.nine_nether_regions.hellalloy_shovel", "§8§o你想让这个世界寸草不生？");
-        add("tooltip.nine_nether_regions.hellalloy_axe", "§8§o光头强应该很需要它。");
-        add("tooltip.nine_nether_regions.hellalloy_hoe", "§8§o如此奢侈？");
+        add("tooltip.nine_nether_regions.amethyst_dagger", "§3§o虽然这把短剑确实很小，合成配方简单，攻击力也不高；但是得益于紫水晶的生命力，使用它攻击时每次命中敌人都有33%概率为你恢复1点生命值；也正因为它很小巧，你可以更快速的挥动它。\n当然，由于紫水晶质地很脆，它的耐久度在同类武器中并不优秀。");
+        add("tooltip.nine_nether_regions.ghostlium_apple", "§3§o沾染了一点点幽冥界的力量……但是尝起来很美味！");
+        add("tooltip.nine_nether_regions.enchanted_ghostlium_apple", "§3§o被幽冥之力全方位强化过的附魔金苹果，美味顶饱而且效果强大。");
+        add("tooltip.nine_nether_regions.web_fruit", "§3§o蛛网球抹除了紫颂果的瞬移能力，取而代之的是赋予玩家一段时间的类似蜘蛛的攀爬能力。");
+        add("tooltip.nine_nether_regions.bloodblade_essence", "§3§o一团不可名状的物质……但是内部蕴含的能量不可小觑。");
+        add("tooltip.nine_nether_regions.hellalloy_block", "§3§o浸润着来自冥界的力量……");
+        add("tooltip.nine_nether_regions.hellalloy_ingot", "§3§o被冥界力量强化过的合金锭，坚硬无比。");
+        add("tooltip.nine_nether_regions.hellalloy_pickaxe", "§3§o原来黑曜石也没有那么坚硬。");
+        add("tooltip.nine_nether_regions.hellalloy_shovel", "§3§o你想让这个世界寸草不生？");
+        add("tooltip.nine_nether_regions.hellalloy_axe", "§3§o光头强应该很需要它。");
+        add("tooltip.nine_nether_regions.hellalloy_hoe", "§3§o如此奢侈？");
         add("tooltip.nine_nether_regions.hellalloy_sword_alt",
-                "§8§o这把剑已经不再是Minecraft传统意义上的剑了。\n得益于优良的材料，这把剑蓄满力时造成的一切伤害均为不会衰减的AOE伤害。\n但不幸的是，幽冥合金并非顶级材料。由于幽冥合金的缺陷，这把剑的专属AOE伤害不会随着附魔等属性的提升而增加。\n另外，得益于嵌入这把剑的晶核，当它耐久未满时，在你的背包中它会自动恢复耐久（每2.5s恢复1点）。");
-        add("tooltip.nine_nether_regions.hellalloy_sword", "§8§o按下§r§3§oAlt§r§8§o以显示更多。");
-        add("tooltip.nine_nether_regions.hell_nucleus", "§8§o正如炽热恒星的核心一般滚烫。");
-        add("tooltip.nine_nether_regions.styx_fabric", "§8§o被冥河渡客的灵魂所充盈。");
+                "§3§o这把剑已经不再是Minecraft传统意义上的剑了。\n得益于优良的材料，这把剑蓄满力时造成的一切伤害均为不会衰减的AOE伤害。\n但不幸的是，幽冥合金并非顶级材料。由于幽冥合金的缺陷，这把剑的专属AOE伤害不会随着附魔等属性的提升而增加。\n另外，得益于嵌入这把剑的晶核，当它耐久未满时，在你的背包中它会自动恢复耐久（每2.5s恢复1点）。");
+        add("tooltip.nine_nether_regions.hellalloy_sword", "§3§o按下§r§6§oAlt§r§3§o以显示更多。");
+        add("tooltip.nine_nether_regions.hell_nucleus", "§3§o正如炽热恒星的核心一般滚烫。");
+        add("tooltip.nine_nether_regions.styx_fabric", "§3§o被冥河渡客的灵魂所充盈。");
         add("tooltip.nine_nether_regions.styx_tear", "§5§o冥河渡客的血泪，蕴含着她无尽的哀怨……当然，也蕴含着她的部分力量。");
-        add("tooltip.nine_nether_regions.styx_block", "§8§o这几乎是最硬的方块，除了§k基岩§r§8§o和§k???§r§8§o之外。甚至§k凋灵？？§r§8§o也不能破坏它。");
-        add("tooltip.nine_nether_regions.styx_ingot", "§8§o正如冥河渡客的意志，坚不可摧。");
-        add("tooltip.nine_nether_regions.styx_sword", "§8§o按下§r §3§oAlt§r§8§o以显示更多。");
+        add("tooltip.nine_nether_regions.styx_block", "§3§o这几乎是最硬的方块，除了§k基岩§r§3§o和§k???§r§3§o之外。甚至§k凋灵？？§r§3§o也不能破坏它。");
+        add("tooltip.nine_nether_regions.styx_ingot", "§3§o正如冥河渡客的意志，坚不可摧。");
+        add("tooltip.nine_nether_regions.styx_sword", "§3§o按下§r §6§oAlt§r§3§o以显示更多。");
         add("tooltip.nine_nether_regions.styx_sword_alt",
-                "§6§o坚不可摧：§r§8§o正常情况下该武器耐久不会被消耗。如果通过某种手段使得该武器耐久受损，则武器耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o战刃之锋：§r§8§o当蓄力条为满攻击生物时，冥河战刃会同时对以玩家为中心半径3格内所有非友方生物造成§r§e§o（战刃攻击力+目标最大生命值×5%）§r§8§o的范围伤害。\n§r§6§o灵魂汲取：§r§8§o蓄力条为满时战刃每次攻击都会强制为玩家恢复§r§d§o（玩家最大生命值×8%）§r§8§o的血量。\n§r§4§o警告：由于该剑攻击逻辑发生变化，大多数效用性附魔（如锋利、亡灵杀手）在该剑上大概率无法起效！");
-        add("tooltip.nine_nether_regions.styx_pickaxe", "§8§o按下§r §3§oAlt§r§8§o以显示更多。");
+                "§6§o坚不可摧：§r§3§o正常情况下该武器耐久不会被消耗。如果通过某种手段使得该武器耐久受损，则武器耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o战刃之锋：§r§3§o当蓄力条为满攻击生物时，冥河战刃会同时对以玩家为中心半径4格内所有非友方生物造成§r§e§o（战刃攻击力+目标最大生命值×5%）§r§3§o的范围伤害。\n§r§6§o灵魂汲取：§r§3§o蓄力条为满时战刃每次攻击都会强制为玩家恢复§r§d§o（玩家最大生命值×8%）§r§3§o的血量。\n§r§4§o警告：由于该剑攻击逻辑发生变化，大多数效用性附魔（如锋利、亡灵杀手）在该剑上大概率无法起效！");
+        add("tooltip.nine_nether_regions.styx_pickaxe", "§3§o按下§r §6§oAlt§r§3§o以显示更多。");
         add("tooltip.nine_nether_regions.styx_pickaxe_alt",
-                "§8§o这把镐子是所有镐子中的佼佼者。\n正常情况下它的耐久无法被消耗，如果遇到特殊情况使它的耐久降低，它会极快速的恢复满耐久值（每4tick恢复24点）。\n受到冥河之力的祝福，这把镐子破坏任何方块的速度都为原来的2.5倍，且破坏任何方块均有24%的概率掉落钻石，12%的概率掉落下界合金碎片。");
-        add("tooltip.nine_nether_regions.styx_helmet", "§6§l愿冥河之力与你同在。\n§r§8§o按下§r §3§oAlt§r§8§o以显示更多。");
-        add("tooltip.nine_nether_regions.styx_chestplate", "§6§l愿冥河之力与你同在。\n§r§8§o按下§r §3§oAlt§r§8§o以显示更多。");
-        add("tooltip.nine_nether_regions.styx_leggings", "§6§l愿冥河之力与你同在。\n§r§8§o按下§r §3§oAlt§r§8§o以显示更多。");
-        add("tooltip.nine_nether_regions.styx_boots", "§6§l愿冥河之力与你同在。\n§r§8§o按下§r §3§oAlt§r§8§o以显示更多。");
+                "§3§o这把镐子是所有镐子中的佼佼者。\n正常情况下它的耐久无法被消耗，如果遇到特殊情况使它的耐久降低，它会极快速的恢复满耐久值（每4tick恢复24点）。\n受到冥河之力的祝福，这把镐子破坏任何方块的速度都为原来的2.5倍，且破坏任何方块均有24%的概率掉落钻石，12%的概率掉落下界合金碎片。");
+        add("tooltip.nine_nether_regions.styx_helmet", "§c§l愿冥河之力与你同在。\n§r§3§o按下§r §6§oAlt§r§3§o以显示更多。");
+        add("tooltip.nine_nether_regions.styx_chestplate", "§c§l愿冥河之力与你同在。\n§r§3§o按下§r §6§oAlt§r§3§o以显示更多。");
+        add("tooltip.nine_nether_regions.styx_leggings", "§c§l愿冥河之力与你同在。\n§r§3§o按下§r §6§oAlt§r§3§o以显示更多。");
+        add("tooltip.nine_nether_regions.styx_boots", "§c§l愿冥河之力与你同在。\n§r§3§o按下§r §6§oAlt§r§3§o以显示更多。");
         add("tooltip.nine_nether_regions.styx_helmet_alt",
-                "§6§o坚不可摧：§r§8§o正常情况下该装备耐久不会被消耗。如果通过某种手段使得该装备耐久受损，则装备耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o全套效果——不动如山：§r§8§o当原始伤害≤3点或类型为§r§5§o魔法、§r§e§o爆炸、§r§3§o冰冻、§r§1§o监守者音波§r§8§o时，强制将伤害数值降低为0；持续提供§r§6§o抗性提升、伤害吸收§r§8§o效果（全效果3级）；每10tick强制恢复1.5点生命值并提供72%对于几乎所有伤害的减免。\n§r§6§o单件效果：§r§8§o持续提供§r§6§o夜视、水下呼吸、饱和§r§8§o效果（全效果2级），且免疫§7§o失明、黑暗、饥饿、血刃诅咒§r§8§o效果。");
+                "§6§o坚不可摧：§r§3§o正常情况下该装备耐久不会被消耗。如果通过某种手段使得该装备耐久受损，则装备耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o全套效果——不动如山：§r§3§o当原始伤害≤3点或类型为§r§5§o魔法、§r§e§o爆炸、§r§3§o冰冻、§r§1§o监守者音波§r§3§o时，强制将伤害数值降低为0；持续提供§r§6§o抗性提升、伤害吸收§r§3§o效果（全效果3级）；每10tick强制恢复1.5点生命值并提供72%对于几乎所有伤害的减免。\n§r§6§o单件效果：§r§3§o持续提供§r§6§o夜视、水下呼吸、饱和§r§3§o效果（全效果2级），且免疫§7§o失明、黑暗、饥饿、血刃诅咒§r§3§o效果。");
         add("tooltip.nine_nether_regions.styx_chestplate_alt",
-                "§6§o坚不可摧：§r§8§o正常情况下该装备耐久不会被消耗。如果通过某种手段使得该装备耐久受损，则装备耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o全套效果——不动如山：§r§8§o当原始伤害≤3点或类型为§r§5§o魔法、§r§e§o爆炸、§r§3§o冰冻、§r§1§o监守者音波§r§8§o时，强制将伤害数值降低为0；持续提供§r§6§o抗性提升、伤害吸收§r§8§o效果（全效果3级）；每10tick强制恢复1.5点生命值并提供72%对于几乎所有伤害的减免。\n§r§6§o单件效果：§r§8§o持续提供§r§6§o抗火、急迫§r§8§o效果（全效果2级）和§r§6§o力量§r§8§o效果（3级），且免疫§7§o凋零、中毒、挖掘疲劳、虚弱§r§8§o效果。");
+                "§6§o坚不可摧：§r§3§o正常情况下该装备耐久不会被消耗。如果通过某种手段使得该装备耐久受损，则装备耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o全套效果——不动如山：§r§3§o当原始伤害≤3点或类型为§r§5§o魔法、§r§e§o爆炸、§r§3§o冰冻、§r§1§o监守者音波§r§3§o时，强制将伤害数值降低为0；持续提供§r§6§o抗性提升、伤害吸收§r§3§o效果（全效果3级）；每10tick强制恢复1.5点生命值并提供72%对于几乎所有伤害的减免。\n§r§6§o单件效果：§r§3§o持续提供§r§6§o抗火、急迫§r§3§o效果（全效果2级）和§r§6§o力量§r§3§o效果（3级），且免疫§7§o凋零、中毒、挖掘疲劳、虚弱§r§3§o效果。");
         add("tooltip.nine_nether_regions.styx_leggings_alt",
-                "§6§o坚不可摧：§r§8§o正常情况下该装备耐久不会被消耗。如果通过某种手段使得该装备耐久受损，则装备耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o全套效果——不动如山：§r§8§o当原始伤害≤3点或类型为§r§5§o魔法、§r§e§o爆炸、§r§3§o冰冻、§r§1§o监守者音波§r§8§o时，强制将伤害数值降低为0；持续提供§r§6§o抗性提升、伤害吸收§r§8§o效果（全效果3级）；每10tick强制恢复1.5点生命值并提供72%对于几乎所有伤害的减免。\n§r§6§o单件效果：§r§8§o持续提供§r§6§o跳跃提升§r§8§o效果（2级）和§r§6§o幸运§r§8§o效果（3级），且免疫§7§o反胃§r§8§o效果。");
+                "§6§o坚不可摧：§r§3§o正常情况下该装备耐久不会被消耗。如果通过某种手段使得该装备耐久受损，则装备耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o全套效果——不动如山：§r§3§o当原始伤害≤3点或类型为§r§5§o魔法、§r§e§o爆炸、§r§3§o冰冻、§r§1§o监守者音波§r§3§o时，强制将伤害数值降低为0；持续提供§r§6§o抗性提升、伤害吸收§r§3§o效果（全效果3级）；每10tick强制恢复1.5点生命值并提供72%对于几乎所有伤害的减免。\n§r§6§o单件效果：§r§3§o持续提供§r§6§o跳跃提升§r§3§o效果（2级）和§r§6§o幸运§r§3§o效果（3级），且免疫§7§o反胃§r§3§o效果。");
         add("tooltip.nine_nether_regions.styx_boots_alt",
-                "§6§o坚不可摧：§r§8§o正常情况下该装备耐久不会被消耗。如果通过某种手段使得该装备耐久受损，则装备耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o全套效果——不动如山：§r§8§o当原始伤害≤3点或类型为§r§5§o魔法、§r§e§o爆炸、§r§3§o冰冻、§r§1§o监守者音波§r§8§o时，强制将伤害数值降低为0；持续提供§r§6§o抗性提升、伤害吸收§r§8§o效果（全效果3级）；每10tick强制恢复1.5点生命值并提供72%对于几乎所有伤害的减免。\n§r§6§o单件效果：§r§8§o持续提供§r§6§o迅捷§r§8§o效果（3级），且免疫§7§o缓慢、漂浮、寄生§r§8§o效果，同时对摔落伤害持有85%抗性。");
-        add("tooltip.nine_nether_regions.steel_base", "§8§o千锤百炼之后，方得一块好钢。");
-        add("tooltip.nine_nether_regions.steel_ingot", "§8§o比铁更好。");
-        add("tooltip.nine_nether_regions.rainbowgem_armors", "§8§o全套效果：对几乎所有伤害持有10%减免。");
-        add("tooltip.nine_nether_regions.alloy_hilt", "§8§o它可以被当作武器来使用，但这永远不会是它的真正作用。");
+                "§6§o坚不可摧：§r§3§o正常情况下该装备耐久不会被消耗。如果通过某种手段使得该装备耐久受损，则装备耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o全套效果——不动如山：§r§3§o当原始伤害≤3点或类型为§r§5§o魔法、§r§e§o爆炸、§r§3§o冰冻、§r§1§o监守者音波§r§3§o时，强制将伤害数值降低为0；持续提供§r§6§o抗性提升、伤害吸收§r§3§o效果（全效果3级）；每10tick强制恢复1.5点生命值并提供72%对于几乎所有伤害的减免。\n§r§6§o单件效果：§r§3§o持续提供§r§6§o迅捷§r§3§o效果（3级），且免疫§7§o缓慢、漂浮、寄生§r§3§o效果，同时对摔落伤害持有85%抗性。");
+        add("tooltip.nine_nether_regions.steel_base", "§3§o千锤百炼之后，方得一块好钢。");
+        add("tooltip.nine_nether_regions.steel_ingot", "§3§o比铁更好。");
+        add("tooltip.nine_nether_regions.rainbowgem_armors", "§3§o全套效果：对几乎所有伤害持有10%减免。");
+        add("tooltip.nine_nether_regions.alloy_hilt", "§3§o它可以被当作武器来使用，但这永远不会是它的真正作用。");
         add("tooltip.nine_nether_regions.hellalloy_helmet_alt",
-                "§8§o自修复：如果该装备耐久未满，在护甲栏或玩家背包中时该装备会自动恢复耐久值§1§o（每2秒回复4点）§r§8§o。\n单件效果：装备在护甲栏时，持续为玩家提供§6§o夜视§r§8§o效果（1级），同时清除玩家身上的§7§o失明、黑暗§r§8§o效果。\n全套效果：对绝大多数伤害持有34%减伤，同时每10tick强制恢复玩家0.7点生命值，持续为玩家提供§6§o抗性提升§r§8§o（2级）效果。");
-        add("tooltip.nine_nether_regions.hellalloy_helmet", "§8§o按下§r§3§oAlt§r§8§o以显示更多。");
+                "§3§o自修复：如果该装备耐久未满，在护甲栏或玩家背包中时该装备会自动恢复耐久值§1§o（每2秒回复4点）§r§3§o。\n单件效果：装备在护甲栏时，持续为玩家提供§6§o夜视§r§3§o效果（1级），同时清除玩家身上的§7§o失明、黑暗§r§3§o效果。\n全套效果：对绝大多数伤害持有34%减伤，同时每10tick强制恢复玩家0.7点生命值，持续为玩家提供§6§o抗性提升§r§3§o（2级）效果。");
+        add("tooltip.nine_nether_regions.hellalloy_helmet", "§3§o按下§r§6§oAlt§r§3§o以显示更多。");
         add("tooltip.nine_nether_regions.hellalloy_chestplate_alt",
-                "§8§o自修复：如果该装备耐久未满，在护甲栏或玩家背包中时该装备会自动恢复耐久值§1§o（每2秒回复4点）§r§8§o。\n单件效果：装备在护甲栏时，持续为玩家提供§6§o抗火§r§8§o效果（1级）同时使玩家不会着火，清除玩家身上的§7§o凋零、中毒、挖掘疲劳§r§8§o效果。\n全套效果：对绝大多数伤害持有34%减伤，同时每10tick强制恢复玩家0.7点生命值，持续为玩家提供§6§o抗性提升§r§8§o（2级）效果。");
-        add("tooltip.nine_nether_regions.hellalloy_chestplate", "§8§o按下§r§3§oAlt§r§8§o以显示更多。");
+                "§3§o自修复：如果该装备耐久未满，在护甲栏或玩家背包中时该装备会自动恢复耐久值§1§o（每2秒回复4点）§r§3§o。\n单件效果：装备在护甲栏时，持续为玩家提供§6§o抗火§r§3§o效果（1级）同时使玩家不会着火，清除玩家身上的§7§o凋零、中毒、挖掘疲劳§r§3§o效果。\n全套效果：对绝大多数伤害持有34%减伤，同时每10tick强制恢复玩家0.7点生命值，持续为玩家提供§6§o抗性提升§r§3§o（2级）效果。");
+        add("tooltip.nine_nether_regions.hellalloy_chestplate", "§3§o按下§r§6§oAlt§r§3§o以显示更多。");
         add("tooltip.nine_nether_regions.hellalloy_leggings_alt",
-                "§8§o自修复：如果该装备耐久未满，在护甲栏或玩家背包中时该装备会自动恢复耐久值§1§o（每2秒回复4点）§r§8§o。\n单件效果：装备在护甲栏时，持续为玩家提供§6§o跳跃提升§r§8§o效果（1级）同时清除玩家身上的§7§o反胃§r§8§o效果。\n全套效果：对绝大多数伤害持有34%减伤，同时每10tick强制恢复玩家0.7点生命值，持续为玩家提供§6§o抗性提升§r§8§o（2级）效果。");
-        add("tooltip.nine_nether_regions.hellalloy_leggings", "§8§o按下§r§3§oAlt§r§8§o以显示更多。");
+                "§3§o自修复：如果该装备耐久未满，在护甲栏或玩家背包中时该装备会自动恢复耐久值§1§o（每2秒回复4点）§r§3§o。\n单件效果：装备在护甲栏时，持续为玩家提供§6§o跳跃提升§r§3§o效果（1级）同时清除玩家身上的§7§o反胃§r§3§o效果。\n全套效果：对绝大多数伤害持有34%减伤，同时每10tick强制恢复玩家0.7点生命值，持续为玩家提供§6§o抗性提升§r§3§o（2级）效果。");
+        add("tooltip.nine_nether_regions.hellalloy_leggings", "§3§o按下§r§6§oAlt§r§3§o以显示更多。");
         add("tooltip.nine_nether_regions.hellalloy_boots_alt",
-                "§8§o自修复：如果该装备耐久未满，在护甲栏或玩家背包中时该装备会自动恢复耐久值§1§o（每2秒回复4点）§r§8§o。\n单件效果：装备在护甲栏时，持续为玩家提供§6§o迅捷§r§8§o效果（2级）同时清除玩家身上的§7§o缓慢§r§8§o效果。\n全套效果：对绝大多数伤害持有34%减伤，同时每10tick强制恢复玩家0.7点生命值，持续为玩家提供§6§o抗性提升§r§8§o（2级）效果。");
-        add("tooltip.nine_nether_regions.hellalloy_boots", "§8§o按下§r§3§oAlt§r§8§o以显示更多。");
-        add("tooltip.nine_nether_regions.hellalloy_longbow", "§8§o更精准，更强大。");
-        add("tooltip.nine_nether_regions.reinforced_obsidian", "§8§o它真的很硬……一定有它的用武之地。");
-        add("tooltip.nine_nether_regions.ender_staff", "§8§o汲取了末影珍珠的传送之力，并被下界之星所强化。\n按下右键传送至准星所指的地方，最远传送半径为64格。");
-        add("tooltip.nine_nether_regions.fire_staff", "§8§o被来自下界的火焰环绕着。\n按下右键以发射烈焰人火球。");
-        add("tooltip.nine_nether_regions.wither_staff", "§8§o凝聚着来自凋灵的毁灭之力。\n按下右键以发射黑色凋灵之首。");
-        add("tooltip.nine_nether_regions.void_staff", "§8§o充盈着来自虚空与那巨龙的力量。\n按下右键以发射末影龙火球。");
-        add("tooltip.nine_nether_regions.rainbowgem", "§8§o一块由各种宝石融合起来得到的奇异宝石，质地非常坚硬，几乎可以媲美下界合金。");
-        add("tooltip.nine_nether_regions.ruby_sword", "§8§o一把非常嗜血的剑，拥有相当不错的伤害，代价是它本身极为脆弱。");
-        add("tooltip.nine_nether_regions.styx_lamp", "§8§o一盏可以开关的灯，右键来控制它的开关。当它开启时，以它为中心半径64格的范围内将不再刷新生物。");
+                "§3§o自修复：如果该装备耐久未满，在护甲栏或玩家背包中时该装备会自动恢复耐久值§1§o（每2秒回复4点）§r§3§o。\n单件效果：装备在护甲栏时，持续为玩家提供§6§o迅捷§r§3§o效果（2级）同时清除玩家身上的§7§o缓慢§r§3§o效果。\n全套效果：对绝大多数伤害持有34%减伤，同时每10tick强制恢复玩家0.7点生命值，持续为玩家提供§6§o抗性提升§r§3§o（2级）效果。");
+        add("tooltip.nine_nether_regions.hellalloy_boots", "§3§o按下§r§3§oAlt§r§3§o以显示更多。");
+        add("tooltip.nine_nether_regions.hellalloy_longbow", "§3§o更精准，更强大。");
+        add("tooltip.nine_nether_regions.reinforced_obsidian", "§3§o它真的很硬……一定有它的用武之地。");
+        add("tooltip.nine_nether_regions.ender_staff", "§3§o汲取了末影珍珠的传送之力，并被下界之星所强化。\n按下右键传送至准星所指的地方，最远传送半径为64格。");
+        add("tooltip.nine_nether_regions.fire_staff", "§3§o被来自下界的火焰环绕着。\n按下右键以发射烈焰人火球。");
+        add("tooltip.nine_nether_regions.wither_staff", "§3§o凝聚着来自凋灵的毁灭之力。\n按下右键以发射黑色凋灵之首。");
+        add("tooltip.nine_nether_regions.void_staff", "§3§o充盈着来自虚空与那巨龙的力量。\n按下右键以发射末影龙火球。");
+        add("tooltip.nine_nether_regions.rainbowgem", "§3§o一块由各种宝石融合起来得到的奇异宝石，质地非常坚硬，几乎可以媲美下界合金。");
+        add("tooltip.nine_nether_regions.ruby_sword", "§3§o一把非常嗜血的剑，拥有相当不错的伤害，代价是它本身极为脆弱。");
+        add("tooltip.nine_nether_regions.styx_lamp", "§3§o一盏可以开关的灯，右键来控制它的开关。当它开启时，以它为中心半径64格的范围内将不再刷新生物。");
     }
 }

@@ -360,6 +360,29 @@ public class ModBlocks {
                 }
             });
 
+    public static final DeferredBlock<Block> CARVED_WINDOW =
+            registerBlocks("carved_window", () -> new WindowBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_LIGHT_BLUE)
+                    .instrument(NoteBlockInstrument.HAT)
+                    .strength(0.5F, 1.4F)
+                    .sound(SoundType.GLASS)
+                    .noOcclusion()
+                    .isValidSpawn((state, level, pos, entity) -> false)
+                    .isRedstoneConductor((state, level, pos) -> false)
+                    .isSuffocating((state, level, pos) -> false)
+                    .isViewBlocking((state, level, pos) -> false)));
+    public static final DeferredBlock<Block> UW_CARVED_WINDOW =
+            registerBlocks("uw_carved_window", () -> new WindowBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BLUE)
+                    .instrument(NoteBlockInstrument.HAT)
+                    .strength(0.8F, 44.4F)
+                    .sound(SoundType.GLASS)
+                    .noOcclusion()
+                    .isValidSpawn((state, level, pos, entity) -> false)
+                    .isRedstoneConductor((state, level, pos) -> false)
+                    .isSuffocating((state, level, pos) -> false)
+                    .isViewBlocking((state, level, pos) -> false)));
+
     public static final DeferredBlock<Block> UNDERWORLDRACK =
             registerBlocks("underworldrack", () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_CYAN)

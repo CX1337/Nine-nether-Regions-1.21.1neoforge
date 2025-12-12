@@ -186,7 +186,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.STYX_BLOCK.get())
                 .add(ModBlocks.UNDERWORLD_CRYSTAL_ORE.get())
                 .add(ModBlocks.HELL_LAMP.get())
-                .add(ModBlocks.STYX_LAMP.get());
+                .add(ModBlocks.STYX_LAMP.get())
+                .add(ModBlocks.UW_CARVED_WINDOW.get());
 
         //木材
         tag(BlockTags.LOGS_THAT_BURN)
