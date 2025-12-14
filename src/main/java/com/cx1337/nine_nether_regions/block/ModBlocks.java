@@ -25,6 +25,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -288,12 +289,12 @@ public class ModBlocks {
                     super.stepOn(level, pos, state, entity);
                 }
                 @Override
-                protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+                protected @NotNull VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
                     return Block.box(4.0D, 0.0D, 4.0D, 12.0D, 8.0D, 12.0D);
                 }
 
                 @Override
-                protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+                protected @NotNull VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
                     return Block.box(4.0D, 0.0D, 4.0D, 12.0D, 8.0D, 12.0D);
                 }
 
