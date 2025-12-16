@@ -469,6 +469,18 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.NETHER_BRICKS)));
 
+    public static final DeferredBlock<Block> FLUOROSCOPY_BLOCK =
+            registerBlocks("fluoroscopy_block", () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(1.5F, 22F)
+                    .sound(SoundType.METAL)
+                    .mapColor(MapColor.COLOR_LIGHT_GREEN)){
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nine_nether_regions.fluoroscopy_block"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+
     private static <T extends Block> DeferredBlock<T> registerBlockOnly(String name, Supplier<T> block) {
         return BLOCKS.register(name, block);
     }

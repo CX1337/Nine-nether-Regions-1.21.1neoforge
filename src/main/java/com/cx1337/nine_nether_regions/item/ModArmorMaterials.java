@@ -82,10 +82,10 @@ public class ModArmorMaterials {
     //幽冥合金盔甲
     public static final Holder<ArmorMaterial> HELLALLOY_ARMOR_MATERIAL = register("hellalloy",
             Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
-                attribute.put(ArmorItem.Type.BOOTS, 4);
+                attribute.put(ArmorItem.Type.BOOTS, 5);
                 attribute.put(ArmorItem.Type.LEGGINGS, 7);
                 attribute.put(ArmorItem.Type.CHESTPLATE, 9);
-                attribute.put(ArmorItem.Type.HELMET, 4);
+                attribute.put(ArmorItem.Type.HELMET, 5);
                 attribute.put(ArmorItem.Type.BODY, 22);
             }), 28, 4.0F, 0.7F, () -> ModItems.HELLALLOY_INGOT.get(),
             SoundEvents.ARMOR_EQUIP_NETHERITE,

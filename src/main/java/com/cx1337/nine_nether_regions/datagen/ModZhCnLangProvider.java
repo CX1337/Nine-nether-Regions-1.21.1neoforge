@@ -117,6 +117,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.HARDENED_BLOODBLADE_ROCK.get(), "硬化血刃岩");
         add(ModBlocks.COMPACT_OBSIDIAN.get(), "压缩黑曜石");
         add(ModBlocks.REINFORCED_OBSIDIAN.get(), "§9§l强化黑曜石");
+        add(ModBlocks.FLUOROSCOPY_BLOCK.get(), "透视块");
         add(ModBlocks.GLOWING_UNDERWORLD_BRICKS.get(), "§b幽光冥界砖块");
         add(ModBlocks.GLOWING_UNDERWORLD_BRICK_SLAB.get(), "§b幽光冥界半砖");
         add(ModBlocks.GLOWING_UNDERWORLD_BRICK_STAIRS.get(), "§b幽光冥界砖楼梯");
@@ -209,6 +210,37 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("item.nine_nether_regions.manjusaka_plain_music_disc.desc", "Bryan Teoh--Go On Without Me（君自前行）");
         add("item.nine_nether_regions.caves_music_disc.desc", "Kevin MacLeod--Satin Danger（危机如缎）");
 
+        add("advancement.nine_nether_regions.root.title", "九幽之引");
+        add("advancement.nine_nether_regions.root.description", "旅途就此开始");
+        add("advancement.nine_nether_regions.safe.title", "安全了？");
+        add("advancement.nine_nether_regions.safe.description", "获得一整套木制盔甲。");
+        add("advancement.nine_nether_regions.different_set.title", "不一样的套装！");
+        add("advancement.nine_nether_regions.different_set.description", "获得一整套樱花木套装，木套装的变体。");
+        add("advancement.nine_nether_regions.better_than_iron.title", "比铁更好。");
+        add("advancement.nine_nether_regions.better_than_iron.description", "获得精钢锭。");
+        add("advancement.nine_nether_regions.better_protection.title", "更好的防护。");
+        add("advancement.nine_nether_regions.better_protection.description", "获得一件精钢盔甲。");
+        add("advancement.nine_nether_regions.beating_energy.title", "跳动的能量！");
+        add("advancement.nine_nether_regions.beating_energy.description", "获得幽冥晶。");
+        add("advancement.nine_nether_regions.deep_in_the_dark.title", "深暗之中");
+        add("advancement.nine_nether_regions.deep_in_the_dark.description", "获得幽冥质。");
+        add("advancement.nine_nether_regions.shining.title", "亮晶晶！");
+        add("advancement.nine_nether_regions.shining.description", "获得虹玉。");
+        add("advancement.nine_nether_regions.dazzling.title", "光彩夺目");
+        add("advancement.nine_nether_regions.dazzling.description", "获得一件虹玉盔甲。");
+        add("advancement.nine_nether_regions.vampire.title", "脆弱的吸血鬼");
+        add("advancement.nine_nether_regions.vampire.description", "获得红宝石剑。");
+        add("advancement.nine_nether_regions.hell_archive.title", "幽冥档案");
+        add("advancement.nine_nether_regions.hell_archive.description", "获得幽冥合金锭。");
+        add("advancement.nine_nether_regions.hellalloy_set.title", "幽冥护体");
+        add("advancement.nine_nether_regions.hellalloy_set.description", "获得全套幽冥合金盔甲。");
+        add("advancement.nine_nether_regions.styx_tear.title", "九幽之怨");
+        add("advancement.nine_nether_regions.styx_tear.description", "获得冥河之泪。");
+        add("advancement.nine_nether_regions.styx_ingot.title", "第十三条河……");
+        add("advancement.nine_nether_regions.styx_ingot.description", "获得冥河锭。");
+        add("advancement.nine_nether_regions.styx_set.title", "冥河铸魂");
+        add("advancement.nine_nether_regions.styx_set.description", "获得全套冥河护甲。");
+
         add("tooltip.nine_nether_regions.amethyst_dagger", "§3§o虽然这把短剑确实很小，合成配方简单，攻击力也不高；但是得益于紫水晶的生命力，使用它攻击时每次命中敌人都有33%概率为你恢复1点生命值；也正因为它很小巧，你可以更快速的挥动它。\n当然，由于紫水晶质地很脆，它的耐久度在同类武器中并不优秀。");
         add("tooltip.nine_nether_regions.ghostlium_apple", "§3§o沾染了一点点幽冥界的力量……但是尝起来很美味！");
         add("tooltip.nine_nether_regions.enchanted_ghostlium_apple", "§3§o被幽冥之力全方位强化过的附魔金苹果，美味顶饱而且效果强大。");
@@ -270,6 +302,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.nine_nether_regions.void_staff", "§3§o充盈着来自虚空与那巨龙的力量。\n按下右键以发射末影龙火球。");
         add("tooltip.nine_nether_regions.rainbowgem", "§3§o一块由各种宝石融合起来得到的奇异宝石，质地非常坚硬，几乎可以媲美下界合金。");
         add("tooltip.nine_nether_regions.ruby_sword", "§3§o一把非常嗜血的剑，拥有相当不错的伤害，代价是它本身极为脆弱。");
-        add("tooltip.nine_nether_regions.styx_lamp", "§3§o一盏可以开关的灯，右键来控制它的开关。当它开启时，以它为中心半径64格的范围内将不再刷新生物。");
+        add("tooltip.nine_nether_regions.styx_lamp", "§3§o一盏可以开关的灯，右键来控制它的开关。当它开启时，以它为中心半径64格的范围内将不再刷新生物。\n§r§4§o特别注意：如果进入世界时该灯就是点亮状态，抑制刷怪并不会生效！开关一次后即可正常生效。");
+        add("tooltip.nine_nether_regions.fluoroscopy_block", "§3§o由几个透明方块融合压缩形成的特殊方块，或许可以用来寻找地下隐藏的矿物和结构……");
     }
 }

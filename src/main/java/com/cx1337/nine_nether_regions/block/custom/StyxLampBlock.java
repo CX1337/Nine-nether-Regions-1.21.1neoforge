@@ -1,5 +1,6 @@
 package com.cx1337.nine_nether_regions.block.custom;
 
+import com.cx1337.nine_nether_regions.event.ModEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -29,12 +30,30 @@ public class StyxLampBlock extends Block {
             level.setBlockAndUpdate(pos, state.setValue(CLICKED, newState));
 
             if (newState) {
+                ModEvents.addActiveStyxLamp(level, pos);
                 level.playSound(null, pos, SoundEvents.BEACON_ACTIVATE, SoundSource.BLOCKS, 1.5F, 1.0F);
             } else {
+                ModEvents.removeActiveStyxLamp(level, pos);
                 level.playSound(null, pos, SoundEvents.BEACON_DEACTIVATE, SoundSource.BLOCKS, 1.5F, 1.0F);
             }
         }
         return InteractionResult.SUCCESS;
+    }
+
+    @Override
+    protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+        super.onRemove(state, level, pos, newState, movedByPiston);
+        if (!level.isClientSide() && state.getValue(CLICKED)) {
+            ModEvents.removeActiveStyxLamp(level, pos);
+        }
+    }
+
+    @Override
+    protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
+        super.onPlace(state, level, pos, oldState, movedByPiston);
+        if (!level.isClientSide() && state.getValue(CLICKED)) {
+            ModEvents.addActiveStyxLamp(level, pos);
+        }
     }
 
     @Override

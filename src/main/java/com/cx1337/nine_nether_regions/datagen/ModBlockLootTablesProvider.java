@@ -46,6 +46,7 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.GLOWING_UNDERWORLD_BRICKS.get());
         add(ModBlocks.GLOWING_UNDERWORLD_BRICK_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.GLOWING_UNDERWORLD_BRICK_SLAB.get()));
+        dropSelf(ModBlocks.FLUOROSCOPY_BLOCK.get());
         dropSelf(ModBlocks.GLOWING_UNDERWORLD_BRICK_STAIRS.get());
         dropSelf(ModBlocks.HELLALLOY_BLOCK.get());
         dropSelf(ModBlocks.HELLIGHT.get());

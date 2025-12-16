@@ -129,6 +129,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.CRACKED_BLOODBLADE_ROCK.get())
                 .add(ModBlocks.BLOODBLADE_ROCK.get())
                 .add(ModBlocks.COMPACT_OBSIDIAN.get())
+                .add(ModBlocks.FLUOROSCOPY_BLOCK.get())
                 .add(ModBlocks.GLOWING_UNDERWORLD_BRICKS.get())
                 .add(ModBlocks.GLOWING_UNDERWORLD_BRICK_SLAB.get())
                 .add(ModBlocks.GLOWING_UNDERWORLD_BRICK_STAIRS.get())

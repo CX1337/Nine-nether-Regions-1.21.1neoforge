@@ -152,6 +152,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.BLOODY_SAND);
                         output.accept(ModBlocks.COMPACT_OBSIDIAN);
                         output.accept(ModBlocks.REINFORCED_OBSIDIAN);
+                        output.accept(ModBlocks.FLUOROSCOPY_BLOCK);
 
                         output.accept(ModBlocks.HELLALLOY_BLOCK);
                         output.accept(ModBlocks.STEEL_BLOCK);

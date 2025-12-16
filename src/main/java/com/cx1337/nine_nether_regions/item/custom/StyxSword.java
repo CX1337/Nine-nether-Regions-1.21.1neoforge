@@ -40,10 +40,10 @@ public class StyxSword extends SwordItem implements RangeWeapon{
                                 AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
                 .add(Attributes.ENTITY_INTERACTION_RANGE,
                         new AttributeModifier(BASE_ENTITY_INTERACTION_RANGE_ID, 3.0F,
-                                AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
+                                AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.HAND)
                 .add(Attributes.BLOCK_INTERACTION_RANGE,
                         new AttributeModifier(BASE_BLOCK_INTERACTION_RANGE_ID, 3.0F,
-                                AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
+                                AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.HAND)
                 .build();
     }
 

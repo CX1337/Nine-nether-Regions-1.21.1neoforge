@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "nine_nether_regions:block/fluoroscopy_block"
+  },
+  "render_type": "translucent"
+}

@@ -857,6 +857,15 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.HELLALLOY_INGOT), has(ModItems.HELLALLOY_INGOT))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.FLUOROSCOPY_BLOCK, 6)
+                .pattern("#$#")
+                .pattern("$#$")
+                .pattern("#$#")
+                .define('#', Items.GLASS)
+                .define('$', Items.ICE)
+                .unlockedBy(getHasName(Items.GLASS), has(Items.GLASS))
+                .save(recipeOutput);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.UNDERWORLD_BRICK_BUTTON, 4)
                 .requires(ModBlocks.UNDERWORLD_BRICKS)
                 .unlockedBy(getHasName(ModBlocks.UNDERWORLD_BRICKS), has(ModBlocks.UNDERWORLD_BRICKS))

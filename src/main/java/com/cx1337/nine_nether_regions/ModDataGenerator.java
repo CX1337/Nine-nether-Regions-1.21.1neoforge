@@ -39,6 +39,8 @@ public class ModDataGenerator {
         generator.addProvider(event.includeClient(), new ModEnUsLangProvider(packOutput));
         generator.addProvider(event.includeClient(), new ModZhCnLangProvider(packOutput));
 
+        generator.addProvider(event.includeClient(), new ModAdvancementProvider(packOutput, lookupProvider, existingFileHelper));
+
         generator.addProvider(event.includeServer(), new ModDatapackProvider(packOutput, lookupProvider));
     }
 }

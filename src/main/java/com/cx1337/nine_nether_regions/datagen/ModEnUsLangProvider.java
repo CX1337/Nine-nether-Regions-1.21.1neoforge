@@ -116,6 +116,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.HARDENED_BLOODBLADE_ROCK.get(), "Hardened Bloodblade Rock");
         add(ModBlocks.COMPACT_OBSIDIAN.get(), "Compact Obsidian");
         add(ModBlocks.REINFORCED_OBSIDIAN.get(), "Reinforced Obsidian");
+        add(ModBlocks.FLUOROSCOPY_BLOCK.get(), "Fluoroscopy Block");
         add(ModBlocks.GLOWING_UNDERWORLD_BRICKS.get(), "§bGlowing Underworld Bricks");
         add(ModBlocks.GLOWING_UNDERWORLD_BRICK_SLAB.get(), "§bGlowing Underworld Brick Slab");
         add(ModBlocks.GLOWING_UNDERWORLD_BRICK_STAIRS.get(), "§bGlowing Underworld Brick Stairs");
@@ -208,6 +209,37 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("item.nine_nether_regions.manjusaka_plain_music_disc.desc", "Bryan Teoh--Go On Without Me");
         add("item.nine_nether_regions.caves_music_disc.desc", "Kevin MacLeod--Satin Danger");
 
+        add("advancement.nine_nether_regions.root.title", "Nine-nether Regions");
+        add("advancement.nine_nether_regions.root.description", "The beginning of your journey.");
+        add("advancement.nine_nether_regions.safe.title", "Safe?");
+        add("advancement.nine_nether_regions.safe.description", "Obtain a full set of Wood armor.");
+        add("advancement.nine_nether_regions.different_set.title", "A Different Set!");
+        add("advancement.nine_nether_regions.different_set.description", "Obtain a full set of Cherry armor,a variant of Wood armor.");
+        add("advancement.nine_nether_regions.better_than_iron.title", "Better than Iron");
+        add("advancement.nine_nether_regions.better_than_iron.description", "Get Steel Ingot.");
+        add("advancement.nine_nether_regions.better_protection.title", "Better Protection");
+        add("advancement.nine_nether_regions.better_protection.description", "Obtain a Steel armor.");
+        add("advancement.nine_nether_regions.beating_energy.title", "Beating Energy");
+        add("advancement.nine_nether_regions.beating_energy.description", "Obtain Underworld Crystal.");
+        add("advancement.nine_nether_regions.deep_in_the_dark.title", "Deep In The Dark");
+        add("advancement.nine_nether_regions.deep_in_the_dark.description", "Obtain Ghostlium.");
+        add("advancement.nine_nether_regions.shining.title", "It's Shining!");
+        add("advancement.nine_nether_regions.shining.description", "Get Rainbow Jade.");
+        add("advancement.nine_nether_regions.dazzling.title", "Dazzling!");
+        add("advancement.nine_nether_regions.dazzling.description", "Obtain a Rainbow Jade armor.");
+        add("advancement.nine_nether_regions.vampire.title", "Fragile Vampire");
+        add("advancement.nine_nether_regions.vampire.description", "Obtain a Ruby Sword.");
+        add("advancement.nine_nether_regions.hell_archive.title", "Archive of Underworld");
+        add("advancement.nine_nether_regions.hell_archive.description", "Get Hellalloy Ingot.");
+        add("advancement.nine_nether_regions.hellalloy_set.title", "Hellalloy Protection");
+        add("advancement.nine_nether_regions.hellalloy_set.description", "Obtain a full set of Hellalloy armor.");
+        add("advancement.nine_nether_regions.styx_tear.title", "Abyssal Grudge");
+        add("advancement.nine_nether_regions.styx_tear.description", "Obtain Styx Tear.");
+        add("advancement.nine_nether_regions.styx_ingot.title", "The Thirteenth River...");
+        add("advancement.nine_nether_regions.styx_ingot.description", "Get Styx Ingot.");
+        add("advancement.nine_nether_regions.styx_set.title", "Styx Soul Forged");
+        add("advancement.nine_nether_regions.styx_set.description", "Obtain a full set of Styx armor.");
+
         add("tooltip.nine_nether_regions.amethyst_dagger", "§3§oAlthough this short sword is indeed small, the recipe is simple, and the attack power is not high, thanks to the vitality contained in amethyst, players have a 33% chance of recovering 1 point of health each time they use it to attack. Meanwhile, precisely because of its compact size, players can swing it faster.\nOf course, due to the fragility of amethyst itself, the durability of this short sword is not as high.");
         add("tooltip.nine_nether_regions.ghostlium_apple", "§3§o Tainted with a bit of the Underworld's power... but it tastes delicious!");
         add("tooltip.nine_nether_regions.enchanted_ghostlium_apple", "§3§oAn Enchanted Golden Apple, enhanced in every way by the Underworld's power. Delicious, filling, and incredibly potent.");
@@ -267,6 +299,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.nine_nether_regions.void_staff", "§3§oInfused with power from the Void and the great dragon.\nRight-click to launch a dragon fireball.");
         add("tooltip.nine_nether_regions.rainbowgem", "§3§oA strange gem formed by the fusion of various gems, extremely hard and nearly rivaling Netherite.");
         add("tooltip.nine_nether_regions.ruby_sword", "§3§oA bloodthirsty sword that deals decent damage, at the cost of being extremely fragile.");
-        add("tooltip.nine_nether_regions.styx_lamp", "§3§oA lamp that can be toggled on and off. Right-click to switch its state. When lit, creatures will no longer spawn within a radius of 64 blocks centered on it.");
+        add("tooltip.nine_nether_regions.styx_lamp", "§3§oA lamp that can be toggled on and off. Right-click to switch its state. When lit, creatures will no longer spawn within a radius of 64 blocks centered on it.\n §r§4§oImportant Note: If the lamp is already lit when entering the world, its creature-spawning suppression will not be active! This effect will function normally after toggling it once.");
+        add("tooltip.nine_nether_regions.fluoroscopy_block", "§3§oA special block formed by fusing and compressing several transparent blocks, which may be used to locate hidden ores and structures underground…");
     }
 }

@@ -1,14 +1,12 @@
 package com.cx1337.nine_nether_regions.event;
 
 import com.cx1337.nine_nether_regions.block.ModBlocks;
-import com.cx1337.nine_nether_regions.block.custom.StyxLampBlock;
 import com.cx1337.nine_nether_regions.effect.ModEffects;
 import com.cx1337.nine_nether_regions.item.ModItems;
 import com.cx1337.nine_nether_regions.potion.ModPotions;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.GlobalPos;
 import net.minecraft.core.Holder;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.protocol.game.ClientboundLevelParticlesPacket;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
@@ -29,8 +27,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.common.NeoForge;
@@ -39,7 +35,6 @@ import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.MobSpawnEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
-import net.neoforged.neoforge.network.PacketDistributor;
 
 import java.util.HashSet;
 import java.util.List;
@@ -354,34 +349,38 @@ public class ModEvents {
     }
 
     //冥河灯抑制刷怪
+    private static final Set<GlobalPos> ACTIVE_STYX_LAMPS = new HashSet<>();
     private static final int EFFECT_RADIUS = 64;
     private static final int RADIUS_SQ = EFFECT_RADIUS * EFFECT_RADIUS;
+
+    public static void addActiveStyxLamp(Level level, BlockPos pos) {
+        ACTIVE_STYX_LAMPS.add(GlobalPos.of(level.dimension(), pos));
+    }
+    public static void removeActiveStyxLamp(Level level, BlockPos pos) {
+        ACTIVE_STYX_LAMPS.remove(GlobalPos.of(level.dimension(), pos));
+    }
+    public boolean isInStyxLampRange(Level level, BlockPos pos) {
+        for (GlobalPos lampPos : ACTIVE_STYX_LAMPS) {
+            if (!lampPos.dimension().equals(level.dimension())) {
+                continue;
+            }
+            if (pos.distSqr(lampPos.pos()) <= RADIUS_SQ) {
+                return true;
+            }
+        }
+        return false;
+    }
     @SubscribeEvent
     public void onCheckSpawnStyx(MobSpawnEvent.PositionCheck event) {
-        if (event.getSpawnType() == MobSpawnType.COMMAND || event.getSpawnType() == MobSpawnType.SPAWN_EGG) {
-            return;
-        }
+        if (event.getSpawnType() == MobSpawnType.COMMAND ||
+            event.getSpawnType() == MobSpawnType.SPAWN_EGG) {
+            return;}
         Level level = event.getLevel().getLevel();
         BlockPos spawnPos = BlockPos.containing(event.getX(), event.getY(), event.getZ());
 
-        int x = spawnPos.getX();
-        int y = spawnPos.getY();
-        int z = spawnPos.getZ();
-
-        for (int dx = -EFFECT_RADIUS; dx <= EFFECT_RADIUS; dx += 1) {
-            for (int dy = -EFFECT_RADIUS; dy <= EFFECT_RADIUS; dy += 1) {
-                for (int dz = -EFFECT_RADIUS; dz <= EFFECT_RADIUS; dz += 1) {
-                    BlockPos checkPos = new BlockPos(x + dx, y + dy, z + dz);
-                    BlockState state = level.getBlockState(checkPos);
-
-                    if (state.is(ModBlocks.STYX_LAMP.get()) &&
-                        state.getValue(StyxLampBlock.CLICKED) &&
-                        spawnPos.distSqr(checkPos) <= RADIUS_SQ) {
-                        event.setResult(MobSpawnEvent.PositionCheck.Result.FAIL);
-                        return;
-                    }
-                }
-            }
+        if (isInStyxLampRange(level, spawnPos)) {
+            event.setResult(MobSpawnEvent.PositionCheck.Result.FAIL);
+            System.out.println("Stopped!");
         }
     }
 

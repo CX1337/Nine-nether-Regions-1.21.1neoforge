@@ -6,9 +6,13 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
@@ -17,12 +21,29 @@ import java.util.List;
 
 import static net.minecraft.world.level.block.Block.popResource;
 
-public class StyxPickaxe extends PickaxeItem {
+public class StyxPickaxe extends PickaxeItem implements RangeWeapon{
     public StyxPickaxe() {
         super(ModToolTiers.STYX, new Properties()
-                .attributes(PickaxeItem.createAttributes(ModToolTiers.STYX, 1.0F, -2.6F))
+                .attributes(createAttributes())
                 .rarity(Rarity.EPIC).fireResistant());
     }
+    public static ItemAttributeModifiers createAttributes() {
+        return ItemAttributeModifiers.builder()
+                .add(Attributes.ATTACK_DAMAGE,
+                        new AttributeModifier(BASE_ATTACK_DAMAGE_ID, 12.0D,
+                                AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
+                .add(Attributes.ATTACK_SPEED,
+                        new AttributeModifier(BASE_ATTACK_SPEED_ID, -2.0D,
+                                AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND)
+                .add(Attributes.ENTITY_INTERACTION_RANGE,
+                        new AttributeModifier(BASE_ENTITY_INTERACTION_RANGE_ID, 3.0F,
+                                AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.HAND)
+                .add(Attributes.BLOCK_INTERACTION_RANGE,
+                        new AttributeModifier(BASE_BLOCK_INTERACTION_RANGE_ID, 3.0F,
+                                AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.HAND)
+                .build();
+    }
+
     //加速破坏速度（貌似无效）。
     @Override
     public float getDestroySpeed(@NotNull ItemStack stack, @NotNull BlockState state) {
