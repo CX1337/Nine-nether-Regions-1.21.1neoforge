@@ -24,6 +24,10 @@ public class ModTags {
                 createTag("needs_rainbowgem_tool");
         public static final TagKey<Block> INCORRECT_FOR_RAINBOWGEM_TOOL =
                 createTag("incorrect_for_rainbowgem_tool");
+        public static final TagKey<Block> NEEDS_VOIDRITE_TOOL =
+                createTag("needs_voidrite_tool");
+        public static final TagKey<Block> INCORRECT_FOR_VOIDRITE_TOOL =
+                createTag("incorrect_for_voidrite_tool");
         public static final TagKey<Block> NEEDS_RUBY_TOOL =
                 createTag("needs_rainbowgem_tool");
         public static final TagKey<Block> INCORRECT_FOR_RUBY_TOOL =

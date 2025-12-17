@@ -93,6 +93,19 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.WITHER_STAFF.get(), "凋灵法杖");
         add(ModItems.VOID_CORE.get(), "虚空核心");
         add(ModItems.VOID_STAFF.get(), "虚无魔杖");
+        add(ModItems.VOID_SHARD.get(), "虚空碎片");
+        add(ModItems.VOIDRITE_INGOT.get(), "虚空合金锭");
+        add(ModItems.VOIDRITE_UPGRADE_SMITHING_TEMPLATE.get(), "锻造模板");
+        add(ModItems.VOIDRITE_ROD.get(), "虚空合金棒");
+        add(ModItems.VOIDRITE_AXE.get(), "虚空合金斧");
+        add(ModItems.VOIDRITE_HOE.get(), "虚空合金锄");
+        add(ModItems.VOIDRITE_PICKAXE.get(), "虚空合金镐");
+        add(ModItems.VOIDRITE_SHOVEL.get(), "虚空合金锹");
+        add(ModItems.VOIDRITE_SWORD.get(), "虚空合金剑");
+        add(ModItems.VOIDRITE_HELMET.get(), "虚空合金头盔");
+        add(ModItems.VOIDRITE_CHESTPLATE.get(), "虚空合金胸甲");
+        add(ModItems.VOIDRITE_LEGGINGS.get(), "虚空合金护腿");
+        add(ModItems.VOIDRITE_BOOTS.get(), "虚空合金靴子");
         add(ModItems.RUBY.get(), "红宝石");
         add(ModItems.RAINBOWGEM.get(), "虹玉");
         add(ModItems.RAINBOWGEM_AXE.get(), "虹玉斧");
@@ -163,6 +176,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.UNDERWORLD_BRICK_WALL.get(), "冥界砖墙");
         add(ModBlocks.UNDERWORLD_SPIRIT_STONE.get(), "幽冥灵石");
         add(ModBlocks.UNDERWORLD_CRYSTAL_ORE.get(), "§b幽冥晶矿石");
+        add(ModBlocks.VOID_NEBULA.get(), "虚空星云");
+        add(ModBlocks.VOIDRITE_BLOCK.get(), "虚空合金块");
 
         add("effect.nine_nether_regions.decline", "归寂");
         add("item.minecraft.potion.effect.decline_potion", "归寂药水");
@@ -228,6 +243,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("advancement.nine_nether_regions.shining.description", "获得虹玉。");
         add("advancement.nine_nether_regions.dazzling.title", "光彩夺目");
         add("advancement.nine_nether_regions.dazzling.description", "获得一件虹玉盔甲。");
+        add("advancement.nine_nether_regions.voidrite_ingot.title", "虚无锻造");
+        add("advancement.nine_nether_regions.voidrite_ingot.description", "获得一块虚空合金锭。");
+        add("advancement.nine_nether_regions.voidrite_armor.title", "空虚躯壳");
+        add("advancement.nine_nether_regions.voidrite_armor.description", "获得一件虚空合金盔甲。");
         add("advancement.nine_nether_regions.vampire.title", "脆弱的吸血鬼");
         add("advancement.nine_nether_regions.vampire.description", "获得红宝石剑。");
         add("advancement.nine_nether_regions.hell_archive.title", "幽冥档案");
@@ -236,7 +255,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("advancement.nine_nether_regions.hellalloy_set.description", "获得全套幽冥合金盔甲。");
         add("advancement.nine_nether_regions.styx_tear.title", "九幽之怨");
         add("advancement.nine_nether_regions.styx_tear.description", "获得冥河之泪。");
-        add("advancement.nine_nether_regions.styx_ingot.title", "第十三条河……");
+        add("advancement.nine_nether_regions.styx_ingot.title", "第十三条河流");
         add("advancement.nine_nether_regions.styx_ingot.description", "获得冥河锭。");
         add("advancement.nine_nether_regions.styx_set.title", "冥河铸魂");
         add("advancement.nine_nether_regions.styx_set.description", "获得全套冥河护甲。");
@@ -281,6 +300,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.nine_nether_regions.steel_base", "§3§o千锤百炼之后，方得一块好钢。");
         add("tooltip.nine_nether_regions.steel_ingot", "§3§o比铁更好。");
         add("tooltip.nine_nether_regions.rainbowgem_armors", "§3§o全套效果：对几乎所有伤害持有10%减免。");
+        add("tooltip.nine_nether_regions.voidrite_armors", "§3§o全套效果：对几乎所有伤害持有15%减免。");
         add("tooltip.nine_nether_regions.alloy_hilt", "§3§o它可以被当作武器来使用，但这永远不会是它的真正作用。");
         add("tooltip.nine_nether_regions.hellalloy_helmet_alt",
                 "§3§o自修复：如果该装备耐久未满，在护甲栏或玩家背包中时该装备会自动恢复耐久值§1§o（每2秒回复4点）§r§3§o。\n单件效果：装备在护甲栏时，持续为玩家提供§6§o夜视§r§3§o效果（1级），同时清除玩家身上的§7§o失明、黑暗§r§3§o效果。\n全套效果：对绝大多数伤害持有34%减伤，同时每10tick强制恢复玩家0.7点生命值，持续为玩家提供§6§o抗性提升§r§3§o（2级）效果。");
@@ -304,5 +324,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.nine_nether_regions.ruby_sword", "§3§o一把非常嗜血的剑，拥有相当不错的伤害，代价是它本身极为脆弱。");
         add("tooltip.nine_nether_regions.styx_lamp", "§3§o一盏可以开关的灯，右键来控制它的开关。当它开启时，以它为中心半径64格的范围内将不再刷新生物。\n§r§4§o特别注意：如果进入世界时该灯就是点亮状态，抑制刷怪并不会生效！开关一次后即可正常生效。");
         add("tooltip.nine_nether_regions.fluoroscopy_block", "§3§o由几个透明方块融合压缩形成的特殊方块，或许可以用来寻找地下隐藏的矿物和结构……");
+        add("tooltip.nine_nether_regions.voidrite_ingot", "§3§o集万千虚空之力于一锭。");
+        add("tooltip.nine_nether_regions.voidrite_upgrade_smithing_template", "§3虚空合金升级");
     }
 }

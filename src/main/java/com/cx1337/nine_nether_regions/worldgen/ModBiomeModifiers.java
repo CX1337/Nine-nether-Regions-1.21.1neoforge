@@ -18,6 +18,8 @@ public class ModBiomeModifiers {
             registerKey("add_underworld_spirit_stone");
     public static final ResourceKey<BiomeModifier> ADD_UNDERWORLD_CRYSTAL_ORE =
             registerKey("add_underworld_crystal_ore");
+    public static final ResourceKey<BiomeModifier> ADD_VOID_NEBULA =
+            registerKey("add_void_nebula");
 
     public static final ResourceKey<BiomeModifier> ADD_TREE_HELLWOOD =
             registerKey("add_tree_hellwood");
@@ -33,6 +35,10 @@ public class ModBiomeModifiers {
         context.register(ADD_UNDERWORLD_CRYSTAL_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(Biomes.SOUL_SAND_VALLEY)),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.UNDERWORLD_CRYSTAL_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_VOID_NEBULA, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_END),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.VOID_NEBULA_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
         context.register(ADD_TREE_HELLWOOD, new BiomeModifiers.AddFeaturesBiomeModifier(

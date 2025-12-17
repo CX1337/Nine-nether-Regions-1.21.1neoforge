@@ -238,7 +238,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .pattern(" R ")
                 .pattern(" R ")
                 .define('#', ModItems.VOID_CORE)
-                .define('R', ModItems.NETHERITE_ROD)
+                .define('R', ModItems.VOIDRITE_ROD)
                 .define('$', Items.END_CRYSTAL)
                 .unlockedBy(getHasName(ModItems.VOID_CORE), has(ModItems.VOID_CORE))
                 .save(recipeOutput);
@@ -751,6 +751,13 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModItems.HELLALLOY_INGOT), has(ModItems.HELLALLOY_INGOT))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.VOIDRITE_ROD, 4)
+                .pattern("#")
+                .pattern("#")
+                .define('#', ModItems.VOIDRITE_INGOT)
+                .unlockedBy(getHasName(ModItems.VOIDRITE_INGOT), has(ModItems.VOIDRITE_INGOT))
+                .save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.NETHERITE_ROD, 4)
                 .pattern("#")
                 .pattern("#")
@@ -866,6 +873,34 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(Items.GLASS), has(Items.GLASS))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.VOIDRITE_INGOT, 1)
+                .pattern("###")
+                .pattern("$R$")
+                .pattern("###")
+                .define('#', ModItems.VOID_SHARD)
+                .define('$', Items.ENDER_PEARL)
+                .define('R', Items.ENDER_EYE)
+                .unlockedBy(getHasName(ModItems.VOID_SHARD), has(ModItems.VOID_SHARD))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.VOIDRITE_BLOCK, 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', ModItems.VOIDRITE_INGOT)
+                .unlockedBy(getHasName(ModItems.VOIDRITE_INGOT), has(ModItems.VOIDRITE_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.VOIDRITE_UPGRADE_SMITHING_TEMPLATE, 1)
+                .pattern("$#$")
+                .pattern("$R$")
+                .pattern("#$#")
+                .define('#', ModItems.VOID_SHARD)
+                .define('$', Items.ENDER_EYE)
+                .define('R', Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE)
+                .unlockedBy(getHasName(ModItems.VOID_SHARD), has(ModItems.VOID_SHARD))
+                .save(recipeOutput);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.UNDERWORLD_BRICK_BUTTON, 4)
                 .requires(ModBlocks.UNDERWORLD_BRICKS)
                 .unlockedBy(getHasName(ModBlocks.UNDERWORLD_BRICKS), has(ModBlocks.UNDERWORLD_BRICKS))
@@ -891,6 +926,11 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .unlockedBy(getHasName(ModBlocks.STEEL_BLOCK), has(ModBlocks.STEEL_BLOCK))
                 .save(recipeOutput, NineNetherRegions.MODID + ":" +"steel_ingot_no2");
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.VOIDRITE_INGOT, 9)
+                .requires(ModBlocks.VOIDRITE_BLOCK)
+                .unlockedBy(getHasName(ModBlocks.VOIDRITE_BLOCK), has(ModBlocks.VOIDRITE_BLOCK))
+                .save(recipeOutput, NineNetherRegions.MODID + ":" +"voidrite_ingot_no2");
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.STYX_INGOT, 9)
                 .requires(ModBlocks.STYX_BLOCK)
                 .unlockedBy(getHasName(ModBlocks.STYX_BLOCK), has(ModBlocks.STYX_BLOCK))
@@ -905,6 +945,71 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .requires(ModBlocks.RAINBOWGEM_BLOCK)
                 .unlockedBy(getHasName(ModBlocks.RAINBOWGEM_BLOCK), has(ModBlocks.RAINBOWGEM_BLOCK))
                 .save(recipeOutput, NineNetherRegions.MODID + ":" +"rainbowgem_no2");
+
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(ModItems.VOIDRITE_UPGRADE_SMITHING_TEMPLATE.get()),
+                        Ingredient.of(ModItems.RAINBOWGEM_AXE.get()),
+                        Ingredient.of(ModItems.VOIDRITE_INGOT.get()),
+                        RecipeCategory.TOOLS, ModItems.VOIDRITE_AXE.get())
+                .unlocks("has_voidrite_ingot", has(ModItems.VOIDRITE_INGOT.get()))
+                .save(recipeOutput, NineNetherRegions.MODID + ":" +"voidrite_axe_smithing");
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(ModItems.VOIDRITE_UPGRADE_SMITHING_TEMPLATE.get()),
+                        Ingredient.of(ModItems.RAINBOWGEM_HOE.get()),
+                        Ingredient.of(ModItems.VOIDRITE_INGOT.get()),
+                        RecipeCategory.TOOLS, ModItems.VOIDRITE_HOE.get())
+                .unlocks("has_voidrite_ingot", has(ModItems.VOIDRITE_INGOT.get()))
+                .save(recipeOutput, NineNetherRegions.MODID + ":" +"voidrite_hoe_smithing");
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(ModItems.VOIDRITE_UPGRADE_SMITHING_TEMPLATE.get()),
+                        Ingredient.of(ModItems.RAINBOWGEM_PICKAXE.get()),
+                        Ingredient.of(ModItems.VOIDRITE_INGOT.get()),
+                        RecipeCategory.TOOLS, ModItems.VOIDRITE_PICKAXE.get())
+                .unlocks("has_voidrite_ingot", has(ModItems.VOIDRITE_INGOT.get()))
+                .save(recipeOutput, NineNetherRegions.MODID + ":" +"voidrite_pickaxe_smithing");
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(ModItems.VOIDRITE_UPGRADE_SMITHING_TEMPLATE.get()),
+                        Ingredient.of(ModItems.RAINBOWGEM_SHOVEL.get()),
+                        Ingredient.of(ModItems.VOIDRITE_INGOT.get()),
+                        RecipeCategory.TOOLS, ModItems.VOIDRITE_SHOVEL.get())
+                .unlocks("has_voidrite_ingot", has(ModItems.VOIDRITE_INGOT.get()))
+                .save(recipeOutput, NineNetherRegions.MODID + ":" +"voidrite_shovel_smithing");
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(ModItems.VOIDRITE_UPGRADE_SMITHING_TEMPLATE.get()),
+                        Ingredient.of(ModItems.RAINBOWGEM_SWORD.get()),
+                        Ingredient.of(ModItems.VOIDRITE_INGOT.get()),
+                        RecipeCategory.COMBAT, ModItems.VOIDRITE_SWORD.get())
+                .unlocks("has_voidrite_ingot", has(ModItems.VOIDRITE_INGOT.get()))
+                .save(recipeOutput, NineNetherRegions.MODID + ":" +"voidrite_sword_smithing");
+
+        SmithingTransformRecipeBuilder.smithing(
+                Ingredient.of(ModItems.VOIDRITE_UPGRADE_SMITHING_TEMPLATE.get()),
+                Ingredient.of(ModItems.RAINBOWGEM_HELMET.get()),
+                Ingredient.of(ModItems.VOIDRITE_INGOT.get()),
+                RecipeCategory.COMBAT, ModItems.VOIDRITE_HELMET.get())
+                .unlocks("has_voidrite_ingot", has(ModItems.VOIDRITE_INGOT.get()))
+                .save(recipeOutput, NineNetherRegions.MODID + ":" +"voidrite_helmet_smithing");
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(ModItems.VOIDRITE_UPGRADE_SMITHING_TEMPLATE.get()),
+                        Ingredient.of(ModItems.RAINBOWGEM_CHESTPLATE.get()),
+                        Ingredient.of(ModItems.VOIDRITE_INGOT.get()),
+                        RecipeCategory.COMBAT, ModItems.VOIDRITE_CHESTPLATE.get())
+                .unlocks("has_voidrite_ingot", has(ModItems.VOIDRITE_INGOT.get()))
+                .save(recipeOutput, NineNetherRegions.MODID + ":" +"voidrite_chestplate_smithing");
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(ModItems.VOIDRITE_UPGRADE_SMITHING_TEMPLATE.get()),
+                        Ingredient.of(ModItems.RAINBOWGEM_LEGGINGS.get()),
+                        Ingredient.of(ModItems.VOIDRITE_INGOT.get()),
+                        RecipeCategory.COMBAT, ModItems.VOIDRITE_LEGGINGS.get())
+                .unlocks("has_voidrite_ingot", has(ModItems.VOIDRITE_INGOT.get()))
+                .save(recipeOutput, NineNetherRegions.MODID + ":" +"voidrite_leggings_smithing");
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(ModItems.VOIDRITE_UPGRADE_SMITHING_TEMPLATE.get()),
+                        Ingredient.of(ModItems.RAINBOWGEM_BOOTS.get()),
+                        Ingredient.of(ModItems.VOIDRITE_INGOT.get()),
+                        RecipeCategory.COMBAT, ModItems.VOIDRITE_BOOTS.get())
+                .unlocks("has_voidrite_ingot", has(ModItems.VOIDRITE_INGOT.get()))
+                .save(recipeOutput, NineNetherRegions.MODID + ":" +"voidrite_boots_smithing");
 
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.UNDERWORLD_BRICK_WALL.get(),
                 ModBlocks.UNDERWORLD_BRICKS.get(), 1);
@@ -966,6 +1071,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
         oreBlasting(recipeOutput, STEEL_NUGGET, RecipeCategory.MISC, ModItems.STEEL_NUGGET, 0.10f, 100, "steel_nugget");
         oreSmelting(recipeOutput, COPPER_NUGGET, RecipeCategory.MISC, ModItems.COPPER_NUGGET, 0.10f, 200, "copper_nugget");
         oreBlasting(recipeOutput, COPPER_NUGGET, RecipeCategory.MISC, ModItems.COPPER_NUGGET, 0.10f, 100, "copper_nugget");
+        oreBlasting(recipeOutput, VOID_SHARD, RecipeCategory.MISC, ModItems.VOID_SHARD, 1.00f, 200, "void_shard");
     }
     //熔炼原料注册点。
     public static final List<ItemLike> BLOODBLADE_ESSENCE = List.of(ModBlocks.BLOODBLADE_ORE);
@@ -980,6 +1086,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
             ModItems.COPPER_LEGGINGS, ModItems.COPPER_BOOTS, ModItems.COPPER_AXE, ModItems.COPPER_HOE, ModItems.COPPER_PICKAXE,
             ModItems.COPPER_SHOVEL, ModItems.COPPER_SWORD, ModItems.COPPER_HORSE_ARMOR);
     public static final List<ItemLike> RED_GLASS = List.of(ModBlocks.BLOODY_SAND);
+    public static final List<ItemLike> VOID_SHARD = List.of(ModBlocks.VOID_NEBULA);
 
     protected static void oreSmelting(
             RecipeOutput recipeOutput, List<ItemLike> ingredients, RecipeCategory category, ItemLike result, float experience, int cookingTime, String group

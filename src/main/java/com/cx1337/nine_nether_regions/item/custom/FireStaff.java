@@ -40,7 +40,7 @@ public class FireStaff extends Item {
                     EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND;
             itemStack.hurtAndBreak(1, player, slot);
 
-            player.getCooldowns().addCooldown(this, 20);
+            player.getCooldowns().addCooldown(this, 10);
         }
         return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());
     }

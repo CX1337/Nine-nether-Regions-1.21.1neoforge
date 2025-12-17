@@ -41,6 +41,8 @@ public class ModBlockStatesProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.UNDERWORLD_BRICKS);
         blockWithItem(ModBlocks.UNDERWORLD_SPIRIT_STONE);
         blockWithItem(ModBlocks.UNDERWORLD_CRYSTAL_ORE);
+        blockWithItem(ModBlocks.VOID_NEBULA);
+        blockWithItem(ModBlocks.VOIDRITE_BLOCK);
 
         buttonBlock(ModBlocks.UNDERWORLD_BRICK_BUTTON.get(), blockTexture(ModBlocks.UNDERWORLD_BRICKS.get()));
         //压力板同按钮。

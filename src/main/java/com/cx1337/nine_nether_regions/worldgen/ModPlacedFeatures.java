@@ -22,6 +22,8 @@ public class ModPlacedFeatures {
             registerKey("underworld_spirit_stone_placed");
     public static final ResourceKey<PlacedFeature> UNDERWORLD_CRYSTAL_ORE_PLACED_KEY =
             registerKey("underworld_crystal_ore_placed");
+    public static final ResourceKey<PlacedFeature> VOID_NEBULA_PLACED_KEY =
+            registerKey("void_nebula_placed");
 
     public static final ResourceKey<PlacedFeature> HELLWOOD_PLACED_KEY =
             registerKey("hellwood_placed");
@@ -37,6 +39,10 @@ public class ModPlacedFeatures {
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.UNDERWORLD_CRYSTAL_ORE_NETHER_KEY),
                 ModOrePlacement.commonOrePlacement(8, HeightRangePlacement.uniform(VerticalAnchor.absolute(4),
                         VerticalAnchor.absolute(44))));
+        register(context, VOID_NEBULA_PLACED_KEY,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.VOID_NEBULA_END_KEY),
+                ModOrePlacement.commonOrePlacement(4, HeightRangePlacement.uniform(VerticalAnchor.absolute(0),
+                        VerticalAnchor.absolute(66))));
 
         register(context, HELLWOOD_PLACED_KEY,
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.HELLWOOD_KEY),

@@ -29,6 +29,8 @@ public class ModConfiguredFeatures {
             registerKey("underworld_spirit_stone");
     public static final ResourceKey<ConfiguredFeature<?, ?>> UNDERWORLD_CRYSTAL_ORE_NETHER_KEY =
             registerKey("underworld_crystal_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> VOID_NEBULA_END_KEY =
+            registerKey("void_nebula");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> HELLWOOD_KEY =
             registerKey("hellwood");
@@ -46,6 +48,8 @@ public class ModConfiguredFeatures {
                 new OreConfiguration(underworldSpiritStoneOverworld, 3));
         register(context, UNDERWORLD_CRYSTAL_ORE_NETHER_KEY, Feature.ORE,
                 new OreConfiguration(netherrackReplaceables, ModBlocks.UNDERWORLD_CRYSTAL_ORE.get().defaultBlockState(), 3));
+        register(context, VOID_NEBULA_END_KEY, Feature.ORE,
+                new OreConfiguration(endReplaceables, ModBlocks.VOID_NEBULA.get().defaultBlockState(), 3));
 
         register(context, HELLWOOD_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.HELLWOOD_LOG.get()),

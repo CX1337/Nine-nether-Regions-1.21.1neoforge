@@ -36,23 +36,27 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.STEEL_AXE.get())
                 .add(ModItems.COPPER_AXE.get())
                 .add(ModItems.HELLALLOY_AXE.get())
-                .add(ModItems.RAINBOWGEM_AXE.get());
+                .add(ModItems.RAINBOWGEM_AXE.get())
+                .add(ModItems.VOIDRITE_AXE.get());
         tag(ItemTags.PICKAXES)
                 .add(ModItems.STYX_PICKAXE.get())
                 .add(ModItems.HELLALLOY_PICKAXE.get())
                 .add(ModItems.STEEL_PICKAXE.get())
                 .add(ModItems.COPPER_PICKAXE.get())
-                .add(ModItems.RAINBOWGEM_PICKAXE.get());
+                .add(ModItems.RAINBOWGEM_PICKAXE.get())
+                .add(ModItems.VOIDRITE_PICKAXE.get());
         tag(ItemTags.SHOVELS)
                 .add(ModItems.HELLALLOY_SHOVEL.get())
                 .add(ModItems.STEEL_SHOVEL.get())
                 .add(ModItems.COPPER_SHOVEL.get())
-                .add(ModItems.RAINBOWGEM_SHOVEL.get());
+                .add(ModItems.RAINBOWGEM_SHOVEL.get())
+                .add(ModItems.VOIDRITE_SHOVEL.get());
         tag(ItemTags.HOES)
                 .add(ModItems.HELLALLOY_HOE.get())
                 .add(ModItems.STEEL_HOE.get())
                 .add(ModItems.COPPER_HOE.get())
-                .add(ModItems.RAINBOWGEM_HOE.get());
+                .add(ModItems.RAINBOWGEM_HOE.get())
+                .add(ModItems.VOIDRITE_HOE.get());
         tag(ItemTags.SWORDS)
                 .add(ModItems.AMETHYST_DAGGER.get())
                 .add(ModItems.STEEL_SWORD.get())
@@ -60,7 +64,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.RAINBOWGEM_SWORD.get())
                 .add(ModItems.RUBY_SWORD.get())
                 .add(ModItems.HELLALLOY_SWORD.get())
-                .add(ModItems.STYX_SWORD.get());
+                .add(ModItems.STYX_SWORD.get())
+                .add(ModItems.VOIDRITE_SWORD.get());
 
         tag(ItemTags.HEAD_ARMOR)
                 .add(ModItems.WOOD_HELMET.get())
@@ -68,6 +73,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.COPPER_HELMET.get())
                 .add(ModItems.STEEL_HELMET.get())
                 .add(ModItems.RAINBOWGEM_HELMET.get())
+                .add(ModItems.VOIDRITE_HELMET.get())
                 .add(ModItems.HELLALLOY_HELMET.get())
                 .add(ModItems.STYX_HELMET.get());
         tag(ItemTags.CHEST_ARMOR)
@@ -76,6 +82,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.COPPER_CHESTPLATE.get())
                 .add(ModItems.STEEL_CHESTPLATE.get())
                 .add(ModItems.RAINBOWGEM_CHESTPLATE.get())
+                .add(ModItems.VOIDRITE_CHESTPLATE.get())
                 .add(ModItems.HELLALLOY_CHESTPLATE.get())
                 .add(ModItems.STYX_CHESTPLATE.get());
         tag(ItemTags.LEG_ARMOR)
@@ -84,6 +91,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.COPPER_LEGGINGS.get())
                 .add(ModItems.STEEL_LEGGINGS.get())
                 .add(ModItems.RAINBOWGEM_LEGGINGS.get())
+                .add(ModItems.VOIDRITE_LEGGINGS.get())
                 .add(ModItems.HELLALLOY_LEGGINGS.get())
                 .add(ModItems.STYX_LEGGINGS.get());
         tag(ItemTags.FOOT_ARMOR)
@@ -92,6 +100,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.COPPER_BOOTS.get())
                 .add(ModItems.STEEL_BOOTS.get())
                 .add(ModItems.RAINBOWGEM_BOOTS.get())
+                .add(ModItems.VOIDRITE_BOOTS.get())
                 .add(ModItems.HELLALLOY_BOOTS.get())
                 .add(ModItems.STYX_BOOTS.get());
 
@@ -111,7 +120,11 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.RAINBOWGEM_HELMET.get())
                 .add(ModItems.RAINBOWGEM_CHESTPLATE.get())
                 .add(ModItems.RAINBOWGEM_LEGGINGS.get())
-                .add(ModItems.RAINBOWGEM_BOOTS.get());
+                .add(ModItems.RAINBOWGEM_BOOTS.get())
+                .add(ModItems.VOIDRITE_HELMET.get())
+                .add(ModItems.VOIDRITE_CHESTPLATE.get())
+                .add(ModItems.VOIDRITE_LEGGINGS.get())
+                .add(ModItems.VOIDRITE_BOOTS.get());
 
         tag(ItemTags.BOW_ENCHANTABLE)
                 .add(ModItems.HELLALLOY_LONGBOW.get());

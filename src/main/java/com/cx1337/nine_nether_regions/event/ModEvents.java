@@ -3,6 +3,7 @@ package com.cx1337.nine_nether_regions.event;
 import com.cx1337.nine_nether_regions.block.ModBlocks;
 import com.cx1337.nine_nether_regions.effect.ModEffects;
 import com.cx1337.nine_nether_regions.item.ModItems;
+import com.cx1337.nine_nether_regions.item.custom.HellalloyLongbow;
 import com.cx1337.nine_nether_regions.potion.ModPotions;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
@@ -21,6 +22,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.WitherSkull;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -239,6 +241,24 @@ public class ModEvents {
             if (fullSet) {
                 float originalDamage = event.getNewDamage();
                 float reducedDamage = originalDamage * 0.90f;
+                event.setNewDamage(reducedDamage);
+            }
+        }
+    }
+
+    //虚空合金套减伤。
+    @SubscribeEvent
+    public void onLivingDamageVoidrite(LivingDamageEvent.Pre event) {
+        if (event.getEntity() instanceof Player player) {
+            boolean fullSet =
+                    player.getItemBySlot(EquipmentSlot.HEAD).is(ModItems.VOIDRITE_HELMET.get()) &&
+                            player.getItemBySlot(EquipmentSlot.CHEST).is(ModItems.VOIDRITE_CHESTPLATE.get()) &&
+                            player.getItemBySlot(EquipmentSlot.LEGS).is(ModItems.VOIDRITE_LEGGINGS.get()) &&
+                            player.getItemBySlot(EquipmentSlot.FEET).is(ModItems.VOIDRITE_BOOTS.get());
+
+            if (fullSet) {
+                float originalDamage = event.getNewDamage();
+                float reducedDamage = originalDamage * 0.85f;
                 event.setNewDamage(reducedDamage);
             }
         }

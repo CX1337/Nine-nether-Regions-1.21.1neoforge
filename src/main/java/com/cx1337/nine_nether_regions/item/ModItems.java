@@ -104,6 +104,28 @@ public class ModItems {
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
             });
+    public static final DeferredItem<Item> VOID_SHARD =
+            ITEMS.register("void_shard", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant()));
+    public static final DeferredItem<Item> VOIDRITE_INGOT =
+            ITEMS.register("voidrite_ingot", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant()){
+                @Override
+                public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context,
+                                            @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nine_nether_regions.voidrite_ingot"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<Item> VOIDRITE_UPGRADE_SMITHING_TEMPLATE =
+            ITEMS.register("voidrite_upgrade_smithing_template", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)
+                    .fireResistant()){
+                @Override
+                public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context,
+                                            @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nine_nether_regions.voidrite_upgrade_smithing_template"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+
     public static final DeferredItem<Item> DIAMOND_BOWSTRING =
             ITEMS.register("diamond_bowstring", () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
     public static final DeferredItem<Item> UNDERWORLD_BRICK =
@@ -112,6 +134,8 @@ public class ModItems {
             ITEMS.register("underworld_crystal", () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
     public static final DeferredItem<Item> NETHERITE_ROD =
             ITEMS.register("netherite_rod", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant()));
+    public static final DeferredItem<Item> VOIDRITE_ROD =
+            ITEMS.register("voidrite_rod", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant()));
     public static final DeferredItem<Item> HELLALLOY_ROD =
             ITEMS.register("hellalloy_rod", () -> new Item(new Item.Properties().rarity(Rarity.RARE).fireResistant()));
     public static final DeferredItem<Item> GHOSTLIUM =
@@ -259,6 +283,47 @@ public class ModItems {
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
             });
+    //虚空合金盔甲。
+    public static final DeferredItem<ArmorItem> VOIDRITE_HELMET =
+            ITEMS.register("voidrite_helmet", () ->new ArmorItem(ModArmorMaterials.VOIDRITE_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
+                    new Item.Properties() .durability(ArmorItem.Type.HELMET.getDurability(40)).rarity(Rarity.UNCOMMON).fireResistant()){
+                @Override
+                public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context,
+                                            @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nine_nether_regions.voidrite_armors"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<ArmorItem> VOIDRITE_CHESTPLATE =
+            ITEMS.register("voidrite_chestplate", () ->new ArmorItem(ModArmorMaterials.VOIDRITE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+                    new Item.Properties() .durability(ArmorItem.Type.CHESTPLATE.getDurability(40)).rarity(Rarity.UNCOMMON).fireResistant()){
+                @Override
+                public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context,
+                                            @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nine_nether_regions.voidrite_armors"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<ArmorItem> VOIDRITE_LEGGINGS =
+            ITEMS.register("voidrite_leggings", () ->new ArmorItem(ModArmorMaterials.VOIDRITE_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
+                    new Item.Properties() .durability(ArmorItem.Type.LEGGINGS.getDurability(40)).rarity(Rarity.UNCOMMON).fireResistant()){
+                @Override
+                public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context,
+                                            @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nine_nether_regions.voidrite_armors"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+    public static final DeferredItem<ArmorItem> VOIDRITE_BOOTS =
+            ITEMS.register("voidrite_boots", () ->new ArmorItem(ModArmorMaterials.VOIDRITE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
+                    new Item.Properties() .durability(ArmorItem.Type.BOOTS.getDurability(40)).rarity(Rarity.UNCOMMON).fireResistant()){
+                @Override
+                public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context,
+                                            @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nine_nether_regions.voidrite_armors"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
     //幽冥合金盔甲。
     public static final DeferredItem<ArmorItem> HELLALLOY_HELMET =
             ITEMS.register("hellalloy_helmet", HellalloyHelmet::new);
@@ -337,6 +402,22 @@ public class ModItems {
     public static final DeferredItem<SwordItem> RAINBOWGEM_SWORD =
             ITEMS.register("rainbowgem_sword", () -> new SwordItem(ModToolTiers.RAINBOWGEM, new Item.Properties()
                     .attributes(SwordItem.createAttributes(ModToolTiers.RAINBOWGEM, 4.0F, -2.4F)).rarity(Rarity.UNCOMMON)));
+    //虚空合金工具。
+    public static final DeferredItem<PickaxeItem> VOIDRITE_PICKAXE =
+            ITEMS.register("voidrite_pickaxe", () -> new PickaxeItem(ModToolTiers.VOIDRITE, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.VOIDRITE, 1.0F, -2.6F)).rarity(Rarity.UNCOMMON)));
+    public static final DeferredItem<ShovelItem> VOIDRITE_SHOVEL =
+            ITEMS.register("voidrite_shovel", () -> new ShovelItem(ModToolTiers.VOIDRITE, new Item.Properties()
+                    .attributes(ShovelItem.createAttributes(ModToolTiers.VOIDRITE, 1.5F, -2.8F)).rarity(Rarity.UNCOMMON)));
+    public static final DeferredItem<AxeItem> VOIDRITE_AXE =
+            ITEMS.register("voidrite_axe", () -> new AxeItem(ModToolTiers.VOIDRITE, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModToolTiers.VOIDRITE, 6.0F, -3.0F)).rarity(Rarity.UNCOMMON)));
+    public static final DeferredItem<HoeItem> VOIDRITE_HOE =
+            ITEMS.register("voidrite_hoe", () -> new HoeItem(ModToolTiers.VOIDRITE, new Item.Properties()
+                    .attributes(HoeItem.createAttributes(ModToolTiers.VOIDRITE, -0.5F, 0.0F)).rarity(Rarity.UNCOMMON)));
+    public static final DeferredItem<SwordItem> VOIDRITE_SWORD =
+            ITEMS.register("voidrite_sword", () -> new SwordItem(ModToolTiers.VOIDRITE, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.VOIDRITE, 4.0F, -2.4F)).rarity(Rarity.UNCOMMON)));
     //幽冥合金工具。
     public static final DeferredItem<PickaxeItem> HELLALLOY_PICKAXE =
                         ITEMS.register("hellalloy_pickaxe", () -> new PickaxeItem(ModToolTiers.HELLALLOY, new Item.Properties()

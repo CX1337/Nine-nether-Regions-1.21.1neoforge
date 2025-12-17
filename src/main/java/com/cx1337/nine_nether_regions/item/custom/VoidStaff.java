@@ -40,7 +40,7 @@ public class VoidStaff extends Item {
                     EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND;
             itemStack.hurtAndBreak(1, player, slot);
 
-            player.getCooldowns().addCooldown(this, 160);
+            player.getCooldowns().addCooldown(this, 80);
         }
         return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());
     }

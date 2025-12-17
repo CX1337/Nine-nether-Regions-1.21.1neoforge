@@ -79,6 +79,18 @@ public class ModArmorMaterials {
             SoundEvents.ARMOR_EQUIP_DIAMOND,
             ResourceLocation.fromNamespaceAndPath(NineNetherRegions.MODID, "rainbowgem"));
 
+    //虚空合金盔甲。
+    public static final Holder<ArmorMaterial> VOIDRITE_ARMOR_MATERIAL = register("voidrite",
+            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+                attribute.put(ArmorItem.Type.BOOTS, 4);
+                attribute.put(ArmorItem.Type.LEGGINGS, 6);
+                attribute.put(ArmorItem.Type.CHESTPLATE, 8);
+                attribute.put(ArmorItem.Type.HELMET, 4);
+                attribute.put(ArmorItem.Type.BODY, 17);
+            }), 19, 3.0F, 0.4F, () -> ModItems.VOIDRITE_INGOT.get(),
+            SoundEvents.ARMOR_EQUIP_NETHERITE,
+            ResourceLocation.fromNamespaceAndPath(NineNetherRegions.MODID, "voidrite"));
+
     //幽冥合金盔甲
     public static final Holder<ArmorMaterial> HELLALLOY_ARMOR_MATERIAL = register("hellalloy",
             Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {

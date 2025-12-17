@@ -93,12 +93,26 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RAINBOWGEM_HOE);
                         output.accept(ModItems.RAINBOWGEM_PICKAXE);
                         output.accept(ModItems.RAINBOWGEM_SHOVEL);
+                        output.accept(ModItems.RAINBOWGEM_SWORD);
                         output.accept(ModItems.RAINBOWGEM_HELMET);
                         output.accept(ModItems.RAINBOWGEM_CHESTPLATE);
                         output.accept(ModItems.RAINBOWGEM_LEGGINGS);
                         output.accept(ModItems.RAINBOWGEM_BOOTS);
-                        output.accept(ModItems.RAINBOWGEM_SWORD);
                         output.accept(ModItems.RUBY_SWORD);
+
+                        output.accept(ModItems.VOID_SHARD);
+                        output.accept(ModItems.VOIDRITE_INGOT);
+                        output.accept(ModItems.VOIDRITE_UPGRADE_SMITHING_TEMPLATE);
+                        output.accept(ModItems.VOIDRITE_ROD);
+                        output.accept(ModItems.VOIDRITE_AXE);
+                        output.accept(ModItems.VOIDRITE_HOE);
+                        output.accept(ModItems.VOIDRITE_PICKAXE);
+                        output.accept(ModItems.VOIDRITE_SHOVEL);
+                        output.accept(ModItems.VOIDRITE_SWORD);
+                        output.accept(ModItems.VOIDRITE_HELMET);
+                        output.accept(ModItems.VOIDRITE_CHESTPLATE);
+                        output.accept(ModItems.VOIDRITE_LEGGINGS);
+                        output.accept(ModItems.VOIDRITE_BOOTS);
 
                         output.accept(ModItems.HELLALLOY_INGOT);
                         output.accept(ModItems.HELLALLOY_AXE);
@@ -143,6 +157,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.UW_CARVED_WINDOW);
                         output.accept(ModBlocks.MANJUSAKA);
                         output.accept(ModBlocks.PINESAP);
+                        output.accept(ModBlocks.VOID_NEBULA);
                         output.accept(ModBlocks.BLOODBLADE_ORE);
                         output.accept(ModBlocks.BLOODBLADE_ROCK);
                         output.accept(ModBlocks.CRACKED_BLOODBLADE_ROCK);
@@ -158,6 +173,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.STEEL_BLOCK);
                         output.accept(ModBlocks.RUBY_BLOCK);
                         output.accept(ModBlocks.RAINBOWGEM_BLOCK);
+                        output.accept(ModBlocks.VOIDRITE_BLOCK);
                         output.accept(ModBlocks.STYX_BLOCK);
 
                         output.accept(ModBlocks.GLOWING_UNDERWORLD_BRICKS);

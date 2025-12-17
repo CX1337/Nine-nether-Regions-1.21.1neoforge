@@ -71,6 +71,22 @@ public class ModBlocks {
                     .lightLevel(p_50872_ -> 6)
                     .sound(SoundType.DEEPSLATE)), new Item.Properties().rarity(Rarity.UNCOMMON));
 
+    public static final DeferredBlock<Block> VOID_NEBULA =
+            registerBlocks("void_nebula", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BLACK)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .strength(45.0F,1337F)
+                    .requiresCorrectToolForDrops()
+                    .lightLevel(p_50872_ -> 6)
+                    .sound(SoundType.WOOL)), new Item.Properties().rarity(Rarity.UNCOMMON));
+    public static final DeferredBlock<Block> VOIDRITE_BLOCK =
+            registerBlocks("voidrite_block", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BLACK)
+                    .instrument(NoteBlockInstrument.HAT)
+                    .strength(55.0F,4024F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.NETHERITE_BLOCK)), new Item.Properties().rarity(Rarity.RARE));
+
     public static final DeferredBlock<Block> HELLWOOD_LOG =
             registerBlocks("hellwood_log", () -> new ModFlammableRotatedPillarBlock(
                     BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_STEM)));
@@ -88,17 +104,20 @@ public class ModBlocks {
             registerBlocks("hellwood_planks", () -> new Block(
                     BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_PLANKS)){
                 @Override
-                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                public boolean isFlammable(@NotNull BlockState state, @NotNull BlockGetter level,
+                                           @NotNull BlockPos pos, @NotNull Direction direction) {
                     return true;
                 }
 
                 @Override
-                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                public int getFlammability(@NotNull BlockState state, @NotNull BlockGetter level,
+                                           @NotNull BlockPos pos, @NotNull Direction direction) {
                     return 2;
                 }
 
                 @Override
-                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                public int getFireSpreadSpeed(@NotNull BlockState state, @NotNull BlockGetter level,
+                                              @NotNull BlockPos pos, @NotNull Direction direction) {
                     return 4;
                 }
             });
@@ -106,17 +125,20 @@ public class ModBlocks {
             registerBlocks("hellwood_leaves", () -> new LeavesBlock(
                     BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_LEAVES)){
                 @Override
-                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                public boolean isFlammable(@NotNull BlockState state, @NotNull BlockGetter level,
+                                           @NotNull BlockPos pos, @NotNull Direction direction) {
                     return true;
                 }
 
                 @Override
-                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                public int getFlammability(@NotNull BlockState state, @NotNull BlockGetter level,
+                                           @NotNull BlockPos pos, @NotNull Direction direction) {
                     return 6;
                 }
 
                 @Override
-                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                public int getFireSpreadSpeed(@NotNull BlockState state, @NotNull BlockGetter level,
+                                              @NotNull BlockPos pos, @NotNull Direction direction) {
                     return 3;
                 }
             });
@@ -166,7 +188,8 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .lightLevel(p_50872_ -> 13)){
                 @Override
-                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                public void appendHoverText(@NotNull ItemStack stack, Item.@NotNull TooltipContext context,
+                                            @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.nine_nether_regions.reinforced_obsidian"));
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
@@ -208,12 +231,18 @@ public class ModBlocks {
                             .sound(SoundType.GRASS)
                             .offsetType(BlockBehaviour.OffsetType.XZ)
                             .pushReaction(PushReaction.DESTROY)));
+
+    /*
+    警告：下方两个盆栽由于新函数无法正确调用的问题依然使用弃用函数，如果升级或降级版本请注意函数调用。
+     */
+    @SuppressWarnings("deprecation")
     public static final DeferredBlock<Block> POTTED_PINESAP =
             registerBlockOnly("potted_pinesap", () -> new FlowerPotBlock(
                     PINESAP.get(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY)
                             .lightLevel(p_50872_ -> 8)
                             .noOcclusion()));
+    @SuppressWarnings("deprecation")
     public static final DeferredBlock<Block> POTTED_HELLWOOD_SAPLING =
             registerBlockOnly("potted_hellwood_sapling", () -> new FlowerPotBlock(
                     HELLWOOD_SAPLING.get(),
@@ -236,7 +265,8 @@ public class ModBlocks {
                     .strength(66.0F,6066.0F)
                     .sound(SoundType.NETHERITE_BLOCK)){
                 @Override
-                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                public void appendHoverText(@NotNull ItemStack stack, Item.@NotNull TooltipContext context,
+                                            @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.nine_nether_regions.hellalloy_block"));
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
@@ -265,7 +295,6 @@ public class ModBlocks {
                     .strength(22.0F,85.0F)
                     .lightLevel(p_50872_ -> 4)
                     .sound(SoundType.STONE)), new Item.Properties().rarity(Rarity.UNCOMMON));
-
     public static final DeferredBlock<Block> HELLIGHT =
             registerBlocks("hellight", () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_LIGHT_BLUE)
@@ -273,6 +302,7 @@ public class ModBlocks {
                     .strength(1.5F,6.0F)
                     .sound(SoundType.SCULK_CATALYST)
                     .lightLevel(p_50872_ -> 15)));
+    //炼狱晶核
     public static final DeferredBlock<Block> HELL_NUCLEUS =
             registerBlocks("hell_nucleus", () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.NETHER)
@@ -282,24 +312,28 @@ public class ModBlocks {
                     .lightLevel(p_50872_ -> 12)
             ){
                 @Override
-                public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
+                public void stepOn(@NotNull Level level, @NotNull BlockPos pos,
+                                   @NotNull BlockState state, @NotNull Entity entity) {
                     if (!entity.fireImmune()){
                         entity.setRemainingFireTicks(300);
                     }
                     super.stepOn(level, pos, state, entity);
                 }
                 @Override
-                protected @NotNull VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+                protected @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level,
+                                                       @NotNull BlockPos pos, @NotNull CollisionContext context) {
                     return Block.box(4.0D, 0.0D, 4.0D, 12.0D, 8.0D, 12.0D);
                 }
 
                 @Override
-                protected @NotNull VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+                protected @NotNull VoxelShape getCollisionShape(@NotNull BlockState state, @NotNull BlockGetter level,
+                                                                @NotNull BlockPos pos, @NotNull CollisionContext context) {
                     return Block.box(4.0D, 0.0D, 4.0D, 12.0D, 8.0D, 12.0D);
                 }
 
                 @Override
-                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                public void appendHoverText(@NotNull ItemStack stack, Item.@NotNull TooltipContext context,
+                                            @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.nine_nether_regions.hell_nucleus"));
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
@@ -314,7 +348,8 @@ public class ModBlocks {
                     .sound(SoundType.NETHERITE_BLOCK)
                     .lightLevel(p_50872_ -> 4)){
                 @Override
-                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                public void appendHoverText(@NotNull ItemStack stack, Item.@NotNull TooltipContext context,
+                                            @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.nine_nether_regions.styx_block"));
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
@@ -329,15 +364,17 @@ public class ModBlocks {
                     .noOcclusion()
                     .lightLevel(state -> state.getValue(HellLampBlock.CLICKED) ? 15 : 0)){
                 @Override
-                protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+                protected @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level,
+                                                       @NotNull BlockPos pos, @NotNull CollisionContext context) {
                     return Block.box(3.0D, 0.0D, 3.0D, 13.0D, 16.0D, 13.0D);
                 }
                 @Override
-                protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+                protected @NotNull VoxelShape getCollisionShape(@NotNull BlockState state, @NotNull BlockGetter level,
+                                                                @NotNull BlockPos pos, @NotNull CollisionContext context) {
                     return Block.box(3.0D, 0.0D, 3.0D, 13.0D, 14.0D, 13.0D);
                 }
                 @Override
-                protected boolean useShapeForLightOcclusion(BlockState state) {
+                protected boolean useShapeForLightOcclusion(@NotNull BlockState state) {
                     return true;
                 }
             });
@@ -351,12 +388,13 @@ public class ModBlocks {
                     .noOcclusion()
                     .lightLevel(state -> state.getValue(StyxLampBlock.CLICKED) ? 15 : 2)){
                 @Override
-                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                public void appendHoverText(@NotNull ItemStack stack, Item.@NotNull TooltipContext context,
+                                            @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.nine_nether_regions.styx_lamp"));
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
                 @Override
-                protected boolean useShapeForLightOcclusion(BlockState state) {
+                protected boolean useShapeForLightOcclusion(@NotNull BlockState state) {
                     return true;
                 }
             });
@@ -475,7 +513,8 @@ public class ModBlocks {
                     .sound(SoundType.METAL)
                     .mapColor(MapColor.COLOR_LIGHT_GREEN)){
                 @Override
-                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                public void appendHoverText(@NotNull ItemStack stack, Item.@NotNull TooltipContext context,
+                                            @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.nine_nether_regions.fluoroscopy_block"));
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }

@@ -40,7 +40,7 @@ public class WitherStaff extends Item {
                     EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND;
             itemStack.hurtAndBreak(1, player, slot);
 
-            player.getCooldowns().addCooldown(this, 50);
+            player.getCooldowns().addCooldown(this, 40);
         }
         return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());
     }

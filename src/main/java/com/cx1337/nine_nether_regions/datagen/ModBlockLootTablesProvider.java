@@ -55,6 +55,8 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.STYX_LAMP.get());
         dropSelf(ModBlocks.CARVED_WINDOW.get());
         dropSelf(ModBlocks.UW_CARVED_WINDOW.get());
+        dropSelf(ModBlocks.VOID_NEBULA.get());
+        dropSelf(ModBlocks.VOIDRITE_BLOCK.get());
 
         dropSelf(ModBlocks.HELLWOOD_LOG.get());
         dropSelf(ModBlocks.HELLWOOD_WOOD.get());

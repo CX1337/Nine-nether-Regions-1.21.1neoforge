@@ -210,6 +210,53 @@ public class ModAdvancementProvider extends AdvancementProvider {
                     .parent(shining)
                     .save(saver, ResourceLocation.fromNamespaceAndPath(NineNetherRegions.MODID,"dazzling"),
                             existingFileHelper);
+            //虚无锻造
+            AdvancementHolder voidriteIngot = Advancement.Builder.advancement()
+                    .display(
+                            ModItems.VOIDRITE_INGOT.get(),
+                            Component.translatable("advancement.nine_nether_regions.voidrite_ingot.title"),
+                            Component.translatable("advancement.nine_nether_regions.voidrite_ingot.description"),
+                            null,
+                            AdvancementType.GOAL,
+                            true, true, false
+                    )
+                    .addCriterion("has_voidrite_ingot",
+                            InventoryChangeTrigger.TriggerInstance.hasItems(
+                                    ModItems.VOIDRITE_INGOT.get()
+                            ))
+                    .parent(beatingEnergy)
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(NineNetherRegions.MODID,"voidrite_ingot"),
+                            existingFileHelper);
+            //空虚躯壳。
+            AdvancementHolder voidriteArmor = Advancement.Builder.advancement()
+                    .display(
+                            ModItems.VOIDRITE_CHESTPLATE.get(),
+                            Component.translatable("advancement.nine_nether_regions.voidrite_armor.title"),
+                            Component.translatable("advancement.nine_nether_regions.voidrite_armor.description"),
+                            null,
+                            AdvancementType.GOAL,
+                            true, true, false
+                    )
+                    .addCriterion("has_steel_helmet",
+                            InventoryChangeTrigger.TriggerInstance.hasItems(
+                                    ModItems.VOIDRITE_HELMET.get()
+                            ))
+                    .addCriterion("has_steel_chestplate",
+                            InventoryChangeTrigger.TriggerInstance.hasItems(
+                                    ModItems.VOIDRITE_CHESTPLATE.get()
+                            ))
+                    .addCriterion("has_steel_leggings",
+                            InventoryChangeTrigger.TriggerInstance.hasItems(
+                                    ModItems.VOIDRITE_LEGGINGS.get()
+                            ))
+                    .addCriterion("has_steel_boots",
+                            InventoryChangeTrigger.TriggerInstance.hasItems(
+                                    ModItems.VOIDRITE_BOOTS.get()
+                            ))
+                    .requirements(AdvancementRequirements.Strategy.OR)
+                    .parent(voidriteIngot)
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(NineNetherRegions.MODID,"voidrite_armor"),
+                            existingFileHelper);
             //脆弱的吸血鬼。
             AdvancementHolder vampire = Advancement.Builder.advancement()
                     .display(

@@ -70,6 +70,10 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.FIRE_CORE.get());
         basicItem(ModItems.WITHER_CORE.get());
         basicItem(ModItems.VOID_CORE.get());
+        basicItem(ModItems.VOID_SHARD.get());
+        basicItem(ModItems.VOIDRITE_INGOT.get());
+        basicItem(ModItems.VOIDRITE_UPGRADE_SMITHING_TEMPLATE.get());
+        basicItem(ModItems.VOIDRITE_ROD.get());
         basicItem(ModItems.WEB_BALL.get());
         basicItem(ModItems.WEB_FRUIT.get());
         basicItem(ModItems.HELLALLOY_ROD.get());
@@ -79,6 +83,10 @@ public class ModItemModelsProvider extends ItemModelProvider {
         //盔甲。
         for (var sup : List.of(ModItems.HELLALLOY_HELMET, ModItems.HELLALLOY_CHESTPLATE,ModItems.HELLALLOY_LEGGINGS,
                 ModItems.HELLALLOY_BOOTS)){
+            basicItem(sup.get());
+        }
+        for (var sup : List.of(ModItems.VOIDRITE_HELMET, ModItems.VOIDRITE_CHESTPLATE,ModItems.VOIDRITE_LEGGINGS,
+                ModItems.VOIDRITE_BOOTS)){
             basicItem(sup.get());
         }
         for (var sup : List.of(ModItems.RAINBOWGEM_HELMET, ModItems.RAINBOWGEM_CHESTPLATE,ModItems.RAINBOWGEM_LEGGINGS,
@@ -127,6 +135,11 @@ public class ModItemModelsProvider extends ItemModelProvider {
         handheldItem(ModItems.RAINBOWGEM_PICKAXE.get());
         handheldItem(ModItems.RAINBOWGEM_SHOVEL.get());
         handheldItem(ModItems.RAINBOWGEM_SWORD.get());
+        handheldItem(ModItems.VOIDRITE_AXE.get());
+        handheldItem(ModItems.VOIDRITE_HOE.get());
+        handheldItem(ModItems.VOIDRITE_PICKAXE.get());
+        handheldItem(ModItems.VOIDRITE_SHOVEL.get());
+        handheldItem(ModItems.VOIDRITE_SWORD.get());
         handheldItem(ModItems.RUBY_SWORD.get());
         handheldItem(ModItems.STYX_PICKAXE.get());
 

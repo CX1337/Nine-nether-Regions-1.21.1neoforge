@@ -92,6 +92,19 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.WITHER_STAFF.get(), "Wither Staff");
         add(ModItems.VOID_CORE.get(), "Void Core");
         add(ModItems.VOID_STAFF.get(), "Void Staff");
+        add(ModItems.VOID_SHARD.get(), "Void Shard");
+        add(ModItems.VOIDRITE_INGOT.get(), "Voidrite Ingot");
+        add(ModItems.VOIDRITE_UPGRADE_SMITHING_TEMPLATE.get(), "Smithing Template");
+        add(ModItems.VOIDRITE_ROD.get(), "Voidrite Rod");
+        add(ModItems.VOIDRITE_AXE.get(), "Voidrite Axe");
+        add(ModItems.VOIDRITE_HOE.get(), "Voidrite Hoe");
+        add(ModItems.VOIDRITE_PICKAXE.get(), "Voidrite Pickaxe");
+        add(ModItems.VOIDRITE_SHOVEL.get(), "Voidrite Shovel");
+        add(ModItems.VOIDRITE_SWORD.get(), "Voidrite Sword");
+        add(ModItems.VOIDRITE_HELMET.get(), "Voidrite Helmet");
+        add(ModItems.VOIDRITE_CHESTPLATE.get(), "Voidrite Chestplate");
+        add(ModItems.VOIDRITE_LEGGINGS.get(), "Voidrite Leggings");
+        add(ModItems.VOIDRITE_BOOTS.get(), "Voidrite Boots");
         add(ModItems.RUBY.get(), "Ruby");
         add(ModItems.RAINBOWGEM.get(), "Rainbow Jade");
         add(ModItems.RAINBOWGEM_AXE.get(), "Rainbow Jade Axe");
@@ -162,6 +175,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.UNDERWORLD_BRICK_WALL.get(), "Underworld Brick Wall");
         add(ModBlocks.UNDERWORLD_SPIRIT_STONE.get(), "Underworld Spirit Stone");
         add(ModBlocks.UNDERWORLD_CRYSTAL_ORE.get(), "Underworld Crystal ore");
+        add(ModBlocks.VOID_NEBULA.get(), "Void Nebula");
+        add(ModBlocks.VOIDRITE_BLOCK.get(), "Voidrite Block");
 
         add("effect.nine_nether_regions.decline", "Decline");
         add("item.minecraft.potion.effect.decline_potion", "Decline Potion");
@@ -227,6 +242,10 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("advancement.nine_nether_regions.shining.description", "Get Rainbow Jade.");
         add("advancement.nine_nether_regions.dazzling.title", "Dazzling!");
         add("advancement.nine_nether_regions.dazzling.description", "Obtain a Rainbow Jade armor.");
+        add("advancement.nine_nether_regions.voidrite_ingot.title", "Void Forging");
+        add("advancement.nine_nether_regions.voidrite_ingot.description", "Obtain a piece of Voidrite Ingot.");
+        add("advancement.nine_nether_regions.voidrite_armor.title", "Void Your Body");
+        add("advancement.nine_nether_regions.voidrite_armor.description", "Obtain a Voidrite armor.");
         add("advancement.nine_nether_regions.vampire.title", "Fragile Vampire");
         add("advancement.nine_nether_regions.vampire.description", "Obtain a Ruby Sword.");
         add("advancement.nine_nether_regions.hell_archive.title", "Archive of Underworld");
@@ -266,6 +285,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.nine_nether_regions.steel_base", "§3§oAfter a thousand trials and tribulations, one can obtain a good piece of steel.");
         add("tooltip.nine_nether_regions.steel_ingot", "§3§oBetter than iron.");
         add("tooltip.nine_nether_regions.rainbowgem_armors", "§3§oAll set Bonus: 10% damage reduction against nearly all damage types.");
+        add("tooltip.nine_nether_regions.voidrite_armors", "§3§oAll set Bonus: 15% damage reduction against nearly all damage types.");
         add("tooltip.nine_nether_regions.alloy_hilt", "§3§oIt can be used as a Weapon.BUT that's by no means its true purpose.");
         add("tooltip.nine_nether_regions.hellalloy_helmet_alt",
                 "§3§oSelf healing: If the durability is not sufficient, the equipment will automatically restore durability in the armor bar or player backpack §1(4 points restored every 2 seconds)§r§3§o.\nSingle effect: When equipped on the armor bar, it continuously provides players with §6night_vision§r§3§o(effect level:1), while clearing §7blindness§r§3§o and §7darkness§r§3§o effects on the player's body.\nComplete set of effects: Provide a 34% reduction for most damages,force to restore 0.7 point of health for every 10 ticks and provide §6resistance§r§3§o(level 2) effect.");
@@ -301,5 +321,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.nine_nether_regions.ruby_sword", "§3§oA bloodthirsty sword that deals decent damage, at the cost of being extremely fragile.");
         add("tooltip.nine_nether_regions.styx_lamp", "§3§oA lamp that can be toggled on and off. Right-click to switch its state. When lit, creatures will no longer spawn within a radius of 64 blocks centered on it.\n §r§4§oImportant Note: If the lamp is already lit when entering the world, its creature-spawning suppression will not be active! This effect will function normally after toggling it once.");
         add("tooltip.nine_nether_regions.fluoroscopy_block", "§3§oA special block formed by fusing and compressing several transparent blocks, which may be used to locate hidden ores and structures underground…");
+        add("tooltip.nine_nether_regions.voidrite_ingot", "§3§oCondenses the myriad powers of the Void into a single ingot.");
+        add("tooltip.nine_nether_regions.voidrite_upgrade_smithing_template", "§3Voidrite Upgrade");
     }
 }
