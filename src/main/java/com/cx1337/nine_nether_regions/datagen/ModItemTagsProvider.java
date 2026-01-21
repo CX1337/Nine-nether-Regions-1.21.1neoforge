@@ -129,7 +129,11 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.BOW_ENCHANTABLE)
                 .add(ModItems.HELLALLOY_LONGBOW.get());
         tag(ItemTags.DURABILITY_ENCHANTABLE)
-                .add(ModItems.HELLALLOY_LONGBOW.get());
+                .add(ModItems.HELLALLOY_LONGBOW.get())
+                .add(ModItems.ENDER_STAFF.get())
+                .add(ModItems.FIRE_STAFF.get())
+                .add(ModItems.VOID_STAFF.get())
+                .add(ModItems.WITHER_STAFF.get());
 
         //木材
         tag(ItemTags.LOGS_THAT_BURN)

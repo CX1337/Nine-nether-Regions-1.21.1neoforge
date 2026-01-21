@@ -307,7 +307,7 @@ public class ModBlocks {
             registerBlocks("hell_nucleus", () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.NETHER)
                     .instrument(NoteBlockInstrument.BANJO)
-                    .strength(3.5F,200.0F)
+                    .strength(3.0F,200.0F)
                     .sound(SoundType.AMETHYST)
                     .lightLevel(p_50872_ -> 12)
             ){

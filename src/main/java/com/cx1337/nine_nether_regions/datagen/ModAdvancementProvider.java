@@ -224,7 +224,7 @@ public class ModAdvancementProvider extends AdvancementProvider {
                             InventoryChangeTrigger.TriggerInstance.hasItems(
                                     ModItems.VOIDRITE_INGOT.get()
                             ))
-                    .parent(beatingEnergy)
+                    .parent(dazzling)
                     .save(saver, ResourceLocation.fromNamespaceAndPath(NineNetherRegions.MODID,"voidrite_ingot"),
                             existingFileHelper);
             //空虚躯壳。

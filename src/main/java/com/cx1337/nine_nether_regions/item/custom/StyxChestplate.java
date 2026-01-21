@@ -62,12 +62,8 @@ public class StyxChestplate extends ArmorItem {
                 MobEffects.DAMAGE_BOOST,310,2,true,false,false
         ));
 
-        if (player.isOnFire() || player.isInLava()){
-            player.clearFire();
-        }
-        if (player.getRemainingFireTicks() > 0){
-            player.setRemainingFireTicks(0);
-        }
+        player.setRemainingFireTicks(0);
+        player.clearFire();
 
         if (player.hasEffect(MobEffects.WITHER)) {
             player.removeEffect(MobEffects.WITHER);

@@ -35,6 +35,7 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.LivingEvent;
 import net.neoforged.neoforge.event.entity.living.MobSpawnEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
@@ -222,7 +223,7 @@ public class ModEvents {
 
             if (fullSet) {
                 float originalDamage = event.getNewDamage();
-                float reducedDamage = originalDamage * 0.66f;
+                float reducedDamage = originalDamage * 0.56f;
                 event.setNewDamage(reducedDamage);
             }
         }
@@ -240,7 +241,7 @@ public class ModEvents {
 
             if (fullSet) {
                 float originalDamage = event.getNewDamage();
-                float reducedDamage = originalDamage * 0.90f;
+                float reducedDamage = originalDamage * 0.93f;
                 event.setNewDamage(reducedDamage);
             }
         }
@@ -258,7 +259,7 @@ public class ModEvents {
 
             if (fullSet) {
                 float originalDamage = event.getNewDamage();
-                float reducedDamage = originalDamage * 0.85f;
+                float reducedDamage = originalDamage * 0.82f;
                 event.setNewDamage(reducedDamage);
             }
         }
@@ -302,7 +303,7 @@ public class ModEvents {
     }
     private void addIfMissingStyx(Player player, Holder<MobEffect> effect, int duration, int amplifier, boolean particles) {
         MobEffectInstance inst = player.getEffect(effect);
-        if (inst == null || inst.getAmplifier() < amplifier || inst.getDuration() < 300) {
+        if (inst == null || inst.getAmplifier() < amplifier || inst.getDuration() < 309) {
             player.addEffect(new MobEffectInstance(effect, duration, amplifier, true, particles, true));
         }
     }
@@ -341,14 +342,13 @@ public class ModEvents {
                     return;
             }
                 if (fullSet) {
-                    float reducedDamage = originalDamage * 0.28f;
+                    float reducedDamage = originalDamage * 0.25f;
                     event.setNewDamage(reducedDamage);
                 }
 
             boolean hasBoots = player.getItemBySlot(EquipmentSlot.FEET).is(ModItems.STYX_BOOTS.get());
                 if (hasBoots && event.getSource().is(DamageTypes.FALL)) {
-                    float reducedFallDamage = originalDamage * 0.15f;
-                    event.setNewDamage(reducedFallDamage);
+                    event.setNewDamage(0);
                 }
         }
     }

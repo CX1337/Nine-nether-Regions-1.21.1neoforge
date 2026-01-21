@@ -65,7 +65,7 @@ public class WitherStaff extends Item {
     }
     @Override
     public boolean isEnchantable(@NotNull ItemStack stack) {
-        return false;
+        return true;
     }
 
     @Override

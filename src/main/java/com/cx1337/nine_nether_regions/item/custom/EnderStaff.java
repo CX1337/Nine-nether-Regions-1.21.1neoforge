@@ -92,7 +92,7 @@ public class EnderStaff extends Item {
 
     @Override
     public boolean isEnchantable(@NotNull ItemStack stack) {
-        return false;
+        return true;
     }
 
     @Override
