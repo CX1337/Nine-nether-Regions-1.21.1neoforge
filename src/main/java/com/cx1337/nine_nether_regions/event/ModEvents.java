@@ -4,6 +4,7 @@ import com.cx1337.nine_nether_regions.block.ModBlocks;
 import com.cx1337.nine_nether_regions.effect.ModEffects;
 import com.cx1337.nine_nether_regions.item.ModItems;
 import com.cx1337.nine_nether_regions.item.custom.HellalloyLongbow;
+import com.cx1337.nine_nether_regions.item.custom.StaffItem;
 import com.cx1337.nine_nether_regions.potion.ModPotions;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
@@ -34,9 +35,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
-import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
-import net.neoforged.neoforge.event.entity.living.LivingEvent;
-import net.neoforged.neoforge.event.entity.living.MobSpawnEvent;
+import net.neoforged.neoforge.event.entity.living.*;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 import java.util.HashSet;
@@ -404,6 +403,35 @@ public class ModEvents {
         }
     }
 
+    //磁锢效果禁疗
+    @SubscribeEvent
+    public void onLivingHealMag(LivingHealEvent event) {
+        LivingEntity entity = event.getEntity();
+        if(entity .hasEffect(ModEffects.MAG_CONFINE)) {
+            event.setCanceled(true);
+        }
+    }
+
+    //法杖副手冷却
+    @SubscribeEvent
+    public void onStaffUseFinish(LivingEntityUseItemEvent.Finish event) {
+        if (!(event.getEntity() instanceof Player player)) {
+            return;
+        }
+        if (player.level().isClientSide) {
+            return;
+        }
+        if (!(player.getOffhandItem().getItem() instanceof StaffItem staffItem)) {
+            return;
+        }
+        var offhandItem = player.getOffhandItem().getItem();
+        if (player.getCooldowns().isOnCooldown(offhandItem)) {
+            return;
+        }
+        int cooldown = staffItem.getCooldownOnMainHandUse();
+        player.getCooldowns().addCooldown(offhandItem, cooldown);
+    }
+
     //药剂
     @SubscribeEvent
     public void onBrewingRecipeRegister(RegisterBrewingRecipesEvent event) {
@@ -412,7 +440,10 @@ public class ModEvents {
         builder.addMix(ModPotions.DECLINE_POTION, ModItems.RUBY.get(), ModPotions.S_DECLINE_POTION);
         builder.addMix(Potions.AWKWARD, ModBlocks.BLOODBLADE_ROCK.get().asItem(), ModPotions.BB_CURSE_POTION);
         builder.addMix(ModPotions.BB_CURSE_POTION, ModItems.RUBY.get(), ModPotions.S_BB_CURSE_POTION);
+        builder.addMix(Potions.AWKWARD, ModItems.VOID_SHARD.get(), ModPotions.MAG_CONFINE_POTION);
         builder.addMix(Potions.AWKWARD, Items.BLUE_ICE, ModPotions.FROST_POTION);
         builder.addMix(ModPotions.FROST_POTION, ModItems.RUBY.get(), ModPotions.S_FROST_POTION);
+        builder.addMix(Potions.AWKWARD, ModItems.STEEL_INGOT.get(), ModPotions.STRIKE_POTION);
+        builder.addMix(ModPotions.STRIKE_POTION, ModItems.RUBY.get(), ModPotions.S_STRIKE_POTION);
     }
 }

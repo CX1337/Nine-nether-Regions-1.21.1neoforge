@@ -27,7 +27,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.CHERRY_CHESTPLATE.get(), "§d Cherry Chestplate");
         add(ModItems.CHERRY_LEGGINGS.get(), "§d Cherry Leggings");
         add(ModItems.CHERRY_BOOTS.get(), "§d Cherry Boots");
-        add(ModItems.STYX_FERRYMAN_MUSIC_DISC.get(), "Music Disc--Styx Ferryman");
+        add(ModItems.STYX_FERRYMAN_MUSIC_DISC.get(), "Music Disc--Charon");
         add(ModItems.DIAMOND_BOWSTRING.get(), "Diamond Bowstring");
         add(ModItems.EMPTY_FABRIC.get(), "Empty Fabric");
         add(ModItems.FLUORESCENCE_FOREST_MUSIC_DISC.get(), "Music Disc--Biomes/Fluorescence Forest");
@@ -187,6 +187,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("item.minecraft.lingering_potion.effect.s_decline_potion", "Strengthened Decline Lingering Potion");
         add("death.attack.decline", "%1$s was dissipated into the wind");
         add("death.attack.decline.player", "%1$s faded away while fighting with %2$s");
+        add("death.attack.decline.item", "%1$s was erased by %2$s with %3$s");
         add("effect.nine_nether_regions.bloodblade_curse", "Bloodblade Curse");
         add("item.minecraft.potion.effect.bb_curse_potion", "Bloodblade Curse Potion");
         add("item.minecraft.splash_potion.effect.bb_curse_potion", "Bloodblade Curse Splash Potion");
@@ -204,6 +205,20 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("item.minecraft.lingering_potion.effect.s_frost_potion", "Strengthened Frost Lingering Potion");
         add("effect.nine_nether_regions.wrapped", "Wrapped");
         add("effect.nine_nether_regions.hell_blast", "Hell Blast");
+        add("effect.nine_nether_regions.mag_confine", "Mag Confine");
+        add("item.minecraft.potion.effect.mag_confine_potion", "Mag Confine Potion");
+        add("item.minecraft.splash_potion.effect.mag_confine_potion", "Mag Confine Splash Potion");
+        add("item.minecraft.lingering_potion.effect.mag_confine_potion", "Mag Confine Lingering Potion");
+        add("effect.nine_nether_regions.strike", "Strike");
+        add("death.attack.magelectro", "%1$s was assimilated into the electric current.");
+        add("death.attack.magelectro.player", "%1$s was electrocuted to a crisp while fighting with %2$s");
+        add("death.attack.magelectro.item", "%1$s was electrocuted to a crisp by %2$s with %3$s");
+        add("item.minecraft.potion.effect.strike_potion", "Strike Potion");
+        add("item.minecraft.splash_potion.effect.strike_potion", "Strike Splash Potion");
+        add("item.minecraft.lingering_potion.effect.strike_potion", "Strike Lingering Potion");
+        add("item.minecraft.potion.effect.s_strike_potion", "Strengthened Strike Potion");
+        add("item.minecraft.splash_potion.effect.s_strike_potion", "Strengthened Strike Potion");
+        add("item.minecraft.lingering_potion.effect.s_strike_potion", "Strengthened Strike Lingering Potion");
 
         add("enchantment.nine_nether_regions.storm_anger", "Anger of Storm");
         add("enchantment.nine_nether_regions.soul_rip", "Soul Rip");

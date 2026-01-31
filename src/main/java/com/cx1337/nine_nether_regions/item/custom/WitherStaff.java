@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class WitherStaff extends Item {
+public class WitherStaff extends Item implements  StaffItem {
     public WitherStaff() {
         super(new Properties().durability(404).rarity(Rarity.RARE).fireResistant());
     }

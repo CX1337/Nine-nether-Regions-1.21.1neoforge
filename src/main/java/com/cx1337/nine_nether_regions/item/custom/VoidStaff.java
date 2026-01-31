@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class VoidStaff extends Item {
+public class VoidStaff extends Item implements  StaffItem {
     public VoidStaff() {
         super(new Properties().durability(404).rarity(Rarity.EPIC).fireResistant());
     }

@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class FireStaff extends Item {
+public class FireStaff extends Item implements  StaffItem {
     public FireStaff() {
         super(new Properties().durability(101).rarity(Rarity.UNCOMMON));
     }

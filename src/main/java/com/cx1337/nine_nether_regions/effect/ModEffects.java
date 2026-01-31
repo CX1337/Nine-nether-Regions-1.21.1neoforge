@@ -25,6 +25,10 @@ public class ModEffects {
             MOB_EFFECTS.register("wrapped", () -> new WrappedEffect(MobEffectCategory.HARMFUL, 0x797979));
     public static final DeferredHolder<MobEffect, HellBlastEffect> HELL_BLAST =
             MOB_EFFECTS.register("hell_blast", () -> new HellBlastEffect(MobEffectCategory.HARMFUL, 0x000f0a));
+    public static final DeferredHolder<MobEffect, MagConfineEffect> MAG_CONFINE =
+            MOB_EFFECTS.register("mag_confine", () -> new MagConfineEffect(MobEffectCategory.HARMFUL, 0x004c4d));
+    public static final DeferredHolder<MobEffect, StrikeEffect> STRIKE =
+            MOB_EFFECTS.register("strike", () -> new StrikeEffect(MobEffectCategory.HARMFUL, 0xfcfdd0));
 
 
     public static void register(IEventBus eventBus){

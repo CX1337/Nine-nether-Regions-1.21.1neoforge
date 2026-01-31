@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class EnderStaff extends Item {
+public class EnderStaff extends Item implements  StaffItem {
     public EnderStaff() {
         super(new Properties().durability(202).rarity(Rarity.RARE).fireResistant());
     }

@@ -188,6 +188,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("item.minecraft.lingering_potion.effect.s_decline_potion", "滞留型强效归寂药水");
         add("death.attack.decline", "%1$s随风飘散了");
         add("death.attack.decline.player", "%1$s在与%2$s战斗时归于虚无");
+        add("death.attack.decline.item", "%1$s被%2$s用%3$s从世界上抹去了存在。");
         add("effect.nine_nether_regions.bloodblade_curse", "血刃诅咒");
         add("item.minecraft.potion.effect.bb_curse_potion", "血咒药水");
         add("item.minecraft.splash_potion.effect.bb_curse_potion", "喷溅型血咒药水");
@@ -205,6 +206,20 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("item.minecraft.lingering_potion.effect.s_frost_potion", "滞留型强效冻结药水");
         add("effect.nine_nether_regions.wrapped", "缠绕");
         add("effect.nine_nether_regions.hell_blast", "幽冥爆破");
+        add("effect.nine_nether_regions.mag_confine", "磁锢");
+        add("item.minecraft.potion.effect.mag_confine_potion", "磁锢药水");
+        add("item.minecraft.splash_potion.effect.mag_confine_potion", "喷溅型磁锢药水");
+        add("item.minecraft.lingering_potion.effect.mag_confine_potion", "滞留型磁锢药水");
+        add("effect.nine_nether_regions.strike", "电击");
+        add("death.attack.magelectro", "%1$s被化作了电流的一部分。");
+        add("death.attack.magelectro.player", "%1$s在逃离%2$s时被电成了焦炭。");
+        add("death.attack.magelectro.item", "%1$s被%2$s用%3$s电成了焦炭。");
+        add("item.minecraft.potion.effect.strike_potion", "电离药水");
+        add("item.minecraft.splash_potion.effect.strike_potion", "喷溅型电离药水");
+        add("item.minecraft.lingering_potion.effect.strike_potion", "滞留型电离药水");
+        add("item.minecraft.potion.effect.s_strike_potion", "强化电离药水");
+        add("item.minecraft.splash_potion.effect.s_strike_potion", "喷溅型强化电离药水");
+        add("item.minecraft.lingering_potion.effect.s_strike_potion", "滞留型强化电离药水");
 
         add("enchantment.nine_nether_regions.storm_anger", "风暴之怒");
         add("enchantment.nine_nether_regions.soul_rip", "灵魂撕裂");

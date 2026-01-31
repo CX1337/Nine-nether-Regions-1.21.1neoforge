@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "nine_nether_regions:decline"
+    "nine_nether_regions:decline",
+    "nine_nether_regions:magelectro"
   ]
 }
