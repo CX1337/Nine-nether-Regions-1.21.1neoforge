@@ -6,6 +6,7 @@ import com.cx1337.nine_nether_regions.item.ModItems;
 import com.cx1337.nine_nether_regions.item.custom.HellalloyLongbow;
 import com.cx1337.nine_nether_regions.item.custom.StaffItem;
 import com.cx1337.nine_nether_regions.potion.ModPotions;
+import jdk.jfr.Event;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.core.Holder;
@@ -38,8 +39,10 @@ import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.*;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
+import java.lang.reflect.Field;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class ModEvents {
@@ -69,10 +72,12 @@ public class ModEvents {
         FIREPROOF_ITEMS.add(ModItems.HELLALLOY_PICKAXE.get());
         FIREPROOF_ITEMS.add(ModItems.HELLALLOY_SHOVEL.get());
         FIREPROOF_ITEMS.add(ModItems.HELLALLOY_SWORD.get());
+        FIREPROOF_ITEMS.add(ModItems.STYX_E_CORE.get());
         FIREPROOF_ITEMS.add(ModItems.STYX_FABRIC.get());
         FIREPROOF_ITEMS.add(ModItems.STYX_TEAR.get());
         FIREPROOF_ITEMS.add(ModItems.STYX_INGOT.get());
         FIREPROOF_ITEMS.add(ModItems.STYX_SWORD.get());
+        FIREPROOF_ITEMS.add(ModItems.STYX_TWINNED_SWORD.get());
         FIREPROOF_ITEMS.add(ModItems.STYX_HELMET.get());
         FIREPROOF_ITEMS.add(ModItems.STYX_CHESTPLATE.get());
         FIREPROOF_ITEMS.add(ModItems.STYX_LEGGINGS.get());
@@ -436,11 +441,8 @@ public class ModEvents {
     @SubscribeEvent
     public void onBrewingRecipeRegister(RegisterBrewingRecipesEvent event) {
         PotionBrewing.Builder builder = event.getBuilder();
-        builder.addMix(Potions.AWKWARD, ModItems.GHOSTLIUM.get(), ModPotions.DECLINE_POTION);
-        builder.addMix(ModPotions.DECLINE_POTION, ModItems.RUBY.get(), ModPotions.S_DECLINE_POTION);
         builder.addMix(Potions.AWKWARD, ModBlocks.BLOODBLADE_ROCK.get().asItem(), ModPotions.BB_CURSE_POTION);
         builder.addMix(ModPotions.BB_CURSE_POTION, ModItems.RUBY.get(), ModPotions.S_BB_CURSE_POTION);
-        builder.addMix(Potions.AWKWARD, ModItems.VOID_SHARD.get(), ModPotions.MAG_CONFINE_POTION);
         builder.addMix(Potions.AWKWARD, Items.BLUE_ICE, ModPotions.FROST_POTION);
         builder.addMix(ModPotions.FROST_POTION, ModItems.RUBY.get(), ModPotions.S_FROST_POTION);
         builder.addMix(Potions.AWKWARD, ModItems.STEEL_INGOT.get(), ModPotions.STRIKE_POTION);

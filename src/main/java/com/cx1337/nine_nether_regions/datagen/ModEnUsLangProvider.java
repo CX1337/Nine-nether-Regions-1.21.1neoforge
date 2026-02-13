@@ -51,11 +51,13 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.STYX_INGOT.get(), "§5§lStyx Ingot");
         add(ModItems.STYX_TEAR.get(), "§4§lStyx Tear");
         add(ModItems.STYX_SWORD.get(), "§4§lStyx Battle-sword");
+        add(ModItems.STYX_TWINNED_SWORD.get(), "§4§lStyx Twinned Sword");
         add(ModItems.STYX_PICKAXE.get(), "§4Styx Pickaxe");
         add(ModItems.STYX_HELMET.get(), "§4Styx Helmet");
         add(ModItems.STYX_CHESTPLATE.get(), "§4Styx Chestplate");
         add(ModItems.STYX_LEGGINGS.get(), "§4Styx Leggings");
         add(ModItems.STYX_BOOTS.get(), "§4Styx Boots");
+        add(ModItems.STYX_E_CORE.get(), "Styx Electrical Core");
         add(ModItems.STEEL_BASE.get(), "Steel Base");
         add(ModItems.STEEL_INGOT.get(), "Steel Ingot");
         add(ModItems.STEEL_NUGGET.get(), "Steel Nugget");
@@ -157,6 +159,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.POTTED_HELLWOOD_SAPLING.get(), "Potted Hellwood Sapling");
         add(ModBlocks.NULL_BLOCK.get(), "§c§k?????");
         add(ModBlocks.NULL_GRASSBLOCK.get(), "§c§k!!!!!");
+        add(ModBlocks.STYX_E_CORE_BLOCK.get(), "Styx Integrated Circuit Block");
         add(ModBlocks.STYX_BLOCK.get(), "§5§lStyx Block");
         add(ModBlocks.HELL_LAMP.get(), "Hell Lamp");
         add(ModBlocks.STYX_LAMP.get(), "§4Styx Lamp");
@@ -179,12 +182,6 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.VOIDRITE_BLOCK.get(), "Voidrite Block");
 
         add("effect.nine_nether_regions.decline", "Decline");
-        add("item.minecraft.potion.effect.decline_potion", "Decline Potion");
-        add("item.minecraft.splash_potion.effect.decline_potion", "Decline Splash Potion");
-        add("item.minecraft.lingering_potion.effect.decline_potion", "Decline Lingering Potion");
-        add("item.minecraft.potion.effect.s_decline_potion", "Strengthened Decline Potion");
-        add("item.minecraft.splash_potion.effect.s_decline_potion", "Strengthened Decline Splash Potion");
-        add("item.minecraft.lingering_potion.effect.s_decline_potion", "Strengthened Decline Lingering Potion");
         add("death.attack.decline", "%1$s was dissipated into the wind");
         add("death.attack.decline.player", "%1$s faded away while fighting with %2$s");
         add("death.attack.decline.item", "%1$s was erased by %2$s with %3$s");
@@ -206,9 +203,6 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("effect.nine_nether_regions.wrapped", "Wrapped");
         add("effect.nine_nether_regions.hell_blast", "Hell Blast");
         add("effect.nine_nether_regions.mag_confine", "Mag Confine");
-        add("item.minecraft.potion.effect.mag_confine_potion", "Mag Confine Potion");
-        add("item.minecraft.splash_potion.effect.mag_confine_potion", "Mag Confine Splash Potion");
-        add("item.minecraft.lingering_potion.effect.mag_confine_potion", "Mag Confine Lingering Potion");
         add("effect.nine_nether_regions.strike", "Strike");
         add("death.attack.magelectro", "%1$s was assimilated into the electric current.");
         add("death.attack.magelectro.player", "%1$s was electrocuted to a crisp while fighting with %2$s");
@@ -263,6 +257,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("advancement.nine_nether_regions.voidrite_armor.description", "Obtain a Voidrite armor.");
         add("advancement.nine_nether_regions.vampire.title", "Fragile Vampire");
         add("advancement.nine_nether_regions.vampire.description", "Obtain a Ruby Sword.");
+        add("advancement.nine_nether_regions.underworld_science.title", "Technology Deep in the Underworld");
+        add("advancement.nine_nether_regions.underworld_science.description", "Defeat The Styxier,get the electronic core of it.");
         add("advancement.nine_nether_regions.hell_archive.title", "Archive of Underworld");
         add("advancement.nine_nether_regions.hell_archive.description", "Get Hellalloy Ingot.");
         add("advancement.nine_nether_regions.hellalloy_set.title", "Hellalloy Protection");
@@ -273,8 +269,13 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("advancement.nine_nether_regions.styx_ingot.description", "Get Styx Ingot.");
         add("advancement.nine_nether_regions.styx_set.title", "Styx Soul Forged");
         add("advancement.nine_nether_regions.styx_set.description", "Obtain a full set of Styx armor.");
+        add("advancement.nine_nether_regions.styx_sword.title", "A Sword NOT Perfect?");
+        add("advancement.nine_nether_regions.styx_sword.description", "Upgrade your Hellalloy Sword with Styx ingot,get one of Charon's Weapon.");
+        add("advancement.nine_nether_regions.styx_twinned_sword.title", "The Ultimate Sword!");
+        add("advancement.nine_nether_regions.styx_twinned_sword.description", "Mix The Styxier's core into those weapons,get this unprecedented Twinned Sword!");
 
         add("tooltip.nine_nether_regions.amethyst_dagger", "§3§oAlthough this short sword is indeed small, the recipe is simple, and the attack power is not high, thanks to the vitality contained in amethyst, players have a 33% chance of recovering 1 point of health each time they use it to attack. Meanwhile, precisely because of its compact size, players can swing it faster.\nOf course, due to the fragility of amethyst itself, the durability of this short sword is not as high.");
+        add("tooltip.nine_nether_regions.styx_e_core", "§3§oThis circuit core contains the key structural information of the Styxier; perhaps you can use it to build your own guardian, or for some other purpose.");
         add("tooltip.nine_nether_regions.ghostlium_apple", "§3§o Tainted with a bit of the Underworld's power... but it tastes delicious!");
         add("tooltip.nine_nether_regions.enchanted_ghostlium_apple", "§3§oAn Enchanted Golden Apple, enhanced in every way by the Underworld's power. Delicious, filling, and incredibly potent.");
         add("tooltip.nine_nether_regions.web_fruit", "§3§oThe Web Ball neutralizes the teleportation ability of Chorus Fruit, while granting players wall-climbing capabilities similar to spiders for a limited time.");
@@ -294,7 +295,10 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.nine_nether_regions.styx_ingot", "§3§oJust Like Styx Ferryman's Will.Unbreakable.");
         add("tooltip.nine_nether_regions.styx_sword", "§3§oPress§r §6§oAlt§r§3§o to display more.");
         add("tooltip.nine_nether_regions.styx_sword_alt",
-                "§6§oIndestructible: §r§3§oUnder normal circumstances, this weapon's durability is not consumed. If the weapon's durability is damaged by some means, it will recover very quickly (42 points per 4 ticks).\n§r§6§oBattle-sword's Edge: §r§3§oWhen attacking a creature, the Styx Battle-sword simultaneously deals area damage to all non-friendly creatures within a 4-block radius centered on the player, dealing §r§e§o(Battle-sword's attack power + target's max health × 5%) §r§3§o damage.\n§r§6§oSoul Siphon: §r§3§oEach time the battle-sword attacks, it forcibly restores §r§d§o(player's max health × 8%) §r§3§o health to the player.\n§r§4§oWarning: Due to changes in this sword's attack mechanics, most utility enchantments (such as Sharpness, Smite) will likely have no effect on it!");
+                "§4§lCharon's weapon.Maybe not very perfect?Try to upgrade it.\n§r§6§oIndestructible: §r§3§oUnder normal circumstances, this weapon's durability is not consumed. If the weapon's durability is damaged by some means, it will recover very quickly (42 points per 4 ticks).\n§r§6§oBattle-sword's Edge: §r§3§oWhen attacking a creature, the Styx Battle-sword simultaneously deals area damage to all non-friendly creatures within a 4-block radius centered on the player, dealing §r§e§o(Battle-sword's attack power + target's max health × 5%) §r§3§o damage.\n§r§6§oSoul Siphon: §r§3§oEach time the battle-sword attacks, it forcibly restores §r§d§o(player's max health × 8%) §r§3§o health to the player.\n§r§4§oWarning: Due to changes in this sword's attack mechanics, most utility enchantments (such as Sharpness, Smite) will likely have no effect on it!");
+        add("tooltip.nine_nether_regions.styx_twinned_sword", "§3§oPress§r §6§oAlt§r§3§o to display more.");
+        add("tooltip.nine_nether_regions.styx_twinned_sword_alt",
+                "§4§lThe ultimate weapon of this mod, forged with technology and power from the depths of the Underworld, enough to chill the hearts of any foe.\\n§6§oIndestructible: §r§3§oUnder normal circumstances, the durability of this weapon is not consumed. If the weapon's durability is somehow damaged, it will recover extremely quickly (42 points every 4 ticks).\\n§r§6§oChill of the Edge: §r§3§oWhen attacking a creature with a fully charged attack, the Styx Twinned Sword simultaneously deals area damage to all non-friendly entities within a 6-block radius centered on the player, dealing §r§e§o(Sword Attack Damage + Target's Max Health × 12%)§r§3§o, and forcibly applies the following effects for 12 seconds to both the direct target and all non-friendly entities within the radius: §r§e§oDecline (III), Mag Confine, Weakness (III), Slowness (III)§r§3§o.\\n§r§6§oSoul Harvest: §r§3§oWhen the charge bar is full, each attack with the twin blades forcibly restores §r§d§o(16% of the player's max health)§r§3§o health to the player.\\n§r§4§oWarning: Due to changes in the sword's attack logic, most utility enchantments (such as Sharpness, Smite) will likely not take effect on this sword!");
         add("tooltip.nine_nether_regions.styx_pickaxe", "§3§oPress§r §6§oAlt§r§3§o to display more.");
         add("tooltip.nine_nether_regions.styx_pickaxe_alt", "§3§oThis pickaxe is the best among all pickaxes.\nUnder normal circumstances, its durability cannot be consumed. If under special circumstances its durability is reduced, it will rapidly restore to full durability (restores 24 points per 4 ticks).\nBlessed by the power of Styx, this pickaxe breaks any block 2.5 times faster than normal, and when breaking any block, there is a 24% chance to drop a diamond and a 12% chance to drop a netherite scrap.");
         add("tooltip.nine_nether_regions.steel_base", "§3§oAfter a thousand trials and tribulations, one can obtain a good piece of steel.");

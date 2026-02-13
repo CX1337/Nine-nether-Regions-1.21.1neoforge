@@ -40,6 +40,15 @@ public class ModItems {
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
             });
+    public static final DeferredItem<Item> STYX_E_CORE =
+            ITEMS.register("styx_e_core", () -> new Item(new Item.Properties().rarity(Rarity.EPIC).fireResistant()){
+                @Override
+                public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context,
+                                            @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.nine_nether_regions.styx_e_core"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
     public static final DeferredItem<Item> STYX_TEAR =
             ITEMS.register("styx_tear", StyxTear::new);
     public static final DeferredItem<Item> CHERRY_STICK =
@@ -346,6 +355,9 @@ public class ModItems {
     //冥河战刃。
     public static final DeferredItem<SwordItem> STYX_SWORD =
             ITEMS.register("styx_sword", StyxSword::new);
+    //冥河双刃。
+    public static final DeferredItem<SwordItem> STYX_TWINNED_SWORD =
+            ITEMS.register("styx_twinned_sword", StyxTwinnedSword::new);
     //伤害测试剑。
     public static final DeferredItem<SwordItem> DAMAGE_TEST =
             ITEMS.register("damage_test", DamageTest::new);

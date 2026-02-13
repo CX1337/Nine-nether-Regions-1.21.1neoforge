@@ -274,6 +274,23 @@ public class ModAdvancementProvider extends AdvancementProvider {
                     .parent(safe)
                     .save(saver, ResourceLocation.fromNamespaceAndPath(NineNetherRegions.MODID,"vampire"),
                             existingFileHelper);
+            //冥界深处的科技。
+            AdvancementHolder underworldScience = Advancement.Builder.advancement()
+                    .display(
+                            ModItems.STYX_E_CORE.get(),
+                            Component.translatable("advancement.nine_nether_regions.underworld_science.title"),
+                            Component.translatable("advancement.nine_nether_regions.underworld_science.description"),
+                            null,
+                            AdvancementType.GOAL,
+                            true, true, false
+                    )
+                    .addCriterion("has_styx_e_core",
+                            InventoryChangeTrigger.TriggerInstance.hasItems(
+                                    ModItems.STYX_E_CORE.get()
+                            ))
+                    .parent(safe)
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(NineNetherRegions.MODID,"underworld_science"),
+                            existingFileHelper);
             //幽冥档案。
             AdvancementHolder hellArchive = Advancement.Builder.advancement()
                     .display(
@@ -367,6 +384,43 @@ public class ModAdvancementProvider extends AdvancementProvider {
                     .rewards(AdvancementRewards.Builder.experience(4444))
                     .save(saver, ResourceLocation.fromNamespaceAndPath(NineNetherRegions.MODID, "styx_set"),
                             existingFileHelper);
+            //不完美的剑？
+            AdvancementHolder styxSword = Advancement.Builder.advancement()
+                    .display(
+                            ModItems.STYX_SWORD.get(),
+                            Component.translatable("advancement.nine_nether_regions.styx_sword.title"),
+                            Component.translatable("advancement.nine_nether_regions.styx_sword.description"),
+                            null,
+                            AdvancementType.CHALLENGE,
+                            true, true, false
+                    )
+                    .addCriterion("has_styx_sword",
+                            InventoryChangeTrigger.TriggerInstance.hasItems(
+                                    ModItems.STYX_SWORD.get()
+                            ))
+                    .parent(styxTear)
+                    .rewards(AdvancementRewards.Builder.experience(444))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(NineNetherRegions.MODID,"styx_sword"),
+                            existingFileHelper);
+            //终极规律之刃！
+            AdvancementHolder styxTwinnedSword = Advancement.Builder.advancement()
+                    .display(
+                            ModItems.STYX_TWINNED_SWORD.get(),
+                            Component.translatable("advancement.nine_nether_regions.styx_twinned_sword.title"),
+                            Component.translatable("advancement.nine_nether_regions.styx_twinned_sword.description"),
+                            null,
+                            AdvancementType.CHALLENGE,
+                            true, true, true
+                    )
+                    .addCriterion("has_styx_twinned_sword",
+                            InventoryChangeTrigger.TriggerInstance.hasItems(
+                                    ModItems.STYX_TWINNED_SWORD.get()
+                            ))
+                    .parent(styxSword)
+                    .rewards(AdvancementRewards.Builder.experience(44444))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(NineNetherRegions.MODID,"styx_twinned_sword"),
+                            existingFileHelper);
+
         }
     }
 }

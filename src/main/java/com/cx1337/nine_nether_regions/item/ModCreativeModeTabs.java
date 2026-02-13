@@ -125,6 +125,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.HELLALLOY_BOOTS);
                         output.accept(ModItems.HELLALLOY_SWORD);
                         output.accept(ModItems.HELLALLOY_LONGBOW);
+                        output.accept(ModItems.STYX_E_CORE);
 
                         output.accept(ModItems.STYX_INGOT);
                         output.accept(ModItems.STYX_SWORD);
@@ -133,6 +134,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.STYX_CHESTPLATE);
                         output.accept(ModItems.STYX_LEGGINGS);
                         output.accept(ModItems.STYX_BOOTS);
+                        output.accept(ModItems.STYX_TWINNED_SWORD);
 
                         output.accept(ModItems.BLOODBLADE_PEAK_MUSIC_DISC);
                         output.accept(ModItems.CAVES_MUSIC_DISC);
@@ -168,6 +170,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.COMPACT_OBSIDIAN);
                         output.accept(ModBlocks.REINFORCED_OBSIDIAN);
                         output.accept(ModBlocks.FLUOROSCOPY_BLOCK);
+                        output.accept(ModBlocks.STYX_E_CORE_BLOCK);
 
                         output.accept(ModBlocks.HELLALLOY_BLOCK);
                         output.accept(ModBlocks.STEEL_BLOCK);

@@ -56,6 +56,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.STYX_FERRYMAN_MUSIC_DISC.get());
         basicItem(ModItems.GHOSTLIUM.get());
         basicItem(ModItems.HELLALLOY_INGOT.get());
+        basicItem(ModItems.STYX_E_CORE.get());
         basicItem(ModItems.STYX_INGOT.get());
         basicItem(ModItems.STEEL_BASE.get());
         basicItem(ModItems.STEEL_INGOT.get());

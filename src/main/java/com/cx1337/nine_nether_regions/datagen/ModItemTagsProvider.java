@@ -65,6 +65,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.RUBY_SWORD.get())
                 .add(ModItems.HELLALLOY_SWORD.get())
                 .add(ModItems.STYX_SWORD.get())
+                .add(ModItems.STYX_TWINNED_SWORD.get())
                 .add(ModItems.VOIDRITE_SWORD.get());
 
         tag(ItemTags.HEAD_ARMOR)

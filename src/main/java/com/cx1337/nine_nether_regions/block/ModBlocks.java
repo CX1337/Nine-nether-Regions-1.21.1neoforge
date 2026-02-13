@@ -295,6 +295,14 @@ public class ModBlocks {
                     .strength(22.0F,85.0F)
                     .lightLevel(p_50872_ -> 4)
                     .sound(SoundType.STONE)), new Item.Properties().rarity(Rarity.UNCOMMON));
+    public static final DeferredBlock<Block> STYX_E_CORE_BLOCK =
+            registerBlocks("styx_e_core_block", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_RED)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(22.0F,185.0F)
+                    .lightLevel(p_50872_ -> 8)
+                    .sound(SoundType.NETHERITE_BLOCK)), new Item.Properties().rarity(Rarity.EPIC));
     public static final DeferredBlock<Block> HELLIGHT =
             registerBlocks("hellight", () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_LIGHT_BLUE)

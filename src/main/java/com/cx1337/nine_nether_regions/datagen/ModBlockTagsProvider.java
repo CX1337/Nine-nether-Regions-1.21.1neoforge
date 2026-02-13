@@ -51,19 +51,23 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 // 木工具不正确
         tag(BlockTags.INCORRECT_FOR_WOODEN_TOOL)
                 .add(ModBlocks.HELLALLOY_BLOCK.get())
-                .add(ModBlocks.STYX_BLOCK.get());
+                .add(ModBlocks.STYX_BLOCK.get())
+                .add(ModBlocks.STYX_E_CORE_BLOCK.get());
 // 金工具不正确
         tag(BlockTags.INCORRECT_FOR_GOLD_TOOL)
                 .add(ModBlocks.HELLALLOY_BLOCK.get())
-                .add(ModBlocks.STYX_BLOCK.get());
+                .add(ModBlocks.STYX_BLOCK.get())
+                .add(ModBlocks.STYX_E_CORE_BLOCK.get());
 // 石工具不正确
         tag(BlockTags.INCORRECT_FOR_STONE_TOOL)
                 .add(ModBlocks.HELLALLOY_BLOCK.get())
-                .add(ModBlocks.STYX_BLOCK.get());
+                .add(ModBlocks.STYX_BLOCK.get())
+                .add(ModBlocks.STYX_E_CORE_BLOCK.get());
 // 铁工具不正确
         tag(BlockTags.INCORRECT_FOR_IRON_TOOL)
                 .add(ModBlocks.HELLALLOY_BLOCK.get())
-                .add(ModBlocks.STYX_BLOCK.get());
+                .add(ModBlocks.STYX_BLOCK.get())
+                .add(ModBlocks.STYX_E_CORE_BLOCK.get());
 // 钻石工具不正确
         tag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
                 .add(ModBlocks.HELLALLOY_BLOCK.get())
@@ -142,6 +146,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.COMPACT_OBSIDIAN.get())
                 .add(ModBlocks.REINFORCED_OBSIDIAN.get())
                 .add(ModBlocks.UNDERWORLD_SPIRIT_STONE.get())
+                .add(ModBlocks.STYX_E_CORE_BLOCK.get())
                 .add(ModBlocks.VOID_NEBULA.get())
                 .add(ModBlocks.VOIDRITE_BLOCK.get());
 
@@ -163,6 +168,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.REINFORCED_OBSIDIAN.get())
                 .add(ModBlocks.STYX_BLOCK.get())
                 .add(ModBlocks.STEEL_BLOCK.get())
+                .add(ModBlocks.STYX_E_CORE_BLOCK.get())
                 .add(ModBlocks.RUBY_BLOCK.get())
                 .add(ModBlocks.RAINBOWGEM_BLOCK.get())
                 .add(ModBlocks.UNDERWORLDRACK.get())

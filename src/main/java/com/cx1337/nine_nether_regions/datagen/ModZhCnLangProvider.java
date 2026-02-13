@@ -52,11 +52,13 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.STYX_INGOT.get(), "§5§l冥河锭");
         add(ModItems.STYX_TEAR.get(), "§4§l冥河之泪");
         add(ModItems.STYX_SWORD.get(), "§4§l冥河战刃");
+        add(ModItems.STYX_TWINNED_SWORD.get(), "§4§l冥河双刃");
         add(ModItems.STYX_PICKAXE.get(), "§4冥河镐");
         add(ModItems.STYX_HELMET.get(), "§4冥河战盔");
         add(ModItems.STYX_CHESTPLATE.get(), "§4冥河胸甲");
         add(ModItems.STYX_LEGGINGS.get(), "§4冥河护腿");
         add(ModItems.STYX_BOOTS.get(), "§4冥河战靴");
+        add(ModItems.STYX_E_CORE.get(), "冥河电路核心");
         add(ModItems.STEEL_BASE.get(), "钢坯");
         add(ModItems.STEEL_INGOT.get(), "精钢锭");
         add(ModItems.STEEL_NUGGET.get(), "精钢粒");
@@ -158,6 +160,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.POTTED_HELLWOOD_SAPLING.get(), "幽染树苗盆栽");
         add(ModBlocks.NULL_BLOCK.get(), "§c§k？？？？？");
         add(ModBlocks.NULL_GRASSBLOCK.get(), "§c§k！！！！！");
+        add(ModBlocks.STYX_E_CORE_BLOCK.get(), "冥河集成电路块");
         add(ModBlocks.STYX_BLOCK.get(), "§5§l冥河块");
         add(ModBlocks.HELL_LAMP.get(), "幽染灯笼");
         add(ModBlocks.STYX_LAMP.get(), "§4冥河灯");
@@ -180,12 +183,6 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.VOIDRITE_BLOCK.get(), "虚空合金块");
 
         add("effect.nine_nether_regions.decline", "归寂");
-        add("item.minecraft.potion.effect.decline_potion", "归寂药水");
-        add("item.minecraft.splash_potion.effect.decline_potion", "喷溅型归寂药水");
-        add("item.minecraft.lingering_potion.effect.decline_potion", "滞留型归寂药水");
-        add("item.minecraft.potion.effect.s_decline_potion", "强效归寂药水");
-        add("item.minecraft.splash_potion.effect.s_decline_potion", "喷溅型强效归寂药水");
-        add("item.minecraft.lingering_potion.effect.s_decline_potion", "滞留型强效归寂药水");
         add("death.attack.decline", "%1$s随风飘散了");
         add("death.attack.decline.player", "%1$s在与%2$s战斗时归于虚无");
         add("death.attack.decline.item", "%1$s被%2$s用%3$s从世界上抹去了存在。");
@@ -207,9 +204,6 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("effect.nine_nether_regions.wrapped", "缠绕");
         add("effect.nine_nether_regions.hell_blast", "幽冥爆破");
         add("effect.nine_nether_regions.mag_confine", "磁锢");
-        add("item.minecraft.potion.effect.mag_confine_potion", "磁锢药水");
-        add("item.minecraft.splash_potion.effect.mag_confine_potion", "喷溅型磁锢药水");
-        add("item.minecraft.lingering_potion.effect.mag_confine_potion", "滞留型磁锢药水");
         add("effect.nine_nether_regions.strike", "电击");
         add("death.attack.magelectro", "%1$s被化作了电流的一部分。");
         add("death.attack.magelectro.player", "%1$s在逃离%2$s时被电成了焦炭。");
@@ -264,6 +258,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("advancement.nine_nether_regions.voidrite_armor.description", "获得一件虚空合金盔甲。");
         add("advancement.nine_nether_regions.vampire.title", "脆弱的吸血鬼");
         add("advancement.nine_nether_regions.vampire.description", "获得红宝石剑。");
+        add("advancement.nine_nether_regions.underworld_science.title", "冥界深处的科技");
+        add("advancement.nine_nether_regions.underworld_science.description", "击败冥河体，拿到它身上的电路核心部件。");
         add("advancement.nine_nether_regions.hell_archive.title", "幽冥档案");
         add("advancement.nine_nether_regions.hell_archive.description", "获得幽冥合金锭。");
         add("advancement.nine_nether_regions.hellalloy_set.title", "幽冥护体");
@@ -274,8 +270,13 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("advancement.nine_nether_regions.styx_ingot.description", "获得冥河锭。");
         add("advancement.nine_nether_regions.styx_set.title", "冥河铸魂");
         add("advancement.nine_nether_regions.styx_set.description", "获得全套冥河护甲。");
+        add("advancement.nine_nether_regions.styx_sword.title", "不完美的剑？");
+        add("advancement.nine_nether_regions.styx_sword.description", "用冥河锭升级你的幽冥合金剑，拿到这把冥河渡客的武器。");
+        add("advancement.nine_nether_regions.styx_twinned_sword.title", "终极规律之刃！");
+        add("advancement.nine_nether_regions.styx_twinned_sword.description", "将冥河体的核心和那些强力的武器融合，打造出这把前所未有的双刃！");
 
         add("tooltip.nine_nether_regions.amethyst_dagger", "§3§o虽然这把短剑确实很小，合成配方简单，攻击力也不高；但是得益于紫水晶的生命力，使用它攻击时每次命中敌人都有33%概率为你恢复1点生命值；也正因为它很小巧，你可以更快速的挥动它。\n当然，由于紫水晶质地很脆，它的耐久度在同类武器中并不优秀。");
+        add("tooltip.nine_nether_regions.styx_e_core", "§3§o这块电路核心蕴藏着冥河体的关键结构信息，或许可以利用它建造属于你自己的守卫者，或是有一些其他的什么用途。");
         add("tooltip.nine_nether_regions.ghostlium_apple", "§3§o沾染了一点点幽冥界的力量……但是尝起来很美味！");
         add("tooltip.nine_nether_regions.enchanted_ghostlium_apple", "§3§o被幽冥之力全方位强化过的附魔金苹果，美味顶饱而且效果强大。");
         add("tooltip.nine_nether_regions.web_fruit", "§3§o蛛网球抹除了紫颂果的瞬移能力，取而代之的是赋予玩家一段时间的类似蜘蛛的攀爬能力。");
@@ -296,7 +297,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.nine_nether_regions.styx_ingot", "§3§o正如冥河渡客的意志，坚不可摧。");
         add("tooltip.nine_nether_regions.styx_sword", "§3§o按下§r §6§oAlt§r§3§o以显示更多。");
         add("tooltip.nine_nether_regions.styx_sword_alt",
-                "§6§o坚不可摧：§r§3§o正常情况下该武器耐久不会被消耗。如果通过某种手段使得该武器耐久受损，则武器耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o战刃之锋：§r§3§o当蓄力条为满攻击生物时，冥河战刃会同时对以玩家为中心半径4格内所有非友方生物造成§r§e§o（战刃攻击力+目标最大生命值×5%）§r§3§o的范围伤害。\n§r§6§o灵魂汲取：§r§3§o蓄力条为满时战刃每次攻击都会强制为玩家恢复§r§d§o（玩家最大生命值×8%）§r§3§o的血量。\n§r§4§o警告：由于该剑攻击逻辑发生变化，大多数效用性附魔（如锋利、亡灵杀手）在该剑上大概率无法起效！");
+                "§4§l冥河渡客使用的武器——但也许没那么完美，或许可以进行升级？\n§r§6§o坚不可摧：§r§3§o正常情况下该武器耐久不会被消耗。如果通过某种手段使得该武器耐久受损，则武器耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o战刃之锋：§r§3§o当蓄力条为满攻击生物时，冥河战刃会同时对以玩家为中心半径4格内所有非友方生物造成§r§e§o（战刃攻击力+目标最大生命值×5%）§r§3§o的范围伤害。\n§r§6§o灵魂汲取：§r§3§o蓄力条为满时战刃每次攻击都会强制为玩家恢复§r§d§o（玩家最大生命值×8%）§r§3§o的血量。\n§r§4§o警告：由于该剑攻击逻辑发生变化，大多数效用性附魔（如锋利、亡灵杀手）在该剑上大概率无法起效！");
+        add("tooltip.nine_nether_regions.styx_twinned_sword", "§3§o按下§r §6§oAlt§r§3§o以显示更多。");
+        add("tooltip.nine_nether_regions.styx_twinned_sword_alt",
+                "§4§l本模组的终极武器，凝结着来自冥界深处的科技和强大的力量，足以让对手感到胆寒。\n§6§o坚不可摧：§r§3§o正常情况下该武器耐久不会被消耗。如果通过某种手段使得该武器耐久受损，则武器耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o寒锋威压：§r§3§o当蓄力条为满攻击生物时，冥河双刃会同时对以玩家为中心半径6格内所有非友方生物造成§r§e§o（双刃攻击力+目标最大生命值×12%）§r§3§o的范围伤害，同时对直击目标以及半径内所有非友方生物强制施加12秒§r§e§o归寂（3级）、磁锢、虚弱（3级）、缓慢（3级）§r§3§o效果。\n§r§6§o灵魂豪夺：§r§3§o蓄力条为满时双刃每次攻击都会强制为玩家恢复§r§d§o（玩家最大生命值×16%）§r§3§o的血量。\n§r§4§o警告：由于该剑攻击逻辑发生变化，大多数效用性附魔（如锋利、亡灵杀手）在该剑上大概率无法起效！");
         add("tooltip.nine_nether_regions.styx_pickaxe", "§3§o按下§r §6§oAlt§r§3§o以显示更多。");
         add("tooltip.nine_nether_regions.styx_pickaxe_alt",
                 "§3§o这把镐子是所有镐子中的佼佼者。\n正常情况下它的耐久无法被消耗，如果遇到特殊情况使它的耐久降低，它会极快速的恢复满耐久值（每4tick恢复24点）。\n受到冥河之力的祝福，这把镐子破坏任何方块的速度都为原来的2.5倍，且破坏任何方块均有24%的概率掉落钻石，12%的概率掉落下界合金碎片。");

@@ -33,6 +33,7 @@ public class ModBlockStatesProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.HELLIGHT);
         blockWithItem(ModBlocks.NULL_BLOCK);
         blockWithItem(ModBlocks.NULL_GRASSBLOCK);
+        blockWithItem(ModBlocks.STYX_E_CORE_BLOCK);
         blockWithItem(ModBlocks.STYX_BLOCK);
         blockWithItem(ModBlocks.STEEL_BLOCK);
         blockWithItem(ModBlocks.RUBY_BLOCK);
