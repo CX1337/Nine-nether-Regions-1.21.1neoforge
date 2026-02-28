@@ -16,9 +16,10 @@ import net.minecraft.world.entity.player.Player;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RenderGuiLayerEvent;
 
-@OnlyIn(Dist.CLIENT)
+@EventBusSubscriber(modid = NineNetherRegions.MODID, value = Dist.CLIENT)
 public class ClientEvents {
     private static int displayHealth;
     private static int lastHealth;

@@ -51,7 +51,6 @@ public class NineNetherRegions {
         ModEnchantmentEffects.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
-        NeoForge.EVENT_BUS.register(ClientEvents.class);
 
         modEventBus.addListener(this::addCreative);
 
