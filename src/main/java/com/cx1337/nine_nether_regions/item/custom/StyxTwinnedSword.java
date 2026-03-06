@@ -77,7 +77,7 @@ public class StyxTwinnedSword extends SwordItem implements RangeWeapon{
                 player.setHealth(Math.min(newHealth, player.getMaxHealth()));
 
                 if (target instanceof LivingEntity targetLiving) {
-                    applyEffects(targetLiving, player);
+                    forceApplyEffects(targetLiving);
                 }
 
                 //蓄满力半径6m内所有非友方实体AOE伤害。
@@ -93,7 +93,7 @@ public class StyxTwinnedSword extends SwordItem implements RangeWeapon{
                     le.knockback(0.5F,
                             player.getX() - le.getX(),
                             player.getZ() - le.getZ());
-                    applyEffects(le, player);
+                    forceApplyEffects(le);
                 }
             }
         }
@@ -101,14 +101,16 @@ public class StyxTwinnedSword extends SwordItem implements RangeWeapon{
     }
 
 
-    private void applyEffects(LivingEntity entity, Player source) {
-        addForcedEffect(entity, source, new MobEffectInstance(ModEffects.DECLINE, 240, 2));
-        addForcedEffect(entity, source, new MobEffectInstance(ModEffects.MAG_CONFINE, 240, 0));
-        addForcedEffect(entity, source, new MobEffectInstance(MobEffects.WEAKNESS, 240, 2));
-        addForcedEffect(entity, source, new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 240, 2));
-    }
-    private void addForcedEffect(LivingEntity target, Player source, MobEffectInstance effect) {
-        target.forceAddEffect(effect, target);
+    private void forceApplyEffects(LivingEntity entity) {
+        MobEffectInstance decline = new MobEffectInstance(ModEffects.DECLINE, 240, 2);
+        MobEffectInstance magConfine = new MobEffectInstance(ModEffects.MAG_CONFINE, 240, 0);
+        MobEffectInstance weakness = new MobEffectInstance(MobEffects.WEAKNESS, 240, 3);
+        MobEffectInstance slowness = new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 240, 3);
+
+        entity.forceAddEffect(decline, null);
+        entity.forceAddEffect(magConfine, null);
+        entity.forceAddEffect(weakness, null);
+        entity.forceAddEffect(slowness, null);
     }
 
     @Override

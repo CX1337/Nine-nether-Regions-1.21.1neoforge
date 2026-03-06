@@ -40,10 +40,7 @@ import net.neoforged.neoforge.event.entity.living.*;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 import java.lang.reflect.Field;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class ModEvents {
     // 方块物品防火防雷防仙人掌
@@ -301,6 +298,7 @@ public class ModEvents {
                     player.setHealth(newHealth);
                 }
             }
+            removeNegativeEffects(player);
         } else {
             styxTickCounter = 0;
         }
@@ -309,6 +307,19 @@ public class ModEvents {
         MobEffectInstance inst = player.getEffect(effect);
         if (inst == null || inst.getAmplifier() < amplifier || inst.getDuration() < 309) {
             player.addEffect(new MobEffectInstance(effect, duration, amplifier, true, particles, true));
+        }
+    }
+    //移除负面效果
+    private void removeNegativeEffects(Player player) {
+        Set<Holder<MobEffect>> allowedEffects = Set.of(
+                MobEffects.RAID_OMEN, MobEffects.BAD_OMEN, MobEffects.TRIAL_OMEN
+        );
+        List<MobEffectInstance> effects = new ArrayList<>(player.getActiveEffects());
+        for (MobEffectInstance instance : effects) {
+            Holder<MobEffect> effect = instance.getEffect();
+            if (!effect.value().isBeneficial() && !allowedEffects.contains(effect)) {
+                player.removeEffect(effect);
+            }
         }
     }
     //减伤
