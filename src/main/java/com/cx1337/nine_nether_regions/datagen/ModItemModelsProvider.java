@@ -120,7 +120,6 @@ public class ModItemModelsProvider extends ItemModelProvider {
         handheldItem(ModItems.HELLALLOY_HOE.get());
         handheldItem(ModItems.HELLALLOY_PICKAXE.get());
         handheldItem(ModItems.HELLALLOY_SHOVEL.get());
-        handheldItem(ModItems.HELLALLOY_SWORD.get());
         handheldItem(ModItems.COPPER_AXE.get());
         handheldItem(ModItems.COPPER_HOE.get());
         handheldItem(ModItems.COPPER_PICKAXE.get());

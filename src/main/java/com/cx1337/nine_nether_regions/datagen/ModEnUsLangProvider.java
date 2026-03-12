@@ -304,7 +304,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.nine_nether_regions.steel_base", "§3§oAfter a thousand trials and tribulations, one can obtain a good piece of steel.");
         add("tooltip.nine_nether_regions.steel_ingot", "§3§oBetter than iron.");
         add("tooltip.nine_nether_regions.rainbowgem_armors", "§3§oAll set Bonus: 7% damage reduction against nearly all damage types.");
-        add("tooltip.nine_nether_regions.voidrite_armors", "§3§oAll set Bonus: 18% damage reduction against nearly all damage types.");
+        add("tooltip.nine_nether_regions.voidrite_armors", "§3§oAll set Bonus: 18% damage reduction against nearly all damage types,and heals player 1 point per 2 seconds");
         add("tooltip.nine_nether_regions.alloy_hilt", "§3§oIt can be used as a Weapon.BUT that's by no means its true purpose.");
         add("tooltip.nine_nether_regions.hellalloy_helmet_alt",
                 "§3§oSelf healing: If the durability is not sufficient, the equipment will automatically restore durability in the armor bar or player backpack §1(4 points restored every 2 seconds)§r§3§o.\nSingle effect: When equipped on the armor bar, it continuously provides players with §6night_vision§r§3§o(effect level:1), while clearing §7blindness§r§3§o and §7darkness§r§3§o effects on the player's body.\nComplete set of effects: Provide a 44% reduction for most damages,force to restore 0.7 point of health for every 10 ticks and provide §6resistance§r§3§o(level 2) effect.");

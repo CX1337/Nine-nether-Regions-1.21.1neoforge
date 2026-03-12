@@ -319,7 +319,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.nine_nether_regions.steel_base", "§3§o千锤百炼之后，方得一块好钢。");
         add("tooltip.nine_nether_regions.steel_ingot", "§3§o比铁更好。");
         add("tooltip.nine_nether_regions.rainbowgem_armors", "§3§o全套效果：对几乎所有伤害持有7%减免。");
-        add("tooltip.nine_nether_regions.voidrite_armors", "§3§o全套效果：对几乎所有伤害持有18%减免。");
+        add("tooltip.nine_nether_regions.voidrite_armors", "§3§o全套效果：对几乎所有伤害持有18%减免，每2秒为玩家恢复1点生命值。");
         add("tooltip.nine_nether_regions.alloy_hilt", "§3§o它可以被当作武器来使用，但这永远不会是它的真正作用。");
         add("tooltip.nine_nether_regions.hellalloy_helmet_alt",
                 "§3§o自修复：如果该装备耐久未满，在护甲栏或玩家背包中时该装备会自动恢复耐久值§1§o（每2秒回复4点）§r§3§o。\n单件效果：装备在护甲栏时，持续为玩家提供§6§o夜视§r§3§o效果（1级），同时清除玩家身上的§7§o失明、黑暗§r§3§o效果。\n全套效果：对绝大多数伤害持有44%减伤，同时每10tick强制恢复玩家0.7点生命值，持续为玩家提供§6§o抗性提升§r§3§o（2级）效果。");

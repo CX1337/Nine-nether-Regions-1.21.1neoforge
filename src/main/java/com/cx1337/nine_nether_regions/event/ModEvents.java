@@ -3,10 +3,8 @@ package com.cx1337.nine_nether_regions.event;
 import com.cx1337.nine_nether_regions.block.ModBlocks;
 import com.cx1337.nine_nether_regions.effect.ModEffects;
 import com.cx1337.nine_nether_regions.item.ModItems;
-import com.cx1337.nine_nether_regions.item.custom.HellalloyLongbow;
 import com.cx1337.nine_nether_regions.item.custom.StaffItem;
 import com.cx1337.nine_nether_regions.potion.ModPotions;
-import jdk.jfr.Event;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.core.Holder;
@@ -24,7 +22,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.WitherSkull;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -39,7 +36,6 @@ import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.*;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
-import java.lang.reflect.Field;
 import java.util.*;
 
 public class ModEvents {
@@ -265,6 +261,32 @@ public class ModEvents {
             }
         }
     }
+    //虚空合金套恢复生命值。
+    private int voidriteTickCounter = 0;
+    @SubscribeEvent
+    public void onPlayerTickVoidrite(PlayerTickEvent.Post event) {
+        if (event.getEntity().level().isClientSide()) {
+            return;
+        }
+        Player player = event.getEntity();
+        boolean fullSet =
+                player.getItemBySlot(EquipmentSlot.HEAD).is(ModItems.VOIDRITE_HELMET.get()) &&
+                        player.getItemBySlot(EquipmentSlot.CHEST).is(ModItems.VOIDRITE_CHESTPLATE.get()) &&
+                        player.getItemBySlot(EquipmentSlot.LEGS).is(ModItems.VOIDRITE_LEGGINGS.get()) &&
+                        player.getItemBySlot(EquipmentSlot.FEET).is(ModItems.VOIDRITE_BOOTS.get());
+        if (fullSet) {
+            voidriteTickCounter++;
+            if (voidriteTickCounter >= 40) {
+                voidriteTickCounter = 0;
+                if (player.getHealth() < player.getMaxHealth() && player.getHealth() > 0) {
+                    player.heal(1.0F);
+                }
+            }
+        } else {
+            voidriteTickCounter = 0;
+        }
+    }
+
 
     //冥河套全套效果。
     private int styxTickCounter = 0;
