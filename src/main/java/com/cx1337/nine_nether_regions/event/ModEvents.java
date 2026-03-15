@@ -2,8 +2,11 @@ package com.cx1337.nine_nether_regions.event;
 
 import com.cx1337.nine_nether_regions.block.ModBlocks;
 import com.cx1337.nine_nether_regions.effect.ModEffects;
+import com.cx1337.nine_nether_regions.effect.effects.DeclineEffect;
 import com.cx1337.nine_nether_regions.item.ModItems;
+import com.cx1337.nine_nether_regions.item.custom.HellalloyLongbow;
 import com.cx1337.nine_nether_regions.item.custom.StaffItem;
+import com.cx1337.nine_nether_regions.item.custom.StyxTwinnedSword;
 import com.cx1337.nine_nether_regions.potion.ModPotions;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
@@ -20,10 +23,13 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.WitherSkull;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
@@ -240,6 +246,42 @@ public class ModEvents {
                 float originalDamage = event.getNewDamage();
                 float reducedDamage = originalDamage * 0.93f;
                 event.setNewDamage(reducedDamage);
+            }
+        }
+    }
+
+    //冥河双刃伤害
+    @SubscribeEvent
+    public void onLivingDamageStyxTSwordDecline(LivingDamageEvent.Pre event) {
+        DamageSource source = event.getSource();
+        LivingEntity target = event.getEntity();
+        if (source.is(DeclineEffect.DECLINE_DAMAGE)) {
+            if (source.getEntity() instanceof Player player) {
+                if (player.getMainHandItem().getItem() instanceof StyxTwinnedSword) {
+                    float newDamage = (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE) + target.getMaxHealth() * 0.16F;
+                    event.setNewDamage(newDamage);
+                }
+            }
+        }
+    }
+
+    //幽冥合金长弓伤害
+    @SubscribeEvent
+    public void onLivingDamageHellalloyLongbow(LivingDamageEvent.Pre event) {
+        DamageSource source = event.getSource();
+        LivingEntity target = event.getEntity();
+        if(source.getDirectEntity() instanceof AbstractArrow arrow) {
+            if(arrow.getOwner() instanceof Player player) {
+                ItemStack mainHandItem = player.getMainHandItem();
+                ItemStack offHandItem = player.getOffhandItem();
+                boolean hasBow = mainHandItem.getItem() instanceof HellalloyLongbow ||
+                        offHandItem.getItem() instanceof HellalloyLongbow;
+
+                if(hasBow) {
+                    float originalDamage = event.getOriginalDamage();
+                    float extraDamage = target.getMaxHealth() * 0.088F;
+                    event.setNewDamage(originalDamage + extraDamage);
+                }
             }
         }
     }

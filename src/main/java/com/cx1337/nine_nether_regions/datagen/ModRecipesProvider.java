@@ -11,6 +11,7 @@ import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -22,7 +23,7 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
     }
 
     @Override
-    protected void buildRecipes(RecipeOutput recipeOutput) {
+    protected void buildRecipes(@NotNull RecipeOutput recipeOutput) {
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, Items.ENCHANTED_GOLDEN_APPLE, 1)
                 .pattern("#R#")
                 .pattern("#$#")
@@ -182,6 +183,14 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
                 .define('#', Items.FIRE_CHARGE)
                 .define('$', Items.BLAZE_ROD)
                 .unlockedBy(getHasName(Items.BLAZE_ROD), has(Items.BLAZE_ROD))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.MINI_FRACTAL, 1)
+                .pattern(" #")
+                .pattern("$ ")
+                .define('#', ModItems.NETHERITE_ROD)
+                .define('$', Items.BLAZE_ROD)
+                .unlockedBy(getHasName(ModItems.NETHERITE_ROD), has(ModItems.NETHERITE_ROD))
                 .save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.FIRE_STAFF, 1)
@@ -1089,7 +1098,8 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
     public static final List<ItemLike> VOID_SHARD = List.of(ModBlocks.VOID_NEBULA);
 
     protected static void oreSmelting(
-            RecipeOutput recipeOutput, List<ItemLike> ingredients, RecipeCategory category, ItemLike result, float experience, int cookingTime, String group
+            @NotNull RecipeOutput recipeOutput, List<ItemLike> ingredients, @NotNull RecipeCategory category,
+            @NotNull ItemLike result, float experience, int cookingTime, @NotNull String group
     ) {
         oreCooking(
                 recipeOutput,
@@ -1106,7 +1116,8 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
     }
 
     protected static void oreBlasting(
-            RecipeOutput recipeOutput, List<ItemLike> ingredients, RecipeCategory category, ItemLike result, float experience, int cookingTime, String group
+            @NotNull RecipeOutput recipeOutput, List<ItemLike> ingredients, @NotNull RecipeCategory category,
+            @NotNull ItemLike result, float experience, int cookingTime, @NotNull String group
     ) {
         oreCooking(
                 recipeOutput,
@@ -1123,15 +1134,15 @@ public class ModRecipesProvider extends RecipeProvider implements IConditionBuil
     }
 
     protected static <T extends AbstractCookingRecipe> void oreCooking(
-            RecipeOutput recipeOutput,
+            @NotNull RecipeOutput recipeOutput,
             RecipeSerializer<T> serializer,
-            AbstractCookingRecipe.Factory<T> recipeFactory,
+            AbstractCookingRecipe.@NotNull Factory<T> recipeFactory,
             List<ItemLike> ingredients,
-            RecipeCategory category,
-            ItemLike result,
+            @NotNull RecipeCategory category,
+            @NotNull ItemLike result,
             float experience,
             int cookingTime,
-            String group,
+            @NotNull String group,
             String suffix
     ) {
         for (ItemLike itemlike : ingredients) {

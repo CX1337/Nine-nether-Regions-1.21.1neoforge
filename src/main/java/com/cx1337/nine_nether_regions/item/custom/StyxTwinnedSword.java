@@ -1,13 +1,16 @@
 package com.cx1337.nine_nether_regions.item.custom;
 
 import com.cx1337.nine_nether_regions.effect.ModEffects;
+import com.cx1337.nine_nether_regions.effect.effects.DeclineEffect;
 import com.cx1337.nine_nether_regions.item.ModToolTiers;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -84,12 +87,23 @@ public class StyxTwinnedSword extends SwordItem implements RangeWeapon{
                 AABB box = player.getBoundingBox().inflate(6.0D);
                 float baseDamage = (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE);
 
+                DamageSource declineSource = new DamageSource(
+                        sl.registryAccess()
+                                .registryOrThrow(Registries.DAMAGE_TYPE)
+                                .getHolderOrThrow(DeclineEffect.DECLINE_DAMAGE),
+                        player, player
+                );
+
                 for (LivingEntity le : sl.getEntitiesOfClass(LivingEntity.class, box,
                         e -> e != player && !player.isAlliedTo(e))) {
-                    float bonusDamage = le.getMaxHealth() * 0.12F;
+                    float bonusDamage = le.getMaxHealth() * 0.16F;
                     float totalDamage = baseDamage + bonusDamage;
 
-                    le.hurt(player.damageSources().playerAttack(player), totalDamage);
+                    le.invulnerableTime = 0;
+                    le.hurtTime = 0;
+                    le.hurtDuration = 0;
+
+                    le.hurt(declineSource, totalDamage);
                     le.knockback(0.5F,
                             player.getX() - le.getX(),
                             player.getZ() - le.getZ());

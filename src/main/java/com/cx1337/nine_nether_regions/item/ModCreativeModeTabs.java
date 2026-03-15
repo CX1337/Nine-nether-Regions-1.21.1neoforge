@@ -79,6 +79,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.STEEL_BOOTS);
                         output.accept(ModItems.STEEL_HORSE_ARMOR);
 
+                        output.accept(ModItems.MINI_FRACTAL);
+
                         output.accept(ModItems.ENDER_STAFF);
                         output.accept(ModItems.FIRE_CORE);
                         output.accept(ModItems.FIRE_STAFF);

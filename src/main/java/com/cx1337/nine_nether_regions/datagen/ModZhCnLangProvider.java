@@ -13,8 +13,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        add(ModItems.DAMAGE_TEST.get(), "§k伤害测试剑");
+        add(ModItems.DAMAGE_TEST.get(), "§k？？？？？");
         add(ModItems.ALLOY_HILT.get(), "合金剑柄");
+        add(ModItems.MINI_FRACTAL.get(), "迷你分形者");
         add(ModItems.AMETHYST_BEETROOT.get(), "紫晶甜菜根");
         add(ModItems.CAVES_MUSIC_DISC.get(), "音乐唱片——群系/洞穴类群系");
         add(ModItems.GHOSTLIUM_APPLE.get(), "幽染苹果");
@@ -276,6 +277,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("advancement.nine_nether_regions.styx_twinned_sword.description", "将冥河体的核心和那些强力的武器融合，打造出这把前所未有的双刃！");
 
         add("tooltip.nine_nether_regions.amethyst_dagger", "§3§o虽然这把短剑确实很小，合成配方简单，攻击力也不高；但是得益于紫水晶的生命力，使用它攻击时每次命中敌人都有33%概率为你恢复1点生命值；也正因为它很小巧，你可以更快速的挥动它。\n当然，由于紫水晶质地很脆，它的耐久度在同类武器中并不优秀。");
+        add("tooltip.nine_nether_regions.mini_fractal", "§3§o这把由下界合金打造而成的别致的小剑并没有优秀的面板数值，但是它对生命上限越高的生物造成的伤害越高。\n每次攻击时会对目标额外造成§r§6§o生命上限×1.1%§r§3§o的伤害");
         add("tooltip.nine_nether_regions.styx_e_core", "§3§o这块电路核心蕴藏着冥河体的关键结构信息，或许可以利用它建造属于你自己的守卫者，或是有一些其他的什么用途。");
         add("tooltip.nine_nether_regions.ghostlium_apple", "§3§o沾染了一点点幽冥界的力量……但是尝起来很美味！");
         add("tooltip.nine_nether_regions.enchanted_ghostlium_apple", "§3§o被幽冥之力全方位强化过的附魔金苹果，美味顶饱而且效果强大。");
@@ -300,7 +302,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
                 "§4§l冥河渡客使用的武器——但也许没那么完美，或许可以进行升级？\n§r§6§o坚不可摧：§r§3§o正常情况下该武器耐久不会被消耗。如果通过某种手段使得该武器耐久受损，则武器耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o战刃之锋：§r§3§o当蓄力条为满攻击生物时，冥河战刃会同时对以玩家为中心半径4格内所有非友方生物造成§r§e§o（战刃攻击力+目标最大生命值×5%）§r§3§o的范围伤害。\n§r§6§o灵魂汲取：§r§3§o蓄力条为满时战刃每次攻击都会强制为玩家恢复§r§d§o（玩家最大生命值×8%）§r§3§o的血量。\n§r§4§o警告：由于该剑攻击逻辑发生变化，大多数效用性附魔（如锋利、亡灵杀手）在该剑上大概率无法起效！");
         add("tooltip.nine_nether_regions.styx_twinned_sword", "§3§o按下§r §6§oAlt§r§3§o以显示更多。");
         add("tooltip.nine_nether_regions.styx_twinned_sword_alt",
-                "§4§l本模组的终极武器，凝结着来自冥界深处的科技和强大的力量，足以让对手感到胆寒。\n§6§o坚不可摧：§r§3§o正常情况下该武器耐久不会被消耗。如果通过某种手段使得该武器耐久受损，则武器耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o寒锋威压：§r§3§o当蓄力条为满攻击生物时，冥河双刃会同时对以玩家为中心半径6格内所有非友方生物造成§r§e§o（双刃攻击力+目标最大生命值×12%）§r§3§o的范围伤害，同时对直击目标以及半径内所有非友方生物施加12秒§r§e§o归寂（3级）、磁锢、虚弱（4级）、缓慢（4级）§r§3§o效果。\n§r§6§o灵魂豪夺：§r§3§o蓄力条为满时双刃每次攻击都会强制为玩家恢复§r§d§o（玩家最大生命值×16%）§r§3§o的血量。\n§r§4§o警告：由于该剑攻击逻辑发生变化，大多数效用性附魔（如锋利、亡灵杀手）在该剑上大概率无法起效！");
+                "§4§l本模组的终极武器，凝结着来自冥界深处的科技和强大的力量，足以让对手感到胆寒。\n§6§o坚不可摧：§r§3§o正常情况下该武器耐久不会被消耗。如果通过某种手段使得该武器耐久受损，则武器耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o寒锋威压：§r§3§o当蓄力条为满攻击生物时，冥河双刃会同时对以玩家为中心半径6格内所有非友方生物造成§r§e§o（双刃攻击力+目标最大生命值×16%）§r§3§o的范围伤害，同时对直击目标以及半径内所有非友方生物施加12秒§r§e§o归寂（3级）、磁锢、虚弱（4级）、缓慢（4级）§r§3§o效果。\n§r§6§o灵魂豪夺：§r§3§o蓄力条为满时双刃每次攻击都会强制为玩家恢复§r§d§o（玩家最大生命值×16%）§r§3§o的血量。\n§r§4§o警告：由于该剑攻击逻辑发生变化，大多数效用性附魔（如锋利、亡灵杀手）在该剑上大概率无法起效！");
         add("tooltip.nine_nether_regions.styx_pickaxe", "§3§o按下§r §6§oAlt§r§3§o以显示更多。");
         add("tooltip.nine_nether_regions.styx_pickaxe_alt",
                 "§3§o这把镐子是所有镐子中的佼佼者。\n正常情况下它的耐久无法被消耗，如果遇到特殊情况使它的耐久降低，它会极快速的恢复满耐久值（每4tick恢复24点）。\n受到冥河之力的祝福，这把镐子破坏任何方块的速度都为原来的2.5倍，且破坏任何方块均有24%的概率掉落钻石，12%的概率掉落下界合金碎片。");

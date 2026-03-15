@@ -115,6 +115,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         //工具武器类的物品均放在handheldItem中。
         handheldItem(ModItems.DAMAGE_TEST.get());
         handheldItem(ModItems.ALLOY_HILT.get());
+        handheldItem(ModItems.MINI_FRACTAL.get());
         handheldItem(ModItems.AMETHYST_DAGGER.get());
         handheldItem(ModItems.HELLALLOY_AXE.get());
         handheldItem(ModItems.HELLALLOY_HOE.get());

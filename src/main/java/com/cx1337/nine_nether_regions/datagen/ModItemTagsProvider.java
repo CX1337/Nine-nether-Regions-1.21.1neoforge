@@ -59,6 +59,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.VOIDRITE_HOE.get());
         tag(ItemTags.SWORDS)
                 .add(ModItems.AMETHYST_DAGGER.get())
+                .add(ModItems.ALLOY_HILT.get())
+                .add(ModItems.MINI_FRACTAL.get())
                 .add(ModItems.STEEL_SWORD.get())
                 .add(ModItems.COPPER_SWORD.get())
                 .add(ModItems.RAINBOWGEM_SWORD.get())

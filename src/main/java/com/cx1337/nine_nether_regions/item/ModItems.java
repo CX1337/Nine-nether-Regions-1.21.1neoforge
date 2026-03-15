@@ -482,6 +482,9 @@ public class ModItems {
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
             });
+    //迷你分形者。
+    public static final DeferredItem<SwordItem> MINI_FRACTAL =
+            ITEMS.register("mini_fractal", MiniFractal::new);
     //幽冥合金剑。
     public static final DeferredItem<SwordItem> HELLALLOY_SWORD =
             ITEMS.register("hellalloy_sword", HellalloySword::new);

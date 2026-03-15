@@ -27,7 +27,7 @@ public class DamageTest extends SwordItem {
             if (player.level() instanceof ServerLevel serverLevel) {
                 serverLevel.playSound(null,
                         player.getX(), player.getY(), player.getZ(),
-                        SoundEvents.ARROW_HIT_PLAYER,
+                        SoundEvents.TOTEM_USE,
                         SoundSource.PLAYERS, 1.0F, 1.0F);
                 AABB areaOfEffect = player.getBoundingBox().inflate(4.0D);
                 List<LivingEntity> entitiesInRange = serverLevel.getEntitiesOfClass(
