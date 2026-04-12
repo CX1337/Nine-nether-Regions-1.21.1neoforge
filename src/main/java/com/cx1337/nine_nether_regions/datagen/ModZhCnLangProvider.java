@@ -124,6 +124,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.THE_STYX_MUSIC_DISC.get(), "音乐唱片——群系/冥河、幽冥平川");
         add(ModItems.UNDERWORLD_BRICK.get(), "冥界砖");
         add(ModItems.UNDERWORLD_CRYSTAL.get(), "§b幽冥晶");
+        add(ModItems.UNDERWORLD_POWERED_ELYTRA.get(), "幽冥动力鞘翅");
+        add(ModItems.HELLALLOY_ELYTRA_CHESTPLATE.get(), "幽冥合金鞘翅胸甲");
+        add(ModItems.STYX_ELYTRA_CHESTPLATE.get(), "冥河鞘翅胸甲");
         add(ModItems.UNDERWORLD_ABYSS_MUSIC_DISC.get(), "音乐唱片——群系/冥界深渊");
 
         add(ModBlocks.BLOODY_SAND.get(), "血染沙");
@@ -180,6 +183,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.UNDERWORLD_BRICK_WALL.get(), "冥界砖墙");
         add(ModBlocks.UNDERWORLD_SPIRIT_STONE.get(), "幽冥灵石");
         add(ModBlocks.UNDERWORLD_CRYSTAL_ORE.get(), "§b幽冥晶矿石");
+        add(ModBlocks.UNDERWORLD_CRYSTAL_CLUSTER.get(), "幽冥晶簇");
+        add(ModBlocks.UNDERWORLD_ENCHANTER.get(), "幽冥附神器");
+        add(ModBlocks.ELYTRA_CHARGER.get(), "鞘翅充能台");
         add(ModBlocks.VOID_NEBULA.get(), "虚空星云");
         add(ModBlocks.VOIDRITE_BLOCK.get(), "虚空合金块");
 
@@ -302,7 +308,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
                 "§4§l冥河渡客使用的武器——但也许没那么完美，或许可以进行升级？\n§r§6§o坚不可摧：§r§3§o正常情况下该武器耐久不会被消耗。如果通过某种手段使得该武器耐久受损，则武器耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o战刃之锋：§r§3§o当蓄力条为满攻击生物时，冥河战刃会同时对以玩家为中心半径4格内所有非友方生物造成§r§e§o（战刃攻击力+目标最大生命值×5%）§r§3§o的范围伤害。\n§r§6§o灵魂汲取：§r§3§o蓄力条为满时战刃每次攻击都会强制为玩家恢复§r§d§o（玩家最大生命值×8%）§r§3§o的血量。\n§r§4§o警告：由于该剑攻击逻辑发生变化，大多数效用性附魔（如锋利、亡灵杀手）在该剑上大概率无法起效！");
         add("tooltip.nine_nether_regions.styx_twinned_sword", "§3§o按下§r §6§oAlt§r§3§o以显示更多。");
         add("tooltip.nine_nether_regions.styx_twinned_sword_alt",
-                "§4§l本模组的终极武器，凝结着来自冥界深处的科技和强大的力量，足以让对手感到胆寒。\n§6§o坚不可摧：§r§3§o正常情况下该武器耐久不会被消耗。如果通过某种手段使得该武器耐久受损，则武器耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o寒锋威压：§r§3§o当蓄力条为满攻击生物时，冥河双刃会同时对以玩家为中心半径6格内所有非友方生物造成§r§e§o（双刃攻击力+目标最大生命值×16%）§r§3§o的范围伤害，同时对直击目标以及半径内所有非友方生物施加12秒§r§e§o归寂（3级）、磁锢、虚弱（4级）、缓慢（4级）§r§3§o效果。\n§r§6§o灵魂豪夺：§r§3§o蓄力条为满时双刃每次攻击都会强制为玩家恢复§r§d§o（玩家最大生命值×16%）§r§3§o的血量。\n§r§4§o警告：由于该剑攻击逻辑发生变化，大多数效用性附魔（如锋利、亡灵杀手）在该剑上大概率无法起效！");
+                "§4§l本模组的终极武器，凝结着来自冥界深处的科技和强大的力量，足以让对手感到胆寒。\n§6§o坚不可摧：§r§3§o正常情况下该武器耐久不会被消耗。如果通过某种手段使得该武器耐久受损，则武器耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o寒锋威压：§r§3§o当蓄力条为满攻击生物时，冥河双刃会同时对以玩家为中心半径6格内所有非友方生物造成§r§e§o（双刃攻击力+目标最大生命值×16%）§r§3§o的范围伤害，同时对直击目标以及半径内所有非友方生物强制施加12秒§r§e§o归寂（4级）、磁锢（4级）、虚弱（4级）、缓慢（4级）§r§3§o效果。\n§r§6§o灵魂豪夺：§r§3§o蓄力条为满时双刃每次攻击都会强制为玩家恢复§r§d§o（玩家最大生命值×16%）§r§3§o的血量。\n§r§4§o警告：由于该剑攻击逻辑发生变化，大多数效用性附魔（如锋利、亡灵杀手）在该剑上大概率无法起效！");
         add("tooltip.nine_nether_regions.styx_pickaxe", "§3§o按下§r §6§oAlt§r§3§o以显示更多。");
         add("tooltip.nine_nether_regions.styx_pickaxe_alt",
                 "§3§o这把镐子是所有镐子中的佼佼者。\n正常情况下它的耐久无法被消耗，如果遇到特殊情况使它的耐久降低，它会极快速的恢复满耐久值（每4tick恢复24点）。\n受到冥河之力的祝福，这把镐子破坏任何方块的速度都为原来的2.5倍，且破坏任何方块均有24%的概率掉落钻石，12%的概率掉落下界合金碎片。");
@@ -347,5 +353,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.nine_nether_regions.fluoroscopy_block", "§3§o由几个透明方块融合压缩形成的特殊方块，或许可以用来寻找地下隐藏的矿物和结构……");
         add("tooltip.nine_nether_regions.voidrite_ingot", "§3§o集万千虚空之力于一锭。");
         add("tooltip.nine_nether_regions.voidrite_upgrade_smithing_template", "§3虚空合金升级");
+        add("tooltip.nine_nether_regions.elytra_charge", "§b充能：%1$s / %2$s");
+
+        add("gui.nine_nether_regions.underworld_enchanter.catalyst", "幽冥晶");
+        add("gui.nine_nether_regions.elytra_charger.fuel", "燃料");
     }
 }

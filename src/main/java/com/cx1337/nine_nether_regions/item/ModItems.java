@@ -141,6 +141,8 @@ public class ModItems {
             ITEMS.register("underworld_brick", () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
     public static final DeferredItem<Item> UNDERWORLD_CRYSTAL =
             ITEMS.register("underworld_crystal", () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
+    public static final DeferredItem<Item> UNDERWORLD_POWERED_ELYTRA =
+            ITEMS.register("underworld_powered_elytra", UnderworldPoweredElytra::new);
     public static final DeferredItem<Item> NETHERITE_ROD =
             ITEMS.register("netherite_rod", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant()));
     public static final DeferredItem<Item> VOIDRITE_ROD =
@@ -338,6 +340,8 @@ public class ModItems {
             ITEMS.register("hellalloy_helmet", HellalloyHelmet::new);
     public static final DeferredItem<ArmorItem> HELLALLOY_CHESTPLATE =
             ITEMS.register("hellalloy_chestplate", HellalloyChestplate::new);
+    public static final DeferredItem<ArmorItem> HELLALLOY_ELYTRA_CHESTPLATE =
+            ITEMS.register("hellalloy_elytra_chestplate", HellalloyElytraChestplate::new);
     public static final DeferredItem<ArmorItem> HELLALLOY_LEGGINGS =
             ITEMS.register("hellalloy_leggings", HellalloyLeggings::new);
     public static final DeferredItem<ArmorItem> HELLALLOY_BOOTS =
@@ -347,6 +351,8 @@ public class ModItems {
             ITEMS.register("styx_helmet", StyxHelmet::new);
     public static final DeferredItem<ArmorItem> STYX_CHESTPLATE =
             ITEMS.register("styx_chestplate", StyxChestplate::new);
+    public static final DeferredItem<ArmorItem> STYX_ELYTRA_CHESTPLATE =
+            ITEMS.register("styx_elytra_chestplate", StyxElytraChestplate::new);
     public static final DeferredItem<ArmorItem> STYX_LEGGINGS =
             ITEMS.register("styx_leggings", StyxLeggings::new);
     public static final DeferredItem<ArmorItem> STYX_BOOTS =

@@ -94,6 +94,9 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
                 block -> createSlabItemTable(ModBlocks.UNDERWORLD_BRICK_SLAB.get()));
         dropSelf(ModBlocks.UNDERWORLD_BRICK_STAIRS.get());
         dropSelf(ModBlocks.UNDERWORLD_BRICK_WALL.get());
+        dropSelf(ModBlocks.UNDERWORLD_CRYSTAL_CLUSTER.get());
+        dropSelf(ModBlocks.UNDERWORLD_ENCHANTER.get());
+        dropSelf(ModBlocks.ELYTRA_CHARGER.get());
 
         //非精准采集不掉落自身的矿石按下述方式写。
         add(ModBlocks.UNDERWORLD_CRYSTAL_ORE.get(),

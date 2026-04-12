@@ -29,13 +29,14 @@ public class DamageTest extends SwordItem {
                         player.getX(), player.getY(), player.getZ(),
                         SoundEvents.TOTEM_USE,
                         SoundSource.PLAYERS, 1.0F, 1.0F);
-                AABB areaOfEffect = player.getBoundingBox().inflate(4.0D);
+                AABB areaOfEffect = player.getBoundingBox().inflate(4.5D);
                 List<LivingEntity> entitiesInRange = serverLevel.getEntitiesOfClass(
                         LivingEntity.class, areaOfEffect,
                         entity -> entity != player
                 );
                 for (LivingEntity entity : entitiesInRange) {
-                    float newHealth = entity.getHealth() - 4444.0F;
+                    float maxHealth = entity.getHealth();
+                    float newHealth = maxHealth * 0.01F - 4444.0F;
                     if (newHealth <= 0.0F) {
                         entity.setHealth(0.0F);
                         entity.die(player.damageSources().playerAttack(player));

@@ -1,13 +1,17 @@
 package com.cx1337.nine_nether_regions;
 
 import com.cx1337.nine_nether_regions.block.ModBlocks;
+import com.cx1337.nine_nether_regions.block.entity.ModBlockEntities;
 import com.cx1337.nine_nether_regions.client.event.ClientEvents;
+import com.cx1337.nine_nether_regions.data.component.ModDataComponents;
 import com.cx1337.nine_nether_regions.effect.ModEffects;
 import com.cx1337.nine_nether_regions.enchantment.ModEnchantmentEffects;
 import com.cx1337.nine_nether_regions.item.ModCreativeModeTabs;
 import com.cx1337.nine_nether_regions.event.ModEvents;
 import com.cx1337.nine_nether_regions.item.ModItems;
+import com.cx1337.nine_nether_regions.menu.ModMenuTypes;
 import com.cx1337.nine_nether_regions.potion.ModPotions;
+import com.cx1337.nine_nether_regions.recipe.ModRecipes;
 import com.cx1337.nine_nether_regions.sound.ModSounds;
 import com.cx1337.nine_nether_regions.util.ModItemProperties;
 import net.minecraft.resources.ResourceLocation;
@@ -41,6 +45,10 @@ public class NineNetherRegions {
         ModItems.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
+        ModDataComponents.register(modEventBus);
 
         ModEvents.register();
         ModSounds.register(modEventBus);

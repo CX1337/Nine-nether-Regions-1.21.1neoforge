@@ -68,6 +68,11 @@ public class StyxBoots extends ArmorItem {
     }
 
     @Override
+    public boolean canWalkOnPowderedSnow(@NotNull ItemStack stack, @NotNull LivingEntity wearer) {
+        return true;
+    }
+
+    @Override
     public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context,
                                 @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
         if (Screen.hasAltDown()){

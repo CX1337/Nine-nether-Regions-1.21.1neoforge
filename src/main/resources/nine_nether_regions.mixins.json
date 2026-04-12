@@ -2,7 +2,9 @@
   "required": true,
   "package": "com.cx1337.nine_nether_regions.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": [
+    "EntityMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   },

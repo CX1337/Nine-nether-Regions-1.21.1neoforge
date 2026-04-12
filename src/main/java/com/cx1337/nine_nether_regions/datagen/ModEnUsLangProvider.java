@@ -123,6 +123,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.THE_STYX_MUSIC_DISC.get(), "Music Disc--Biomes/The Styx,Underworld Plains");
         add(ModItems.UNDERWORLD_BRICK.get(), "Underworld Brick");
         add(ModItems.UNDERWORLD_CRYSTAL.get(), "§bUnderworld Crystal");
+        add(ModItems.UNDERWORLD_POWERED_ELYTRA.get(), "Underworld Powered Elytra");
+        add(ModItems.HELLALLOY_ELYTRA_CHESTPLATE.get(), "Hellalloy Elytra Chestplate");
+        add(ModItems.STYX_ELYTRA_CHESTPLATE.get(), "Styx Elytra Chestplate");
         add(ModItems.UNDERWORLD_ABYSS_MUSIC_DISC.get(), "Music Disc--Biomes/Underworld Abyss");
 
         add(ModBlocks.BLOODY_SAND.get(), "Bloody Sand");
@@ -179,6 +182,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.UNDERWORLD_BRICK_WALL.get(), "Underworld Brick Wall");
         add(ModBlocks.UNDERWORLD_SPIRIT_STONE.get(), "Underworld Spirit Stone");
         add(ModBlocks.UNDERWORLD_CRYSTAL_ORE.get(), "Underworld Crystal ore");
+        add(ModBlocks.UNDERWORLD_CRYSTAL_CLUSTER.get(), "Underworld Crystal Cluster");
+        add(ModBlocks.UNDERWORLD_ENCHANTER.get(), "Underworld Enchanter");
+        add(ModBlocks.ELYTRA_CHARGER.get(), "Elytra Charger");
         add(ModBlocks.VOID_NEBULA.get(), "Void Nebula");
         add(ModBlocks.VOIDRITE_BLOCK.get(), "Voidrite Block");
 
@@ -300,7 +306,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
                 "§4§lCharon's weapon.Maybe not very perfect?Try to upgrade it.\n§r§6§oIndestructible: §r§3§oUnder normal circumstances, this weapon's durability is not consumed. If the weapon's durability is damaged by some means, it will recover very quickly (42 points per 4 ticks).\n§r§6§oBattle-sword's Edge: §r§3§oWhen attacking a creature, the Styx Battle-sword simultaneously deals area damage to all non-friendly creatures within a 4-block radius centered on the player, dealing §r§e§o(Battle-sword's attack power + target's max health × 5%) §r§3§o damage.\n§r§6§oSoul Siphon: §r§3§oEach time the battle-sword attacks, it forcibly restores §r§d§o(player's max health × 8%) §r§3§o health to the player.\n§r§4§oWarning: Due to changes in this sword's attack mechanics, most utility enchantments (such as Sharpness, Smite) will likely have no effect on it!");
         add("tooltip.nine_nether_regions.styx_twinned_sword", "§3§oPress§r §6§oAlt§r§3§o to display more.");
         add("tooltip.nine_nether_regions.styx_twinned_sword_alt",
-                "§4§lThe ultimate weapon of this mod, forged with technology and power from the depths of the Underworld, enough to chill the hearts of any foe.\\n§6§oIndestructible: §r§3§oUnder normal circumstances, the durability of this weapon is not consumed. If the weapon's durability is somehow damaged, it will recover extremely quickly (42 points every 4 ticks).\\n§r§6§oChill of the Edge: §r§3§oWhen attacking a creature with a fully charged attack, the Styx Twinned Sword simultaneously deals area damage to all non-friendly entities within a 6-block radius centered on the player, dealing §r§e§o(Sword Attack Damage + Target's Max Health × 16%)§r§3§o, and applies the following effects for 12 seconds to both the direct target and all non-friendly entities within the radius: §r§e§oDecline (III), Mag Confine, Weakness (IV), Slowness (IV)§r§3§o.\\n§r§6§oSoul Harvest: §r§3§oWhen the charge bar is full, each attack with the twin blades forcibly restores §r§d§o(16% of the player's max health)§r§3§o health to the player.\\n§r§4§oWarning: Due to changes in the sword's attack logic, most utility enchantments (such as Sharpness, Smite) will likely not take effect on this sword!");
+                "§4§lThe ultimate weapon of this mod, forged with technology and power from the depths of the Underworld, enough to chill the hearts of any foe.\\n§6§oIndestructible: §r§3§oUnder normal circumstances, the durability of this weapon is not consumed. If the weapon's durability is somehow damaged, it will recover extremely quickly (42 points every 4 ticks).\\n§r§6§oChill of the Edge: §r§3§oWhen attacking a creature with a fully charged attack, the Styx Twinned Sword simultaneously deals area damage to all non-friendly entities within a 6-block radius centered on the player, dealing §r§e§o(Sword Attack Damage + Target's Max Health × 16%)§r§3§o, and forced applies the following effects for 12 seconds to both the direct target and all non-friendly entities within the radius: §r§e§oDecline (IV), Mag Confine (IV), Weakness (IV), Slowness (IV)§r§3§o.\\n§r§6§oSoul Harvest: §r§3§oWhen the charge bar is full, each attack with the twin blades forcibly restores §r§d§o(16% of the player's max health)§r§3§o health to the player.\\n§r§4§oWarning: Due to changes in the sword's attack logic, most utility enchantments (such as Sharpness, Smite) will likely not take effect on this sword!");
         add("tooltip.nine_nether_regions.styx_pickaxe", "§3§oPress§r §6§oAlt§r§3§o to display more.");
         add("tooltip.nine_nether_regions.styx_pickaxe_alt", "§3§oThis pickaxe is the best among all pickaxes.\nUnder normal circumstances, its durability cannot be consumed. If under special circumstances its durability is reduced, it will rapidly restore to full durability (restores 24 points per 4 ticks).\nBlessed by the power of Styx, this pickaxe breaks any block 2.5 times faster than normal, and when breaking any block, there is a 24% chance to drop a diamond and a 12% chance to drop a netherite scrap.");
         add("tooltip.nine_nether_regions.steel_base", "§3§oAfter a thousand trials and tribulations, one can obtain a good piece of steel.");
@@ -344,5 +350,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.nine_nether_regions.fluoroscopy_block", "§3§oA special block formed by fusing and compressing several transparent blocks, which may be used to locate hidden ores and structures underground…");
         add("tooltip.nine_nether_regions.voidrite_ingot", "§3§oCondenses the myriad powers of the Void into a single ingot.");
         add("tooltip.nine_nether_regions.voidrite_upgrade_smithing_template", "§3Voidrite Upgrade");
+        add("tooltip.nine_nether_regions.elytra_charge", "§bCharge: %1$s / %2$s");
+        add("gui.nine_nether_regions.underworld_enchanter.catalyst", "Catalyst");
+        add("gui.nine_nether_regions.elytra_charger.fuel", "Fuel");
     }
 }

@@ -4,6 +4,7 @@ import com.cx1337.nine_nether_regions.effect.ModEffects;
 import com.cx1337.nine_nether_regions.effect.effects.DeclineEffect;
 import com.cx1337.nine_nether_regions.item.ModToolTiers;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -11,6 +12,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -26,9 +28,15 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
+import net.neoforged.fml.util.ObfuscationReflectionHelper;
 import org.jetbrains.annotations.NotNull;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.MethodHandles;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.List;
+import java.util.Map;
 
 public class StyxTwinnedSword extends SwordItem implements RangeWeapon{
     public StyxTwinnedSword() {
@@ -51,6 +59,26 @@ public class StyxTwinnedSword extends SwordItem implements RangeWeapon{
                         new AttributeModifier(BASE_BLOCK_INTERACTION_RANGE_ID, 4.0F,
                                 AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.HAND)
                 .build();
+    }
+
+    private static MethodHandle ACTIVE_EFFECTS_GETTER;
+    private static MethodHandle ON_EFFECT_ADDED;
+    static {
+        try {
+            Field field = ObfuscationReflectionHelper.findField(
+                    LivingEntity.class, "activeEffects"
+            );
+            field.setAccessible(true);
+            ACTIVE_EFFECTS_GETTER = MethodHandles.lookup().unreflectGetter(field);
+            Method method = ObfuscationReflectionHelper.findMethod(
+                    LivingEntity.class, "onEffectAdded",
+                    MobEffectInstance.class, Entity.class
+            );
+            method.setAccessible(true);
+            ON_EFFECT_ADDED = MethodHandles.lookup().unreflect(method);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to setup reflection handles", e);
+        }
     }
 
     @Override
@@ -116,15 +144,32 @@ public class StyxTwinnedSword extends SwordItem implements RangeWeapon{
 
 
     private void forceApplyEffects(LivingEntity entity) {
-        MobEffectInstance decline = new MobEffectInstance(ModEffects.DECLINE, 240, 2);
-        MobEffectInstance magConfine = new MobEffectInstance(ModEffects.MAG_CONFINE, 240, 0);
+        MobEffectInstance decline = new MobEffectInstance(ModEffects.DECLINE, 240, 3);
+        MobEffectInstance magConfine = new MobEffectInstance(ModEffects.MAG_CONFINE, 240, 3);
         MobEffectInstance weakness = new MobEffectInstance(MobEffects.WEAKNESS, 240, 3);
         MobEffectInstance slowness = new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 240, 3);
 
-        entity.forceAddEffect(decline, null);
-        entity.forceAddEffect(magConfine, null);
-        entity.forceAddEffect(weakness, null);
-        entity.forceAddEffect(slowness, null);
+        try {
+            @SuppressWarnings("unchecked")
+            Map<Holder<MobEffect>, MobEffectInstance> effectsMap =
+                    (Map<Holder<MobEffect>, MobEffectInstance>) ACTIVE_EFFECTS_GETTER.invoke(entity);
+            effectsMap.put(decline.getEffect(), decline);
+            effectsMap.put(magConfine.getEffect(), magConfine);
+            effectsMap.put(weakness.getEffect(), weakness);
+            effectsMap.put(slowness.getEffect(), slowness);
+
+            if (ON_EFFECT_ADDED != null) {
+                ON_EFFECT_ADDED.invoke(entity, decline, null);
+                ON_EFFECT_ADDED.invoke(entity, magConfine, null);
+                ON_EFFECT_ADDED.invoke(entity, weakness, null);
+                ON_EFFECT_ADDED.invoke(entity, slowness, null);
+            }
+        } catch (Throwable t) {
+            entity.forceAddEffect(decline, null);
+            entity.forceAddEffect(magConfine, null);
+            entity.forceAddEffect(weakness, null);
+            entity.forceAddEffect(slowness, null);
+        }
     }
 
     @Override

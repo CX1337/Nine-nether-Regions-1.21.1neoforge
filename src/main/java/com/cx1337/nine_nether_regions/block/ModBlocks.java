@@ -212,6 +212,14 @@ public class ModBlocks {
                     .sound(SoundType.AMETHYST)
                     .requiresCorrectToolForDrops()
                     .lightLevel(p_50872_ -> 12)));
+    public static final DeferredBlock<Block> UNDERWORLD_CRYSTAL_CLUSTER =
+            registerBlocks("underworld_crystal_cluster", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_LIGHT_GREEN)
+                    .instrument(NoteBlockInstrument.CHIME)
+                    .strength(3.0F, 36.0F)
+                    .sound(SoundType.AMETHYST_CLUSTER)
+                    .requiresCorrectToolForDrops()
+                    .lightLevel(p_50872_ -> 11)));
 
     public static final DeferredBlock<Block> MANJUSAKA =
             registerBlocks("manjusaka", () -> new TallFlowerBlock(BlockBehaviour.Properties.of()
@@ -444,6 +452,22 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .strength(3.0F,444.0F)
                     .sound(SoundType.NETHER_BRICKS)));
+    public static final DeferredBlock<Block> UNDERWORLD_ENCHANTER =
+            registerBlocks("underworld_enchanter", () -> new UnderworldEnchanterBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_GREEN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(4.5F, 800.0F)
+                    .sound(SoundType.NETHER_BRICKS)
+                    .lightLevel(state -> 7)), new Item.Properties().rarity(Rarity.UNCOMMON));
+    public static final DeferredBlock<Block> ELYTRA_CHARGER =
+            registerBlocks("elytra_charger", () -> new ElytraChargerBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_LIGHT_BLUE)
+                    .instrument(NoteBlockInstrument.HAT)
+                    .requiresCorrectToolForDrops()
+                    .strength(5.0F, 900.0F)
+                    .sound(SoundType.NETHERITE_BLOCK)
+                    .lightLevel(state -> 8)), new Item.Properties().rarity(Rarity.UNCOMMON));
     public static final DeferredBlock<Block> NULL_BLOCK =
             registerBlocks("null_block", () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_PURPLE)

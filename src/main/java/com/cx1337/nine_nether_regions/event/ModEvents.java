@@ -8,6 +8,7 @@ import com.cx1337.nine_nether_regions.item.custom.HellalloyLongbow;
 import com.cx1337.nine_nether_regions.item.custom.StaffItem;
 import com.cx1337.nine_nether_regions.item.custom.StyxTwinnedSword;
 import com.cx1337.nine_nether_regions.potion.ModPotions;
+import com.cx1337.nine_nether_regions.util.ModArmorUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.core.Holder;
@@ -64,6 +65,7 @@ public class ModEvents {
         FIREPROOF_ITEMS.add(ModItems.HELLALLOY_LONGBOW.get());
         FIREPROOF_ITEMS.add(ModItems.HELLALLOY_HELMET.get());
         FIREPROOF_ITEMS.add(ModItems.HELLALLOY_CHESTPLATE.get());
+        FIREPROOF_ITEMS.add(ModItems.HELLALLOY_ELYTRA_CHESTPLATE.get());
         FIREPROOF_ITEMS.add(ModItems.HELLALLOY_LEGGINGS.get());
         FIREPROOF_ITEMS.add(ModItems.HELLALLOY_BOOTS.get());
         FIREPROOF_ITEMS.add(ModItems.HELLALLOY_AXE.get());
@@ -79,9 +81,11 @@ public class ModEvents {
         FIREPROOF_ITEMS.add(ModItems.STYX_TWINNED_SWORD.get());
         FIREPROOF_ITEMS.add(ModItems.STYX_HELMET.get());
         FIREPROOF_ITEMS.add(ModItems.STYX_CHESTPLATE.get());
+        FIREPROOF_ITEMS.add(ModItems.STYX_ELYTRA_CHESTPLATE.get());
         FIREPROOF_ITEMS.add(ModItems.STYX_LEGGINGS.get());
         FIREPROOF_ITEMS.add(ModItems.STYX_BOOTS.get());
         FIREPROOF_ITEMS.add(ModItems.STYX_PICKAXE.get());
+        FIREPROOF_ITEMS.add(ModItems.UNDERWORLD_POWERED_ELYTRA.get());
     }
     @SubscribeEvent
     public void makeItemFireproof(EntityJoinLevelEvent event) {
@@ -181,11 +185,7 @@ public class ModEvents {
         }
 
         Player player = event.getEntity();
-        boolean fullSet =
-                player.getItemBySlot(EquipmentSlot.HEAD).is(ModItems.HELLALLOY_HELMET.get()) &&
-                        player.getItemBySlot(EquipmentSlot.CHEST).is(ModItems.HELLALLOY_CHESTPLATE.get()) &&
-                        player.getItemBySlot(EquipmentSlot.LEGS).is(ModItems.HELLALLOY_LEGGINGS.get()) &&
-                        player.getItemBySlot(EquipmentSlot.FEET).is(ModItems.HELLALLOY_BOOTS.get());
+        boolean fullSet = ModArmorUtils.hasFullHellalloyArmor(player);
 
         if (fullSet) {
             addIfMissingHellalloy(player, MobEffects.DAMAGE_RESISTANCE, 310, 1, false);
@@ -218,11 +218,7 @@ public class ModEvents {
     @SubscribeEvent
     public void onLivingDamageHellalloy(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            boolean fullSet =
-                    player.getItemBySlot(EquipmentSlot.HEAD).is(ModItems.HELLALLOY_HELMET.get()) &&
-                            player.getItemBySlot(EquipmentSlot.CHEST).is(ModItems.HELLALLOY_CHESTPLATE.get()) &&
-                            player.getItemBySlot(EquipmentSlot.LEGS).is(ModItems.HELLALLOY_LEGGINGS.get()) &&
-                            player.getItemBySlot(EquipmentSlot.FEET).is(ModItems.HELLALLOY_BOOTS.get());
+            boolean fullSet = ModArmorUtils.hasFullHellalloyArmor(player);
 
             if (fullSet) {
                 float originalDamage = event.getNewDamage();
@@ -339,16 +335,9 @@ public class ModEvents {
         }
 
         Player player = event.getEntity();
-        boolean fullSet =
-                player.getItemBySlot(EquipmentSlot.HEAD).is(ModItems.STYX_HELMET.get()) &&
-                        player.getItemBySlot(EquipmentSlot.CHEST).is(ModItems.STYX_CHESTPLATE.get()) &&
-                        player.getItemBySlot(EquipmentSlot.LEGS).is(ModItems.STYX_LEGGINGS.get()) &&
-                        player.getItemBySlot(EquipmentSlot.FEET).is(ModItems.STYX_BOOTS.get());
-
-        if (fullSet) {
+        if (ModArmorUtils.hasFullStyxArmor(player)) {
             addIfMissingStyx(player, MobEffects.DAMAGE_RESISTANCE, 310, 2, false);
             addIfMissingStyx(player, MobEffects.ABSORPTION, 310, 1, false);
-
             //强制恢复生命值
             styxTickCounter++;
             if (styxTickCounter >= 10) {
@@ -390,15 +379,11 @@ public class ModEvents {
     @SubscribeEvent
     public void onLivingDamageStyx(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player) {
-            boolean fullSet =
-                    player.getItemBySlot(EquipmentSlot.HEAD).is(ModItems.STYX_HELMET.get()) &&
-                            player.getItemBySlot(EquipmentSlot.CHEST).is(ModItems.STYX_CHESTPLATE.get()) &&
-                            player.getItemBySlot(EquipmentSlot.LEGS).is(ModItems.STYX_LEGGINGS.get()) &&
-                            player.getItemBySlot(EquipmentSlot.FEET).is(ModItems.STYX_BOOTS.get());
-            if (fullSet) {
+            if (ModArmorUtils.hasFullStyxArmor(player)) {
                 DamageSource source = event.getSource();
                 if (source.is(DamageTypes.MAGIC) || source.is(DamageTypes.DRAGON_BREATH)
                 || source.is(DamageTypes.WITHER) || source.is(DamageTypes.INDIRECT_MAGIC)) {
+                    event.setNewDamage(0);
                     return;
                 }
                 if (source.is(DamageTypeTags.IS_EXPLOSION)) {
@@ -416,11 +401,11 @@ public class ModEvents {
             }
 
             float originalDamage = event.getNewDamage();
-                if (fullSet && originalDamage <= 3.0f) {
+                if (ModArmorUtils.hasFullStyxArmor(player) && originalDamage <= 3.0f) {
                     event.setNewDamage(0);
                     return;
             }
-                if (fullSet) {
+                if (ModArmorUtils.hasFullStyxArmor(player) && originalDamage > 3.0f) {
                     float reducedDamage = originalDamage * 0.25f;
                     event.setNewDamage(reducedDamage);
                 }
