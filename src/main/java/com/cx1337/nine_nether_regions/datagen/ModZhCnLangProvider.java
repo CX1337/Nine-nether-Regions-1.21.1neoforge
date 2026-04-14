@@ -2,6 +2,7 @@ package com.cx1337.nine_nether_regions.datagen;
 
 import com.cx1337.nine_nether_regions.NineNetherRegions;
 import com.cx1337.nine_nether_regions.block.ModBlocks;
+import com.cx1337.nine_nether_regions.entity.ModEntities;
 import com.cx1337.nine_nether_regions.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
@@ -37,6 +38,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.MANJUSAKA_PLAIN_MUSIC_DISC.get(), "音乐唱片——群系/彼岸花平原");
         add(ModItems.STYX_FABRIC.get(), "冥河布料");
         add(ModItems.GHOSTLIUM.get(), "幽冥质");
+        add(ModItems.HELL_BLUEBERRY.get(), "幽冥蓝莓");
         add(ModItems.HELLALLOY_INGOT.get(), "§a幽冥合金锭");
         add(ModItems.HELLALLOY_AXE.get(), "§a幽冥合金斧");
         add(ModItems.HELLALLOY_HOE.get(), "§a幽冥合金锄");
@@ -124,10 +126,12 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.THE_STYX_MUSIC_DISC.get(), "音乐唱片——群系/冥河、幽冥平川");
         add(ModItems.UNDERWORLD_BRICK.get(), "冥界砖");
         add(ModItems.UNDERWORLD_CRYSTAL.get(), "§b幽冥晶");
-        add(ModItems.UNDERWORLD_POWERED_ELYTRA.get(), "幽冥动力鞘翅");
-        add(ModItems.HELLALLOY_ELYTRA_CHESTPLATE.get(), "幽冥合金鞘翅胸甲");
-        add(ModItems.STYX_ELYTRA_CHESTPLATE.get(), "冥河鞘翅胸甲");
+        add(ModItems.UNDERWORLD_POWERED_ELYTRA.get(), "幽冥动力鞘翅（WIP）");
+        add(ModItems.HELLALLOY_ELYTRA_CHESTPLATE.get(), "幽冥合金鞘翅胸甲（WIP）");
+        add(ModItems.STYX_ELYTRA_CHESTPLATE.get(), "冥河鞘翅胸甲（WIP）");
         add(ModItems.UNDERWORLD_ABYSS_MUSIC_DISC.get(), "音乐唱片——群系/冥界深渊");
+        add(ModItems.CRAZFIRE_SPAWN_EGG.get(), "狂火刷怪蛋");
+        add(ModItems.STYXBUG_SPAWN_EGG.get(), "冥蛉刷怪蛋");
 
         add(ModBlocks.BLOODY_SAND.get(), "血染沙");
         add(ModBlocks.BLOODBLADE_ORE.get(), "§4血刃矿石");
@@ -140,6 +144,7 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.GLOWING_UNDERWORLD_BRICKS.get(), "§b幽光冥界砖块");
         add(ModBlocks.GLOWING_UNDERWORLD_BRICK_SLAB.get(), "§b幽光冥界半砖");
         add(ModBlocks.GLOWING_UNDERWORLD_BRICK_STAIRS.get(), "§b幽光冥界砖楼梯");
+        add(ModBlocks.HELL_BLUEBERRY_BUSH.get(), "幽冥蓝莓灌木");
         add(ModBlocks.HELLALLOY_BLOCK.get(), "§a幽冥合金块");
         add(ModBlocks.HELLIGHT.get(), "冥光体");
         add(ModBlocks.HELL_NUCLEUS.get(), "§c§l炼狱晶核");
@@ -183,11 +188,17 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.UNDERWORLD_BRICK_WALL.get(), "冥界砖墙");
         add(ModBlocks.UNDERWORLD_SPIRIT_STONE.get(), "幽冥灵石");
         add(ModBlocks.UNDERWORLD_CRYSTAL_ORE.get(), "§b幽冥晶矿石");
-        add(ModBlocks.UNDERWORLD_CRYSTAL_CLUSTER.get(), "幽冥晶簇");
-        add(ModBlocks.UNDERWORLD_ENCHANTER.get(), "幽冥附神器");
-        add(ModBlocks.ELYTRA_CHARGER.get(), "鞘翅充能台");
+        add(ModBlocks.UNDERWORLD_ENCHANTER.get(), "幽冥附神器（WIP）");
+        add(ModBlocks.ELYTRA_CHARGER.get(), "鞘翅充能台（WIP）");
         add(ModBlocks.VOID_NEBULA.get(), "虚空星云");
         add(ModBlocks.VOIDRITE_BLOCK.get(), "虚空合金块");
+
+        add(ModEntities.CRAZFIRE.get(), "狂火（WIP）");
+        add(ModEntities.STYXBUG.get(), "冥蛉");
+
+        add("bug_idle.sub", "冥蛉：轻鸣");
+        add("bug_hurt.sub", "冥蛉：受伤");
+        add("bug_death.sub", "冥蛉：死亡");
 
         add("effect.nine_nether_regions.decline", "归寂");
         add("death.attack.decline", "%1$s随风飘散了");
@@ -317,13 +328,13 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.nine_nether_regions.styx_leggings", "§c§l愿冥河之力与你同在。\n§r§3§o按下§r §6§oAlt§r§3§o以显示更多。");
         add("tooltip.nine_nether_regions.styx_boots", "§c§l愿冥河之力与你同在。\n§r§3§o按下§r §6§oAlt§r§3§o以显示更多。");
         add("tooltip.nine_nether_regions.styx_helmet_alt",
-                "§6§o坚不可摧：§r§3§o正常情况下该装备耐久不会被消耗。如果通过某种手段使得该装备耐久受损，则装备耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o全套效果——不动如山：§r§3§o当原始伤害≤3点或类型为§r§5§o魔法、§r§e§o爆炸、§r§3§o冰冻、§r§1§o监守者音波§r§3§o时，强制将伤害数值降低为0；持续提供§r§6§o抗性提升、伤害吸收§r§3§o效果（全效果3级）；每10tick强制恢复1.5点生命值并提供75%对于几乎所有伤害的减免。持续清除除§r§6§o不祥之兆、试炼之兆、袭击之兆§r§3§o以外的所有负面效果。\n§r§6§o单件效果：§r§3§o持续提供§r§6§o夜视、水下呼吸、饱和§r§3§o效果（全效果2级），且免疫§7§o失明、黑暗、饥饿、血刃诅咒§r§3§o效果。");
+                "§6§o坚不可摧：§r§3§o正常情况下该装备耐久不会被消耗。如果通过某种手段使得该装备耐久受损，则装备耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o全套效果——不动如山：§r§3§o当原始伤害≤3点或类型为§r§5§o魔法、§r§e§o爆炸、§r§3§o冰冻、§r§1§o监守者音波§r§3§o时，强制将伤害数值降低为0；持续提供§r§6§o抗性提升、伤害吸收§r§3§o效果（全效果3级）；每10tick强制恢复1.5点生命值并提供75%对于几乎所有伤害的减免。持续清除除§r§6§o不祥之兆、试炼之兆、袭击之兆§r§3§o以外的所有负面效果。当你因为任意原因生命值归零时，你有44%的概率免除死亡，将生命值立即恢复到最大生命值的25%同时获得5秒§r§6§o抗性提升§r§3§o（5级）效果。\n§r§6§o单件效果：§r§3§o持续提供§r§6§o夜视、水下呼吸、饱和§r§3§o效果（全效果2级），且免疫§7§o失明、黑暗、饥饿、血刃诅咒§r§3§o效果。");
         add("tooltip.nine_nether_regions.styx_chestplate_alt",
-                "§6§o坚不可摧：§r§3§o正常情况下该装备耐久不会被消耗。如果通过某种手段使得该装备耐久受损，则装备耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o全套效果——不动如山：§r§3§o当原始伤害≤3点或类型为§r§5§o魔法、§r§e§o爆炸、§r§3§o冰冻、§r§1§o监守者音波§r§3§o时，强制将伤害数值降低为0；持续提供§r§6§o抗性提升、伤害吸收§r§3§o效果（全效果3级）；每10tick强制恢复1.5点生命值并提供75%对于几乎所有伤害的减免。持续清除除§r§6§o不祥之兆、试炼之兆、袭击之兆§r§3§o以外的所有负面效果。\n§r§6§o单件效果：§r§3§o持续提供§r§6§o抗火、急迫§r§3§o效果（全效果2级）和§r§6§o力量§r§3§o效果（3级），且免疫§7§o凋零、中毒、挖掘疲劳、虚弱§r§3§o效果。");
+                "§6§o坚不可摧：§r§3§o正常情况下该装备耐久不会被消耗。如果通过某种手段使得该装备耐久受损，则装备耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o全套效果——不动如山：§r§3§o当原始伤害≤3点或类型为§r§5§o魔法、§r§e§o爆炸、§r§3§o冰冻、§r§1§o监守者音波§r§3§o时，强制将伤害数值降低为0；持续提供§r§6§o抗性提升、伤害吸收§r§3§o效果（全效果3级）；每10tick强制恢复1.5点生命值并提供75%对于几乎所有伤害的减免。持续清除除§r§6§o不祥之兆、试炼之兆、袭击之兆§r§3§o以外的所有负面效果。当你因为任意原因生命值归零时，你有44%的概率免除死亡，将生命值立即恢复到最大生命值的25%同时获得5秒§r§6§o抗性提升§r§3§o（5级）效果。\n§r§6§o单件效果：§r§3§o持续提供§r§6§o抗火、急迫§r§3§o效果（全效果2级）和§r§6§o力量§r§3§o效果（3级），且免疫§7§o凋零、中毒、挖掘疲劳、虚弱§r§3§o效果。");
         add("tooltip.nine_nether_regions.styx_leggings_alt",
-                "§6§o坚不可摧：§r§3§o正常情况下该装备耐久不会被消耗。如果通过某种手段使得该装备耐久受损，则装备耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o全套效果——不动如山：§r§3§o当原始伤害≤3点或类型为§r§5§o魔法、§r§e§o爆炸、§r§3§o冰冻、§r§1§o监守者音波§r§3§o时，强制将伤害数值降低为0；持续提供§r§6§o抗性提升、伤害吸收§r§3§o效果（全效果3级）；每10tick强制恢复1.5点生命值并提供75%对于几乎所有伤害的减免。持续清除除§r§6§o不祥之兆、试炼之兆、袭击之兆§r§3§o以外的所有负面效果。\n§r§6§o单件效果：§r§3§o持续提供§r§6§o跳跃提升§r§3§o效果（2级）和§r§6§o幸运§r§3§o效果（3级），且免疫§7§o反胃§r§3§o效果。");
+                "§6§o坚不可摧：§r§3§o正常情况下该装备耐久不会被消耗。如果通过某种手段使得该装备耐久受损，则装备耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o全套效果——不动如山：§r§3§o当原始伤害≤3点或类型为§r§5§o魔法、§r§e§o爆炸、§r§3§o冰冻、§r§1§o监守者音波§r§3§o时，强制将伤害数值降低为0；持续提供§r§6§o抗性提升、伤害吸收§r§3§o效果（全效果3级）；每10tick强制恢复1.5点生命值并提供75%对于几乎所有伤害的减免。持续清除除§r§6§o不祥之兆、试炼之兆、袭击之兆§r§3§o以外的所有负面效果。当你因为任意原因生命值归零时，你有44%的概率免除死亡，将生命值立即恢复到最大生命值的25%同时获得5秒§r§6§o抗性提升§r§3§o（5级）效果。\n§r§6§o单件效果：§r§3§o持续提供§r§6§o跳跃提升§r§3§o效果（2级）和§r§6§o幸运§r§3§o效果（3级），且免疫§7§o反胃§r§3§o效果。");
         add("tooltip.nine_nether_regions.styx_boots_alt",
-                "§6§o坚不可摧：§r§3§o正常情况下该装备耐久不会被消耗。如果通过某种手段使得该装备耐久受损，则装备耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o全套效果——不动如山：§r§3§o当原始伤害≤3点或类型为§r§5§o魔法、§r§e§o爆炸、§r§3§o冰冻、§r§1§o监守者音波§r§3§o时，强制将伤害数值降低为0；持续提供§r§6§o抗性提升、伤害吸收§r§3§o效果（全效果3级）；每10tick强制恢复1.5点生命值并提供75%对于几乎所有伤害的减免。持续清除除§r§6§o不祥之兆、试炼之兆、袭击之兆§r§3§o以外的所有负面效果。\n§r§6§o单件效果：§r§3§o持续提供§r§6§o迅捷§r§3§o效果（3级），且免疫§7§o缓慢、漂浮、寄生§r§3§o效果，同时对摔落伤害持有100%抗性。");
+                "§6§o坚不可摧：§r§3§o正常情况下该装备耐久不会被消耗。如果通过某种手段使得该装备耐久受损，则装备耐久会极快速恢复（每4tick恢复42点）。\n§r§6§o全套效果——不动如山：§r§3§o当原始伤害≤3点或类型为§r§5§o魔法、§r§e§o爆炸、§r§3§o冰冻、§r§1§o监守者音波§r§3§o时，强制将伤害数值降低为0；持续提供§r§6§o抗性提升、伤害吸收§r§3§o效果（全效果3级）；每10tick强制恢复1.5点生命值并提供75%对于几乎所有伤害的减免。持续清除除§r§6§o不祥之兆、试炼之兆、袭击之兆§r§3§o以外的所有负面效果。当你因为任意原因生命值归零时，你有44%的概率免除死亡，将生命值立即恢复到最大生命值的25%同时获得5秒§r§6§o抗性提升§r§3§o（5级）效果。\n§r§6§o单件效果：§r§3§o持续提供§r§6§o迅捷§r§3§o效果（3级），且免疫§7§o缓慢、漂浮、寄生§r§3§o效果，同时对摔落伤害持有100%抗性。");
         add("tooltip.nine_nether_regions.steel_base", "§3§o千锤百炼之后，方得一块好钢。");
         add("tooltip.nine_nether_regions.steel_ingot", "§3§o比铁更好。");
         add("tooltip.nine_nether_regions.rainbowgem_armors", "§3§o全套效果：对几乎所有伤害持有7%减免。");

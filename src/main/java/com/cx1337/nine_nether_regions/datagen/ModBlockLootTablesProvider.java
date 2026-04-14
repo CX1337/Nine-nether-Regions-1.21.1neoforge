@@ -6,6 +6,7 @@ import com.cx1337.nine_nether_regions.item.ModItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -16,6 +17,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.block.TallFlowerBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -94,7 +96,6 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
                 block -> createSlabItemTable(ModBlocks.UNDERWORLD_BRICK_SLAB.get()));
         dropSelf(ModBlocks.UNDERWORLD_BRICK_STAIRS.get());
         dropSelf(ModBlocks.UNDERWORLD_BRICK_WALL.get());
-        dropSelf(ModBlocks.UNDERWORLD_CRYSTAL_CLUSTER.get());
         dropSelf(ModBlocks.UNDERWORLD_ENCHANTER.get());
         dropSelf(ModBlocks.ELYTRA_CHARGER.get());
 
@@ -103,10 +104,27 @@ public class ModBlockLootTablesProvider extends BlockLootSubProvider {
                 block -> createMultipleOreDrops(ModBlocks.UNDERWORLD_CRYSTAL_ORE.get(), ModItems.UNDERWORLD_CRYSTAL.get(), 1, 4));
 
 
-        add(ModBlocks.MANJUSAKA.get(), block -> createTallFlowerDrops(block));
+        add(ModBlocks.MANJUSAKA.get(), this::createTallFlowerDrops);
         dropSelf(ModBlocks.PINESAP.get());
         add(ModBlocks.POTTED_PINESAP.get(), createPotFlowerItemTable(ModBlocks.PINESAP));
         add(ModBlocks.POTTED_HELLWOOD_SAPLING.get(), createPotFlowerItemTable(ModBlocks.HELLWOOD_SAPLING));
+
+        HolderLookup.RegistryLookup<Enchantment> registryLookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
+        this.add(ModBlocks.HELL_BLUEBERRY_BUSH.get(), block -> this.applyExplosionDecay(
+                block, LootTable.lootTable().withPool(LootPool.lootPool().when(
+                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.HELL_BLUEBERRY_BUSH.get())
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SweetBerryBushBlock.AGE, 3))
+                        ).add(LootItem.lootTableItem(ModItems.HELL_BLUEBERRY.get()))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
+                        .apply(ApplyBonusCount.addUniformBonusCount(registryLookup.getOrThrow(Enchantments.FORTUNE)))
+                ).withPool(LootPool.lootPool().when(
+                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.HELL_BLUEBERRY_BUSH.get())
+                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SweetBerryBushBlock.AGE, 2))
+                         ).add(LootItem.lootTableItem(ModItems.HELL_BLUEBERRY.get()))
+                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+                         .apply(ApplyBonusCount.addUniformBonusCount(registryLookup.getOrThrow(Enchantments.FORTUNE)))
+                )
+        ));
     }
 
     protected LootTable.Builder createTallFlowerDrops(Block block) {

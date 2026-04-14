@@ -36,6 +36,7 @@ import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
@@ -414,6 +415,24 @@ public class ModEvents {
                 if (hasBoots && event.getSource().is(DamageTypes.FALL)) {
                     event.setNewDamage(0);
                 }
+        }
+    }
+    //44%概率免死。
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public void onLivingDeath(LivingDeathEvent event) {
+        if (event.getEntity() instanceof Player player) {
+            if (ModArmorUtils.hasFullStyxArmor(player)) {
+                if (player.getRandom().nextDouble() <= 0.44) {
+                    event.setCanceled(true);
+                    float maxHealth = player.getMaxHealth();
+                    player.setHealth((float) (0.25 * maxHealth));
+                    player.deathTime = 0;
+                    player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,
+                            100, 4, false, true, true));
+                    player.level().playSound(null, player.blockPosition(), SoundEvents.WITHER_SPAWN, SoundSource.PLAYERS,
+                            1.0F, 1.0F);
+                }
+            }
         }
     }
 

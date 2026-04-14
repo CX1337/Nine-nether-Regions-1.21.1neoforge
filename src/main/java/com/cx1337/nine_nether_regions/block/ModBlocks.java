@@ -212,14 +212,6 @@ public class ModBlocks {
                     .sound(SoundType.AMETHYST)
                     .requiresCorrectToolForDrops()
                     .lightLevel(p_50872_ -> 12)));
-    public static final DeferredBlock<Block> UNDERWORLD_CRYSTAL_CLUSTER =
-            registerBlocks("underworld_crystal_cluster", () -> new Block(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_LIGHT_GREEN)
-                    .instrument(NoteBlockInstrument.CHIME)
-                    .strength(3.0F, 36.0F)
-                    .sound(SoundType.AMETHYST_CLUSTER)
-                    .requiresCorrectToolForDrops()
-                    .lightLevel(p_50872_ -> 11)));
 
     public static final DeferredBlock<Block> MANJUSAKA =
             registerBlocks("manjusaka", () -> new TallFlowerBlock(BlockBehaviour.Properties.of()
@@ -456,6 +448,7 @@ public class ModBlocks {
             registerBlocks("underworld_enchanter", () -> new UnderworldEnchanterBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_GREEN)
                     .instrument(NoteBlockInstrument.BASEDRUM)
+                    .noOcclusion()
                     .requiresCorrectToolForDrops()
                     .strength(4.5F, 800.0F)
                     .sound(SoundType.NETHER_BRICKS)
@@ -551,6 +544,10 @@ public class ModBlocks {
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
             });
+
+    public static final DeferredBlock<Block> HELL_BLUEBERRY_BUSH =
+            registerBlockOnly("hell_blueberry_bush",
+                    () -> new HellBlueberryBushBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SWEET_BERRY_BUSH)));
 
     private static <T extends Block> DeferredBlock<T> registerBlockOnly(String name, Supplier<T> block) {
         return BLOCKS.register(name, block);

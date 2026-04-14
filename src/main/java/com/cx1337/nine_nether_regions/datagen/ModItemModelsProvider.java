@@ -79,6 +79,7 @@ public class ModItemModelsProvider extends ItemModelProvider {
         basicItem(ModItems.WEB_FRUIT.get());
         basicItem(ModItems.HELLALLOY_ROD.get());
         basicItem(ModItems.NETHERITE_ROD.get());
+        basicItem(ModItems.HELL_BLUEBERRY.get());
         basicItem(ModBlocks.HELLWOOD_DOOR.asItem());
 
         //盔甲。
@@ -158,6 +159,10 @@ public class ModItemModelsProvider extends ItemModelProvider {
 
         //树苗
         saplingItem(ModBlocks.HELLWOOD_SAPLING);
+
+        //刷怪蛋
+        withExistingParent(ModItems.CRAZFIRE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.STYXBUG_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
 

@@ -6,6 +6,10 @@ import com.cx1337.nine_nether_regions.client.event.ClientEvents;
 import com.cx1337.nine_nether_regions.data.component.ModDataComponents;
 import com.cx1337.nine_nether_regions.effect.ModEffects;
 import com.cx1337.nine_nether_regions.enchantment.ModEnchantmentEffects;
+import com.cx1337.nine_nether_regions.entity.ModEntities;
+import com.cx1337.nine_nether_regions.entity.client.CrazfireRenderer;
+import com.cx1337.nine_nether_regions.entity.client.StyxbugRenderer;
+import com.cx1337.nine_nether_regions.entity.custom.CrazfireEntity;
 import com.cx1337.nine_nether_regions.item.ModCreativeModeTabs;
 import com.cx1337.nine_nether_regions.event.ModEvents;
 import com.cx1337.nine_nether_regions.item.ModItems;
@@ -14,8 +18,11 @@ import com.cx1337.nine_nether_regions.potion.ModPotions;
 import com.cx1337.nine_nether_regions.recipe.ModRecipes;
 import com.cx1337.nine_nether_regions.sound.ModSounds;
 import com.cx1337.nine_nether_regions.util.ModItemProperties;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.EventBusSubscriber;
 import org.slf4j.Logger;
 
@@ -54,6 +61,7 @@ public class NineNetherRegions {
         ModSounds.register(modEventBus);
 
         ModEffects.register(modEventBus);
+        ModEntities.register(modEventBus);
         ModPotions.register(modEventBus);
 
         ModEnchantmentEffects.register(modEventBus);
@@ -91,11 +99,13 @@ public class NineNetherRegions {
         LOGGER.info("HELLO from server starting");
     }
 
-    @EventBusSubscriber(modid = NineNetherRegions.MODID)
-    public class ClientModEvents {
+    @EventBusSubscriber(modid = NineNetherRegions.MODID, value = Dist.CLIENT)
+    public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLCommonSetupEvent event) {
             ModItemProperties.addCustomItemProperties();
+            EntityRenderers.register(ModEntities.CRAZFIRE.get(), CrazfireRenderer ::new);
+            EntityRenderers.register(ModEntities.STYXBUG.get(), StyxbugRenderer::new);
         }
     }
 }

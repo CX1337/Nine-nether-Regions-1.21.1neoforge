@@ -1,6 +1,8 @@
 package com.cx1337.nine_nether_regions.item;
 
 import com.cx1337.nine_nether_regions.NineNetherRegions;
+import com.cx1337.nine_nether_regions.block.ModBlocks;
+import com.cx1337.nine_nether_regions.entity.ModEntities;
 import com.cx1337.nine_nether_regions.item.custom.*;
 import com.cx1337.nine_nether_regions.sound.ModSounds;
 import net.minecraft.network.chat.Component;
@@ -8,6 +10,7 @@ import net.minecraft.world.entity.projectile.*;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.NotNull;
@@ -153,6 +156,9 @@ public class ModItems {
             ITEMS.register("ghostlium", () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
     public static final DeferredItem<Item> WEB_BALL =
             ITEMS.register("web_ball", () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
+    public static final DeferredItem<Item> HELL_BLUEBERRY =
+            ITEMS.register("hell_blueberry", () -> new ItemNameBlockItem(ModBlocks.HELL_BLUEBERRY_BUSH.get(),
+                    new Item.Properties().rarity(Rarity.COMMON).food(ModFoodProperties.HELL_BLUEBERRY)));
     //红宝石剑
     public static final DeferredItem<SwordItem> RUBY_SWORD =
             ITEMS.register("ruby_sword", () -> new SwordItem(ModToolTiers.RUBY, new Item.Properties()
@@ -533,4 +539,12 @@ public class ModItems {
     public static final DeferredItem<Item> CAVES_MUSIC_DISC =
             ITEMS.register("caves_music_disc", () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.SATIN_DANGER_KEY)
                     .stacksTo(1).rarity(Rarity.RARE).fireResistant()));
+
+    //刷怪蛋
+    public static final DeferredItem<Item> CRAZFIRE_SPAWN_EGG =
+            ITEMS.register("crazfire_spawn_egg", () -> new DeferredSpawnEggItem(ModEntities.CRAZFIRE, 0x0c848b,
+                    0xecc00a, new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final DeferredItem<Item> STYXBUG_SPAWN_EGG =
+            ITEMS.register("styxbug_spawn_egg", () -> new DeferredSpawnEggItem(ModEntities.STYXBUG, 0x6b0707,
+                    0x06cbaa, new Item.Properties().rarity(Rarity.COMMON)));
 }

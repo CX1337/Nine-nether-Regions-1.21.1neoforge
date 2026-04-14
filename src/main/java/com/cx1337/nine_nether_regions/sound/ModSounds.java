@@ -16,6 +16,10 @@ public class ModSounds {
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS =
             DeferredRegister.create(BuiltInRegistries.SOUND_EVENT, NineNetherRegions.MODID);
 
+    public static final Supplier<SoundEvent> BUG_IDLE = registerSoundEvent("bug_idle");
+    public static final Supplier<SoundEvent> BUG_HURT = registerSoundEvent("bug_hurt");
+    public static final Supplier<SoundEvent> BUG_DEATH = registerSoundEvent("bug_death");
+
     public static final Supplier<SoundEvent> DAWN_OF_THE_APOCALYPSE = registerSoundEvent("dawn_of_the_apocalypse");
     public static final ResourceKey<JukeboxSong> DAWN_OF_THE_APOCALYPSE_KEY = createSong("dawn_of_the_apocalypse");
     public static final Supplier<SoundEvent> LONELY_MOUNTAIN = registerSoundEvent("lonely_mountain");

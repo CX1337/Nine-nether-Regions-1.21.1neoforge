@@ -11,6 +11,8 @@ public class ModFoodProperties {
                     .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 200, 0),1.0F)
                     .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 200, 0),0.32F)
                     .alwaysEdible().fast().build();
+    public static final FoodProperties HELL_BLUEBERRY =
+            new FoodProperties.Builder().nutrition(3).saturationModifier(0.8F).fast().build();
     public static final FoodProperties GHOSTLIUM_APPLE =
             new FoodProperties.Builder().nutrition(5).saturationModifier(1.2F)
                     .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 600, 1),1.0F)

@@ -38,6 +38,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.AMETHYST_BEETROOT);
                         output.accept(ModItems.GHOSTLIUM_APPLE);
                         output.accept(ModItems.ENCHANTED_GHOSTLIUM_APPLE);
+                        output.accept(ModItems.HELL_BLUEBERRY);
                         output.accept(ModItems.WEB_BALL);
                         output.accept(ModItems.WEB_FRUIT);
                         output.accept(ModItems.EMPTY_FABRIC);
@@ -148,6 +149,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.THE_STYX_MUSIC_DISC);
                         output.accept(ModItems.UNDERWORLD_ABYSS_MUSIC_DISC);
                         output.accept(ModItems.STYX_FERRYMAN_MUSIC_DISC);
+
+                        output.accept(ModItems.CRAZFIRE_SPAWN_EGG);
+                        output.accept(ModItems.STYXBUG_SPAWN_EGG);
                     }).build());
 
     public static final Supplier<CreativeModeTab> NineNetherRegions_Blocks_Tab =
@@ -171,7 +175,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.HARDENED_BLOODBLADE_ROCK);
                         output.accept(ModBlocks.UNDERWORLD_SPIRIT_STONE);
                         output.accept(ModBlocks.UNDERWORLD_CRYSTAL_ORE);
-                        output.accept(ModBlocks.UNDERWORLD_CRYSTAL_CLUSTER);
                         output.accept(ModBlocks.BLOODY_SAND);
                         output.accept(ModBlocks.COMPACT_OBSIDIAN);
                         output.accept(ModBlocks.REINFORCED_OBSIDIAN);

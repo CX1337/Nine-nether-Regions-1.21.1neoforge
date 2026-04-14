@@ -2,17 +2,23 @@ package com.cx1337.nine_nether_regions.datagen;
 
 import com.cx1337.nine_nether_regions.NineNetherRegions;
 import com.cx1337.nine_nether_regions.block.ModBlocks;
+import com.cx1337.nine_nether_regions.block.custom.HellBlueberryBushBlock;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.block.TallFlowerBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
+
+import java.util.function.Function;
 
 public class ModBlockStatesProvider extends BlockStateProvider {
     public ModBlockStatesProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
@@ -108,11 +114,26 @@ public class ModBlockStatesProvider extends BlockStateProvider {
         blockItem(ModBlocks.HELLWOOD_PRESSURE_PLATE);
         blockItem(ModBlocks.HELLWOOD_FENCE_GATE);
         blockItem(ModBlocks.HELLWOOD_TRAPDOOR, "_bottom");
+
+        makeBush(((SweetBerryBushBlock) ModBlocks.HELL_BLUEBERRY_BUSH.get()), "hell_blueberry_bush_stage",
+                "hell_blueberry_bush_stage");
     }
     private void saplingBlock(DeferredBlock<Block> blockRegistryObject) {
         simpleBlock(blockRegistryObject.get(),
                 models().cross(BuiltInRegistries.BLOCK.getKey(blockRegistryObject.get()).getPath(),
                         blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+
+    public void makeBush(SweetBerryBushBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> states(state, modelName, textureName);
+        getVariantBuilder(block).forAllStates(function);
+    }
+    private ConfiguredModel[] states(BlockState state, String modelName, String textureName) {
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().cross(modelName + state.getValue(HellBlueberryBushBlock.AGE),
+                ResourceLocation.fromNamespaceAndPath(NineNetherRegions.MODID, "block/" + textureName +
+                        state.getValue(HellBlueberryBushBlock.AGE))).renderType("cutout"));
+        return models;
     }
 
     private void leavesBlock(DeferredBlock<Block> blockRegistryObject) {

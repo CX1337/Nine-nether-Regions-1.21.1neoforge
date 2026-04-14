@@ -54,5 +54,29 @@
         "stream": true
       }
     ]
+  },
+  "bug_death": {
+    "subtitle": "bug_death.sub",
+    "sounds": [
+      {
+        "name": "nine_nether_regions:bug_death"
+      }
+    ]
+  },
+  "bug_hurt": {
+    "subtitle": "bug_hurt.sub",
+    "sounds": [
+      {
+        "name": "nine_nether_regions:bug_hurt"
+      }
+    ]
+  },
+  "bug_idle": {
+    "subtitle": "bug_idle.sub",
+    "sounds": [
+      {
+        "name": "nine_nether_regions:bug_idle"
+      }
+    ]
   }
 }

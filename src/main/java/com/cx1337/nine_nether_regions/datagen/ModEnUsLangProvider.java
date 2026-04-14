@@ -2,6 +2,7 @@ package com.cx1337.nine_nether_regions.datagen;
 
 import com.cx1337.nine_nether_regions.NineNetherRegions;
 import com.cx1337.nine_nether_regions.block.ModBlocks;
+import com.cx1337.nine_nether_regions.entity.ModEntities;
 import com.cx1337.nine_nether_regions.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
@@ -36,6 +37,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.MANJUSAKA_PLAIN_MUSIC_DISC.get(), "Music Disc--Biomes/Manjusaka Plain");
         add(ModItems.STYX_FABRIC.get(), "Styx Fabric");
         add(ModItems.GHOSTLIUM.get(), "Ghostlium");
+        add(ModItems.HELL_BLUEBERRY.get(), "Hell Blueberry");
         add(ModItems.HELLALLOY_INGOT.get(), "§aHellalloy Ingot");
         add(ModItems.HELLALLOY_AXE.get(), "§aHellalloy Axe");
         add(ModItems.HELLALLOY_HOE.get(), "§aHellalloy Hoe");
@@ -123,10 +125,12 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.THE_STYX_MUSIC_DISC.get(), "Music Disc--Biomes/The Styx,Underworld Plains");
         add(ModItems.UNDERWORLD_BRICK.get(), "Underworld Brick");
         add(ModItems.UNDERWORLD_CRYSTAL.get(), "§bUnderworld Crystal");
-        add(ModItems.UNDERWORLD_POWERED_ELYTRA.get(), "Underworld Powered Elytra");
-        add(ModItems.HELLALLOY_ELYTRA_CHESTPLATE.get(), "Hellalloy Elytra Chestplate");
-        add(ModItems.STYX_ELYTRA_CHESTPLATE.get(), "Styx Elytra Chestplate");
+        add(ModItems.UNDERWORLD_POWERED_ELYTRA.get(), "Underworld Powered Elytra(WIP)");
+        add(ModItems.HELLALLOY_ELYTRA_CHESTPLATE.get(), "Hellalloy Elytra Chestplate(WIP)");
+        add(ModItems.STYX_ELYTRA_CHESTPLATE.get(), "Styx Elytra Chestplate(WIP)");
         add(ModItems.UNDERWORLD_ABYSS_MUSIC_DISC.get(), "Music Disc--Biomes/Underworld Abyss");
+        add(ModItems.CRAZFIRE_SPAWN_EGG.get(), "Crazfire Spawn Egg");
+        add(ModItems.STYXBUG_SPAWN_EGG.get(), "Styxbug Spawn Egg");
 
         add(ModBlocks.BLOODY_SAND.get(), "Bloody Sand");
         add(ModBlocks.BLOODBLADE_ORE.get(), "§4Bloodblade_ore");
@@ -139,6 +143,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.GLOWING_UNDERWORLD_BRICKS.get(), "§bGlowing Underworld Bricks");
         add(ModBlocks.GLOWING_UNDERWORLD_BRICK_SLAB.get(), "§bGlowing Underworld Brick Slab");
         add(ModBlocks.GLOWING_UNDERWORLD_BRICK_STAIRS.get(), "§bGlowing Underworld Brick Stairs");
+        add(ModBlocks.HELL_BLUEBERRY_BUSH.get(), "Hell Blueberry Bush");
         add(ModBlocks.HELLALLOY_BLOCK.get(), "§aHellalloy Block");
         add(ModBlocks.HELLIGHT.get(), "Hellight");
         add(ModBlocks.HELL_NUCLEUS.get(), "§c§lHell Nucleus");
@@ -182,11 +187,17 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.UNDERWORLD_BRICK_WALL.get(), "Underworld Brick Wall");
         add(ModBlocks.UNDERWORLD_SPIRIT_STONE.get(), "Underworld Spirit Stone");
         add(ModBlocks.UNDERWORLD_CRYSTAL_ORE.get(), "Underworld Crystal ore");
-        add(ModBlocks.UNDERWORLD_CRYSTAL_CLUSTER.get(), "Underworld Crystal Cluster");
-        add(ModBlocks.UNDERWORLD_ENCHANTER.get(), "Underworld Enchanter");
-        add(ModBlocks.ELYTRA_CHARGER.get(), "Elytra Charger");
+        add(ModBlocks.UNDERWORLD_ENCHANTER.get(), "Underworld Enchanter(WIP)");
+        add(ModBlocks.ELYTRA_CHARGER.get(), "Elytra Charger(WIP)");
         add(ModBlocks.VOID_NEBULA.get(), "Void Nebula");
         add(ModBlocks.VOIDRITE_BLOCK.get(), "Voidrite Block");
+
+        add(ModEntities.CRAZFIRE.get(), "Crazfire(WIP)");
+        add(ModEntities.STYXBUG.get(), "Styxbug");
+
+        add("bug_idle.sub", "Styxbug Squeaks");
+        add("bug_hurt.sub", "Styxbug Hurts");
+        add("bug_death.sub", "Styxbug Dies");
 
         add("effect.nine_nether_regions.decline", "Decline");
         add("death.attack.decline", "%1$s was dissipated into the wind");
@@ -331,13 +342,13 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.nine_nether_regions.styx_leggings", "§6§lMay the Power of Styx be with you.\n§r§8§oPress§r §3§oAlt§r§8§o to display more.");
         add("tooltip.nine_nether_regions.styx_boots", "§6§lMay the Power of Styx be with you.\n§r§8§oPress§r §3§oAlt§r§8§o to display more.");
         add("tooltip.nine_nether_regions.styx_helmet_alt",
-                "§6§oIndestructible:§r§3§oUnder normal circumstances, the durability of this equipment will not be depleted. If the durability of the equipment is damaged by some means, its durability will quickly recover (42 points restored every 4 ticks)\n§r§6§oFull Set Effect - Immovable as Mountains:§r§3§oWhen original damage ≤3 points or of type §r§5§oMagic, §r§e§oExplosion, §r§3§oFreeze, §r§1§oWarden's Sonic Boom§r§3§o, forcibly reduces damage to 0; continuously provides §r§6§oResistance Boost and Damage Absorption§r§3§o effects (all effects level 3); forcibly restores 1.5 health point every 10 ticks and provides 75% all damage reduction.Continuously removes all negative effects except §r§6§oBad Omen, Trial Omen, Raid Omen§r§3§o.\n§r§6§oSingle Piece Effect:§r§3§oContinuously provides §r§6§oNight Vision, Water Breathing, Saturation§r§3§o effects (all effects level 2), and grants immunity to §7§oBlindness, Darkness, Hunger, Bloodblade Curse§r§3§o effects.");
+                "§6§oIndestructible:§r§3§oUnder normal circumstances, the durability of this equipment will not be depleted. If the durability of the equipment is damaged by some means, its durability will quickly recover (42 points restored every 4 ticks)\n§r§6§oFull Set Effect - Immovable as Mountains:§r§3§oWhen original damage ≤3 points or of type §r§5§oMagic, §r§e§oExplosion, §r§3§oFreeze, §r§1§oWarden's Sonic Boom§r§3§o, forcibly reduces damage to 0; continuously provides §r§6§oResistance Boost and Damage Absorption§r§3§o effects (all effects level 3); forcibly restores 1.5 health point every 10 ticks and provides 75% all damage reduction.Continuously removes all negative effects except §r§6§oBad Omen, Trial Omen, Raid Omen§r§3§o.When your health reaches zero for any reason, you have a 44% chance to avoid death, instantly restoring your health to 25% of your maximum health and gaining §r§6§oResistance§r§3§o (Level 5)§r for 5 seconds.\n§r§6§oSingle Piece Effect:§r§3§oContinuously provides §r§6§oNight Vision, Water Breathing, Saturation§r§3§o effects (all effects level 2), and grants immunity to §7§oBlindness, Darkness, Hunger, Bloodblade Curse§r§3§o effects.");
         add("tooltip.nine_nether_regions.styx_chestplate_alt",
-                "§6§oIndestructible:§r§3§oUnder normal circumstances, the durability of this equipment will not be depleted. If the durability of the equipment is damaged by some means, its durability will quickly recover (42 points restored every 4 ticks)\n§r§6§oFull Set Effect - Immovable as Mountains:§r§3§oWhen original damage ≤3 points or of type §r§5§oMagic, §r§e§oExplosion, §r§3§oFreeze, §r§1§oWarden's Sonic Boom§r§3§o, forcibly reduces damage to 0; continuously provides §r§6§oResistance Boost and Damage Absorption§r§3§o effects (all effects level 3); forcibly restores 1.5 health point every 10 ticks and provides 75% all damage reduction.Continuously removes all negative effects except §r§6§oBad Omen, Trial Omen, Raid Omen§r§3§o.\n§r§6§oSingle Piece Effect:§r§3§oContinuously provides §r§6§oFire Resistance, Haste§r§3§o effects (all effects level 2) and §r§6§oStrength§r§3§o effect (level 3), and grants immunity to §7§oWither, Poison, Mining Fatigue, Weakness§r§3§o effects.");
+                "§6§oIndestructible:§r§3§oUnder normal circumstances, the durability of this equipment will not be depleted. If the durability of the equipment is damaged by some means, its durability will quickly recover (42 points restored every 4 ticks)\n§r§6§oFull Set Effect - Immovable as Mountains:§r§3§oWhen original damage ≤3 points or of type §r§5§oMagic, §r§e§oExplosion, §r§3§oFreeze, §r§1§oWarden's Sonic Boom§r§3§o, forcibly reduces damage to 0; continuously provides §r§6§oResistance Boost and Damage Absorption§r§3§o effects (all effects level 3); forcibly restores 1.5 health point every 10 ticks and provides 75% all damage reduction.Continuously removes all negative effects except §r§6§oBad Omen, Trial Omen, Raid Omen§r§3§o.When your health reaches zero for any reason, you have a 44% chance to avoid death, instantly restoring your health to 25% of your maximum health and gaining §r§6§oResistance§r§3§o (Level 5)§r for 5 seconds.\n§r§6§oSingle Piece Effect:§r§3§oContinuously provides §r§6§oFire Resistance, Haste§r§3§o effects (all effects level 2) and §r§6§oStrength§r§3§o effect (level 3), and grants immunity to §7§oWither, Poison, Mining Fatigue, Weakness§r§3§o effects.");
         add("tooltip.nine_nether_regions.styx_leggings_alt",
-                "§6§oIndestructible:§r§3§oUnder normal circumstances, the durability of this equipment will not be depleted. If the durability of the equipment is damaged by some means, its durability will quickly recover (42 points restored every 4 ticks)\n§r§6§oFull Set Effect - Immovable as Mountains:§r§3§oWhen original damage ≤3 points or of type §r§5§oMagic, §r§e§oExplosion, §r§3§oFreeze, §r§1§oWarden's Sonic Boom§r§3§o, forcibly reduces damage to 0; continuously provides §r§6§oResistance Boost and Damage Absorption§r§3§o effects (all effects level 3); forcibly restores 1.5 health point every 10 ticks and provides 75% all damage reduction.Continuously removes all negative effects except §r§6§oBad Omen, Trial Omen, Raid Omen§r§3§o.\n§r§6§oSingle Piece Effect:§r§3§oContinuously provides §r§6§oJump Boost§r§3§o effect (level 2) and §r§6§oLuck§r§3§o effect (level 3), and grants immunity to §7§oNausea§r§3§o effect.");
+                "§6§oIndestructible:§r§3§oUnder normal circumstances, the durability of this equipment will not be depleted. If the durability of the equipment is damaged by some means, its durability will quickly recover (42 points restored every 4 ticks)\n§r§6§oFull Set Effect - Immovable as Mountains:§r§3§oWhen original damage ≤3 points or of type §r§5§oMagic, §r§e§oExplosion, §r§3§oFreeze, §r§1§oWarden's Sonic Boom§r§3§o, forcibly reduces damage to 0; continuously provides §r§6§oResistance Boost and Damage Absorption§r§3§o effects (all effects level 3); forcibly restores 1.5 health point every 10 ticks and provides 75% all damage reduction.Continuously removes all negative effects except §r§6§oBad Omen, Trial Omen, Raid Omen§r§3§o.When your health reaches zero for any reason, you have a 44% chance to avoid death, instantly restoring your health to 25% of your maximum health and gaining §r§6§oResistance§r§3§o (Level 5)§r for 5 seconds.\n§r§6§oSingle Piece Effect:§r§3§oContinuously provides §r§6§oJump Boost§r§3§o effect (level 2) and §r§6§oLuck§r§3§o effect (level 3), and grants immunity to §7§oNausea§r§3§o effect.");
         add("tooltip.nine_nether_regions.styx_boots_alt",
-                "§6§oIndestructible:§r§3§oUnder normal circumstances, the durability of this equipment will not be depleted. If the durability of the equipment is damaged by some means, its durability will quickly recover (42 points restored every 4 ticks)\n§r§6§oFull Set Effect - Immovable as Mountains:§r§3§oWhen original damage ≤3 points or of type §r§5§oMagic, §r§e§oExplosion, §r§3§oFreeze, §r§1§oWarden's Sonic Boom§r§3§o, forcibly reduces damage to 0; continuously provides §r§6§oResistance Boost and Damage Absorption§r§3§o effects (all effects level 3); forcibly restores 1.5 health point every 10 ticks and provides 75% all damage reduction.Continuously removes all negative effects except §r§6§oBad Omen, Trial Omen, Raid Omen§r§3§o.\n §r§6§oSingle Piece Effect:§r§3§oContinuously provides §r§6§oSpeed§r§3§o effect (level 3), and grants immunity to §7§oSlowness, Levitation, Infested§r§3§o effects, while also providing 100% resistance to fall damage.");
+                "§6§oIndestructible:§r§3§oUnder normal circumstances, the durability of this equipment will not be depleted. If the durability of the equipment is damaged by some means, its durability will quickly recover (42 points restored every 4 ticks)\n§r§6§oFull Set Effect - Immovable as Mountains:§r§3§oWhen original damage ≤3 points or of type §r§5§oMagic, §r§e§oExplosion, §r§3§oFreeze, §r§1§oWarden's Sonic Boom§r§3§o, forcibly reduces damage to 0; continuously provides §r§6§oResistance Boost and Damage Absorption§r§3§o effects (all effects level 3); forcibly restores 1.5 health point every 10 ticks and provides 75% all damage reduction.Continuously removes all negative effects except §r§6§oBad Omen, Trial Omen, Raid Omen§r§3§o.When your health reaches zero for any reason, you have a 44% chance to avoid death, instantly restoring your health to 25% of your maximum health and gaining §r§6§oResistance§r§3§o (Level 5)§r for 5 seconds.\n §r§6§oSingle Piece Effect:§r§3§oContinuously provides §r§6§oSpeed§r§3§o effect (level 3), and grants immunity to §7§oSlowness, Levitation, Infested§r§3§o effects, while also providing 100% resistance to fall damage.");
         add("tooltip.nine_nether_regions.hellalloy_longbow", "§3§oMore precise,more powerful.");
         add("tooltip.nine_nether_regions.reinforced_obsidian", "§3§oIt's REALLY hard...It must have some purpose.");
         add("tooltip.nine_nether_regions.ender_staff", "§3§oDraws upon the teleportation power of Ender Pearls, enhanced by a Nether Star.\\nRight-click to teleport to the location pointed by the crosshair, with a maximum range of 64 blocks.");
