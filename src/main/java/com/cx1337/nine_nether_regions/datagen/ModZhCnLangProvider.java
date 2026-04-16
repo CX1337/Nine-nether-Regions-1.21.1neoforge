@@ -126,9 +126,9 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModItems.THE_STYX_MUSIC_DISC.get(), "音乐唱片——群系/冥河、幽冥平川");
         add(ModItems.UNDERWORLD_BRICK.get(), "冥界砖");
         add(ModItems.UNDERWORLD_CRYSTAL.get(), "§b幽冥晶");
-        add(ModItems.UNDERWORLD_POWERED_ELYTRA.get(), "幽冥动力鞘翅（WIP）");
-        add(ModItems.HELLALLOY_ELYTRA_CHESTPLATE.get(), "幽冥合金鞘翅胸甲（WIP）");
-        add(ModItems.STYX_ELYTRA_CHESTPLATE.get(), "冥河鞘翅胸甲（WIP）");
+        //add(ModItems.UNDERWORLD_POWERED_ELYTRA.get(), "幽冥动力鞘翅（WIP）");
+        //add(ModItems.HELLALLOY_ELYTRA_CHESTPLATE.get(), "幽冥合金鞘翅胸甲（WIP）");
+        //add(ModItems.STYX_ELYTRA_CHESTPLATE.get(), "冥河鞘翅胸甲（WIP）");
         add(ModItems.UNDERWORLD_ABYSS_MUSIC_DISC.get(), "音乐唱片——群系/冥界深渊");
         add(ModItems.CRAZFIRE_SPAWN_EGG.get(), "狂火刷怪蛋");
         add(ModItems.STYXBUG_SPAWN_EGG.get(), "冥蛉刷怪蛋");
@@ -188,8 +188,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add(ModBlocks.UNDERWORLD_BRICK_WALL.get(), "冥界砖墙");
         add(ModBlocks.UNDERWORLD_SPIRIT_STONE.get(), "幽冥灵石");
         add(ModBlocks.UNDERWORLD_CRYSTAL_ORE.get(), "§b幽冥晶矿石");
-        add(ModBlocks.UNDERWORLD_ENCHANTER.get(), "幽冥附神器（WIP）");
-        add(ModBlocks.ELYTRA_CHARGER.get(), "鞘翅充能台（WIP）");
+        //add(ModBlocks.UNDERWORLD_ENCHANTER.get(), "幽冥附神器（WIP）");
+        //add(ModBlocks.ELYTRA_CHARGER.get(), "鞘翅充能台（WIP）");
         add(ModBlocks.VOID_NEBULA.get(), "虚空星云");
         add(ModBlocks.VOIDRITE_BLOCK.get(), "虚空合金块");
 
@@ -199,6 +199,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("bug_idle.sub", "冥蛉：轻鸣");
         add("bug_hurt.sub", "冥蛉：受伤");
         add("bug_death.sub", "冥蛉：死亡");
+
+        add("disconnected.server.remover", "没有什么东西是永恒的，包括§k你§r。再会，旅行者。");
 
         add("effect.nine_nether_regions.decline", "归寂");
         add("death.attack.decline", "%1$s随风飘散了");
@@ -292,6 +294,10 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("advancement.nine_nether_regions.styx_sword.description", "用冥河锭升级你的幽冥合金剑，拿到这把冥河渡客的武器。");
         add("advancement.nine_nether_regions.styx_twinned_sword.title", "终极规律之刃！");
         add("advancement.nine_nether_regions.styx_twinned_sword.description", "将冥河体的核心和那些强力的武器融合，打造出这把前所未有的双刃！");
+        add("advancement.nine_nether_regions.damage_test.title", "这是§k???");
+        add("advancement.nine_nether_regions.damage_test.description", "这股力量§k不属于你……");
+        add("advancement.nine_nether_regions.remover.title", "§m§k归寂虚无。");
+        add("advancement.nine_nether_regions.remover.description", "§k再会。");
 
         add("tooltip.nine_nether_regions.amethyst_dagger", "§3§o虽然这把短剑确实很小，合成配方简单，攻击力也不高；但是得益于紫水晶的生命力，使用它攻击时每次命中敌人都有33%概率为你恢复1点生命值；也正因为它很小巧，你可以更快速的挥动它。\n当然，由于紫水晶质地很脆，它的耐久度在同类武器中并不优秀。");
         add("tooltip.nine_nether_regions.mini_fractal", "§3§o这把由下界合金打造而成的别致的小剑并没有优秀的面板数值，但是它对生命上限越高的生物造成的伤害越高。\n每次攻击时会对目标额外造成§r§6§o生命上限×1.1%§r§3§o的伤害");
@@ -363,6 +369,8 @@ public class ModZhCnLangProvider extends LanguageProvider {
         add("tooltip.nine_nether_regions.styx_lamp", "§3§o一盏可以开关的灯，右键来控制它的开关。当它开启时，以它为中心半径64格的范围内将不再刷新生物。\n§r§4§o特别注意：如果进入世界时该灯就是点亮状态，抑制刷怪并不会生效！开关一次后即可正常生效。");
         add("tooltip.nine_nether_regions.fluoroscopy_block", "§3§o由几个透明方块融合压缩形成的特殊方块，或许可以用来寻找地下隐藏的矿物和结构……");
         add("tooltip.nine_nether_regions.voidrite_ingot", "§3§o集万千虚空之力于一锭。");
+        add("tooltip.nine_nether_regions.remover.alpha", "§c§o你的归宿，将是那无尽的虚空。");
+        add("tooltip.nine_nether_regions.remover.beta", "§3§o左击一个实体以放逐它。");
         add("tooltip.nine_nether_regions.voidrite_upgrade_smithing_template", "§3虚空合金升级");
         add("tooltip.nine_nether_regions.elytra_charge", "§b充能：%1$s / %2$s");
 

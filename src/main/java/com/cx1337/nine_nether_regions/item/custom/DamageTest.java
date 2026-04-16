@@ -23,7 +23,6 @@ public class DamageTest extends SwordItem {
     }
     @Override
     public boolean onLeftClickEntity(@NotNull ItemStack stack, Player player, @NotNull Entity target) {
-        if (player.getAttackStrengthScale(0.5F) >= 1.0F) {
             if (player.level() instanceof ServerLevel serverLevel) {
                 serverLevel.playSound(null,
                         player.getX(), player.getY(), player.getZ(),
@@ -35,7 +34,7 @@ public class DamageTest extends SwordItem {
                         entity -> entity != player
                 );
                 for (LivingEntity entity : entitiesInRange) {
-                    float maxHealth = entity.getHealth();
+                    float maxHealth = entity.getMaxHealth();
                     float newHealth = maxHealth * 0.01F - 4444.0F;
                     if (newHealth <= 0.0F) {
                         entity.setHealth(0.0F);
@@ -45,7 +44,6 @@ public class DamageTest extends SwordItem {
                     }
                 }
             }
-        }
         return super.onLeftClickEntity(stack, player, target);
     }
 

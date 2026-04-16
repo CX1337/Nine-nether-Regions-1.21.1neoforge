@@ -15,6 +15,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         add(ModItems.DAMAGE_TEST.get(), "§k?????");
+        add(ModItems.REMOVER.get(), "§5§m§oRemover");
         add(ModItems.ALLOY_HILT.get(), "Alloy Hilt");
         add(ModItems.MINI_FRACTAL.get(), "Mini Fractal");
         add(ModItems.AMETHYST_BEETROOT.get(), "Amethyst Beetroot");
@@ -125,9 +126,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModItems.THE_STYX_MUSIC_DISC.get(), "Music Disc--Biomes/The Styx,Underworld Plains");
         add(ModItems.UNDERWORLD_BRICK.get(), "Underworld Brick");
         add(ModItems.UNDERWORLD_CRYSTAL.get(), "§bUnderworld Crystal");
-        add(ModItems.UNDERWORLD_POWERED_ELYTRA.get(), "Underworld Powered Elytra(WIP)");
-        add(ModItems.HELLALLOY_ELYTRA_CHESTPLATE.get(), "Hellalloy Elytra Chestplate(WIP)");
-        add(ModItems.STYX_ELYTRA_CHESTPLATE.get(), "Styx Elytra Chestplate(WIP)");
+        //add(ModItems.UNDERWORLD_POWERED_ELYTRA.get(), "Underworld Powered Elytra(WIP)");
+        //add(ModItems.HELLALLOY_ELYTRA_CHESTPLATE.get(), "Hellalloy Elytra Chestplate(WIP)");
+        //add(ModItems.STYX_ELYTRA_CHESTPLATE.get(), "Styx Elytra Chestplate(WIP)");
         add(ModItems.UNDERWORLD_ABYSS_MUSIC_DISC.get(), "Music Disc--Biomes/Underworld Abyss");
         add(ModItems.CRAZFIRE_SPAWN_EGG.get(), "Crazfire Spawn Egg");
         add(ModItems.STYXBUG_SPAWN_EGG.get(), "Styxbug Spawn Egg");
@@ -187,8 +188,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(ModBlocks.UNDERWORLD_BRICK_WALL.get(), "Underworld Brick Wall");
         add(ModBlocks.UNDERWORLD_SPIRIT_STONE.get(), "Underworld Spirit Stone");
         add(ModBlocks.UNDERWORLD_CRYSTAL_ORE.get(), "Underworld Crystal ore");
-        add(ModBlocks.UNDERWORLD_ENCHANTER.get(), "Underworld Enchanter(WIP)");
-        add(ModBlocks.ELYTRA_CHARGER.get(), "Elytra Charger(WIP)");
+        //add(ModBlocks.UNDERWORLD_ENCHANTER.get(), "Underworld Enchanter(WIP)");
+        //add(ModBlocks.ELYTRA_CHARGER.get(), "Elytra Charger(WIP)");
         add(ModBlocks.VOID_NEBULA.get(), "Void Nebula");
         add(ModBlocks.VOIDRITE_BLOCK.get(), "Voidrite Block");
 
@@ -198,6 +199,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("bug_idle.sub", "Styxbug Squeaks");
         add("bug_hurt.sub", "Styxbug Hurts");
         add("bug_death.sub", "Styxbug Dies");
+
+        add("disconnected.server.remover", "Nothing lasts forever, including you. Farewell, traveler.");
 
         add("effect.nine_nether_regions.decline", "Decline");
         add("death.attack.decline", "%1$s was dissipated into the wind");
@@ -291,6 +294,10 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("advancement.nine_nether_regions.styx_sword.description", "Upgrade your Hellalloy Sword with Styx ingot,get one of Charon's Weapon.");
         add("advancement.nine_nether_regions.styx_twinned_sword.title", "The Ultimate Sword!");
         add("advancement.nine_nether_regions.styx_twinned_sword.description", "Mix The Styxier's core into those weapons,get this unprecedented Twinned Sword!");
+        add("advancement.nine_nether_regions.damage_test.title", "What's §kThat?");
+        add("advancement.nine_nether_regions.damage_test.description", "This power is not belongs to you.");
+        add("advancement.nine_nether_regions.remover.title", "§m§kBack into the void.");
+        add("advancement.nine_nether_regions.remover.description", "§kGoodbye.");
 
         add("tooltip.nine_nether_regions.amethyst_dagger", "§3§oAlthough this short sword is indeed small, the recipe is simple, and the attack power is not high, thanks to the vitality contained in amethyst, players have a 33% chance of recovering 1 point of health each time they use it to attack. Meanwhile, precisely because of its compact size, players can swing it faster.\nOf course, due to the fragility of amethyst itself, the durability of this short sword is not as high.");
         add("tooltip.nine_nether_regions.mini_fractal", "§3§oThis dainty blade, fashioned from Netherite, boasts unimpressive stats, yet it deals greater damage to beings with higher health.\n§r§6§oUpon each strike, it deals bonus damage equal to 1.1% of the target's maximum health.");
@@ -362,6 +369,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("tooltip.nine_nether_regions.voidrite_ingot", "§3§oCondenses the myriad powers of the Void into a single ingot.");
         add("tooltip.nine_nether_regions.voidrite_upgrade_smithing_template", "§3Voidrite Upgrade");
         add("tooltip.nine_nether_regions.elytra_charge", "§bCharge: %1$s / %2$s");
+        add("tooltip.nine_nether_regions.remover.alpha", "§c§oYour fate will be the endless void.");
+        add("tooltip.nine_nether_regions.remover.beta", "§3§oLeft-click an entity to discard him.");
         add("gui.nine_nether_regions.underworld_enchanter.catalyst", "Catalyst");
         add("gui.nine_nether_regions.elytra_charger.fuel", "Fuel");
     }

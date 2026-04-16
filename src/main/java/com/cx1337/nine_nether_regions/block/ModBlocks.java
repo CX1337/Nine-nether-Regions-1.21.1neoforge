@@ -444,7 +444,7 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .strength(3.0F,444.0F)
                     .sound(SoundType.NETHER_BRICKS)));
-    public static final DeferredBlock<Block> UNDERWORLD_ENCHANTER =
+    /*public static final DeferredBlock<Block> UNDERWORLD_ENCHANTER =
             registerBlocks("underworld_enchanter", () -> new UnderworldEnchanterBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_GREEN)
                     .instrument(NoteBlockInstrument.BASEDRUM)
@@ -460,7 +460,7 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .strength(5.0F, 900.0F)
                     .sound(SoundType.NETHERITE_BLOCK)
-                    .lightLevel(state -> 8)), new Item.Properties().rarity(Rarity.UNCOMMON));
+                    .lightLevel(state -> 8)), new Item.Properties().rarity(Rarity.UNCOMMON));*/
     public static final DeferredBlock<Block> NULL_BLOCK =
             registerBlocks("null_block", () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_PURPLE)

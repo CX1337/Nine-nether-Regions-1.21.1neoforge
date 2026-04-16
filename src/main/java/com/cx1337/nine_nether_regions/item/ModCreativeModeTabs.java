@@ -31,7 +31,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DIAMOND_BOWSTRING);
                         output.accept(ModItems.UNDERWORLD_BRICK);
                         output.accept(ModItems.UNDERWORLD_CRYSTAL);
-                        output.accept(ModItems.UNDERWORLD_POWERED_ELYTRA);
+                        //output.accept(ModItems.UNDERWORLD_POWERED_ELYTRA);
                         output.accept(ModItems.BLOODBLADE_ESSENCE);
                         output.accept(ModItems.GHOSTLIUM);
                         output.accept(ModItems.STYX_TEAR);
@@ -125,7 +125,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.HELLALLOY_SHOVEL);
                         output.accept(ModItems.HELLALLOY_HELMET);
                         output.accept(ModItems.HELLALLOY_CHESTPLATE);
-                        output.accept(ModItems.HELLALLOY_ELYTRA_CHESTPLATE);
+                        //output.accept(ModItems.HELLALLOY_ELYTRA_CHESTPLATE);
                         output.accept(ModItems.HELLALLOY_LEGGINGS);
                         output.accept(ModItems.HELLALLOY_BOOTS);
                         output.accept(ModItems.HELLALLOY_SWORD);
@@ -137,7 +137,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.STYX_PICKAXE);
                         output.accept(ModItems.STYX_HELMET);
                         output.accept(ModItems.STYX_CHESTPLATE);
-                        output.accept(ModItems.STYX_ELYTRA_CHESTPLATE);
+                        //output.accept(ModItems.STYX_ELYTRA_CHESTPLATE);
                         output.accept(ModItems.STYX_LEGGINGS);
                         output.accept(ModItems.STYX_BOOTS);
                         output.accept(ModItems.STYX_TWINNED_SWORD);
@@ -194,8 +194,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.UNDERWORLDRACK);
                         output.accept(ModBlocks.UNDERWORLD_BRICKS);
-                        output.accept(ModBlocks.UNDERWORLD_ENCHANTER);
-                        output.accept(ModBlocks.ELYTRA_CHARGER);
+                        //output.accept(ModBlocks.UNDERWORLD_ENCHANTER);
+                        //output.accept(ModBlocks.ELYTRA_CHARGER);
                         output.accept(ModBlocks.UNDERWORLD_BRICK_BUTTON);
                         output.accept(ModBlocks.UNDERWORLD_BRICK_FENCE);
                         output.accept(ModBlocks.UNDERWORLD_BRICK_FENCE_GATE);

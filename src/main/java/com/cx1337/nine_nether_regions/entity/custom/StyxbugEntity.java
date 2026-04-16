@@ -68,11 +68,12 @@ public class StyxbugEntity extends Animal {
 
     @Override
     public @Nullable AgeableMob getBreedOffspring(@NotNull ServerLevel serverLevel, @NotNull AgeableMob ageableMob) {
+        StyxbugVariant variant = Util.getRandom(StyxbugVariant.values(), this.random);
         StyxbugEntity baby = ModEntities.STYXBUG.get().create(serverLevel);
         if (baby != null) {
-            baby.setVariant(this.getVariant());
+            baby.setVariant(variant);
         }
-        return ModEntities.STYXBUG.get().create(serverLevel);
+        return baby;
     }
 
     private void setUpAnimationStates() {

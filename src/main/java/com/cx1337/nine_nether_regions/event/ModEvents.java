@@ -66,7 +66,7 @@ public class ModEvents {
         FIREPROOF_ITEMS.add(ModItems.HELLALLOY_LONGBOW.get());
         FIREPROOF_ITEMS.add(ModItems.HELLALLOY_HELMET.get());
         FIREPROOF_ITEMS.add(ModItems.HELLALLOY_CHESTPLATE.get());
-        FIREPROOF_ITEMS.add(ModItems.HELLALLOY_ELYTRA_CHESTPLATE.get());
+        //FIREPROOF_ITEMS.add(ModItems.HELLALLOY_ELYTRA_CHESTPLATE.get());
         FIREPROOF_ITEMS.add(ModItems.HELLALLOY_LEGGINGS.get());
         FIREPROOF_ITEMS.add(ModItems.HELLALLOY_BOOTS.get());
         FIREPROOF_ITEMS.add(ModItems.HELLALLOY_AXE.get());
@@ -82,11 +82,13 @@ public class ModEvents {
         FIREPROOF_ITEMS.add(ModItems.STYX_TWINNED_SWORD.get());
         FIREPROOF_ITEMS.add(ModItems.STYX_HELMET.get());
         FIREPROOF_ITEMS.add(ModItems.STYX_CHESTPLATE.get());
-        FIREPROOF_ITEMS.add(ModItems.STYX_ELYTRA_CHESTPLATE.get());
+        //FIREPROOF_ITEMS.add(ModItems.STYX_ELYTRA_CHESTPLATE.get());
         FIREPROOF_ITEMS.add(ModItems.STYX_LEGGINGS.get());
         FIREPROOF_ITEMS.add(ModItems.STYX_BOOTS.get());
         FIREPROOF_ITEMS.add(ModItems.STYX_PICKAXE.get());
-        FIREPROOF_ITEMS.add(ModItems.UNDERWORLD_POWERED_ELYTRA.get());
+        //FIREPROOF_ITEMS.add(ModItems.UNDERWORLD_POWERED_ELYTRA.get());
+        FIREPROOF_ITEMS.add(ModItems.DAMAGE_TEST.get());
+        FIREPROOF_ITEMS.add(ModItems.REMOVER.get());
     }
     @SubscribeEvent
     public void makeItemFireproof(EntityJoinLevelEvent event) {

@@ -420,6 +420,42 @@ public class ModAdvancementProvider extends AdvancementProvider {
                     .rewards(AdvancementRewards.Builder.experience(44444))
                     .save(saver, ResourceLocation.fromNamespaceAndPath(NineNetherRegions.MODID,"styx_twinned_sword"),
                             existingFileHelper);
+            //特殊成就：这是什么？
+            AdvancementHolder damageTest = Advancement.Builder.advancement()
+                    .display(
+                            ModItems.DAMAGE_TEST.get(),
+                            Component.translatable("advancement.nine_nether_regions.damage_test.title"),
+                            Component.translatable("advancement.nine_nether_regions.damage_test.description"),
+                            null,
+                            AdvancementType.CHALLENGE,
+                            true, true, true
+                    )
+                    .addCriterion("has_damage_test",
+                            InventoryChangeTrigger.TriggerInstance.hasItems(
+                                    ModItems.DAMAGE_TEST.get()
+                            ))
+                    .parent(styxTwinnedSword)
+                    .rewards(AdvancementRewards.Builder.experience(4))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(NineNetherRegions.MODID,"damage_test"),
+                            existingFileHelper);
+            //特殊成就：归寂虚无。
+            AdvancementHolder remover = Advancement.Builder.advancement()
+                    .display(
+                            ModItems.REMOVER.get(),
+                            Component.translatable("advancement.nine_nether_regions.remover.title"),
+                            Component.translatable("advancement.nine_nether_regions.remover.description"),
+                            null,
+                            AdvancementType.CHALLENGE,
+                            true, true, true
+                    )
+                    .addCriterion("has_remover",
+                            InventoryChangeTrigger.TriggerInstance.hasItems(
+                                    ModItems.REMOVER.get()
+                            ))
+                    .parent(damageTest)
+                    .rewards(AdvancementRewards.Builder.experience(4))
+                    .save(saver, ResourceLocation.fromNamespaceAndPath(NineNetherRegions.MODID,"remover"),
+                            existingFileHelper);
 
         }
     }
